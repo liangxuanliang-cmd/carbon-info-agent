@@ -1,18 +1,19 @@
 /**
  * 数据更新脚本
- * 1. 通过浏览器搜索获取最新数据
+ * 1. 通过爬虫获取最新数据
  * 2. 更新项目数据文件
  * 3. 提交Git更新
  */
 
-import { writeFileSync } from 'fs';
+import { writeFileSync, readFileSync } from 'fs';
 import { resolve } from 'path';
 import dayjs from 'dayjs';
+import { crawlAll, type CrawlResult } from './crawler';
 
 // 项目根目录
 const PROJECT_ROOT = resolve(import.meta.dirname, '..');
 
-// 最新数据（从浏览器搜索获取）
+// 最新数据（从爬虫获取）
 export interface DailyData {
   carbonPrices: {
     cea: { price: number; change: number; date: string };
@@ -22,42 +23,44 @@ export interface DailyData {
   news: Array<{ title: string; source: string; date: string }>;
 }
 
-// 模拟从浏览器搜索获取的最新数据
-// 实际使用时，这里应该调用浏览器搜索Agent
+/**
+ * 通过爬虫获取最新数据
+ */
 export async function fetchLatestData(): Promise<DailyData> {
-  console.log('🔍 正在通过浏览器搜索获取最新数据...\n');
+  console.log('🔍 正在通过爬虫获取最新数据...\n');
   
-  // TODO: 这里将来替换为真实的浏览器搜索
-  // const searchResults = await browserAgent.search([
-  //   "全国碳市场 CEA价格 今日",
-  //   "CCER价格 今日",
-  //   "碳普惠政策 最新",
-  //   "碳市场 新闻 今日"
-  // ]);
+  // 执行爬虫任务
+  const result = await crawlAll();
   
-  // 模拟数据（实际应从搜索结果解析）
+  // 转换数据格式
   const data: DailyData = {
-    carbonPrices: {
+    carbonPrices: result.carbonPrices ? {
       cea: {
-        price: 87.74,
-        change: -0.05,
-        date: dayjs().format('YYYY-MM-DD'),
+        price: result.carbonPrices.cea.price,
+        change: result.carbonPrices.cea.change,
+        date: result.carbonPrices.cea.date,
       },
       ccer: {
-        buyPrice: 70.40,
-        sellPrice: 84.80,
-        midPrice: 80.60,
-        date: dayjs().format('YYYY-MM-DD'),
+        buyPrice: result.carbonPrices.ccer.buyPrice,
+        sellPrice: result.carbonPrices.ccer.sellPrice,
+        midPrice: result.carbonPrices.ccer.midPrice,
+        date: result.carbonPrices.ccer.date,
       },
+    } : {
+      // 爬虫失败时使用默认数据
+      cea: { price: 87.74, change: -0.05, date: dayjs().format('YYYY-MM-DD') },
+      ccer: { buyPrice: 70.40, sellPrice: 84.80, midPrice: 80.60, date: dayjs().format('YYYY-MM-DD') },
     },
-    policies: [
-      { name: '北京市碳普惠管理办法（试行）', issuer: '北京市生态环境局', date: '2026-03-20' },
-      { name: '上海市碳普惠管理办法', issuer: '上海市生态环境局', date: '2026-03-18' },
-    ],
-    news: [
-      { title: '全国碳市场收跌0.05%，报87.74元/吨', source: '全国碳市场信息网', date: dayjs().format('YYYY-MM-DD') },
-      { title: '零碳概念大规模纳入国家级行动计划', source: '政策发布', date: dayjs().format('YYYY-MM-DD') },
-    ],
+    policies: result.policies.map((p) => ({
+      name: p.title,
+      issuer: p.issuer,
+      date: p.date,
+    })),
+    news: result.news.map((n) => ({
+      title: n.title,
+      source: n.source,
+      date: n.date,
+    })),
   };
   
   console.log('✅ 数据获取完成\n');
