@@ -1,91 +1,95 @@
 /**
- * 每日简报生成脚本
- * 基于搜索获取的数据生成格式化的钉钉消息
+ * 每日简报生成脚本（精简版）
+ * 仅包含有价格变化的碳价、新发布政策/方法学、新资讯
  */
 
 import dayjs from 'dayjs';
 
-// 今日碳价数据（从浏览器搜索获取）
-const todayCarbonPrice = {
-  cea: {
-    price: 87.74,
-    change: -0.05,
-    date: '2026-03-24',
-  },
-  ccer: {
-    buyPrice: 70.40,
-    sellPrice: 84.80,
-    midPrice: 80.60,
-    date: '2026-03-24',
-  },
-};
+// 部署后的网站链接（初始为空，部署后更新）
+const WEBSITE_URL = process.env.WEBSITE_URL || '';
 
-// 最新政策
-const latestPolicies = [
-  { name: '北京市碳普惠管理办法（试行）', issuer: '北京市生态环境局' },
-  { name: '上海市碳普惠管理办法', issuer: '上海市生态环境局' },
-  { name: '武汉市碳普惠管理办法', issuer: '武汉市生态环境局' },
+// 碳价数据 - 仅显示有变化的
+interface CarbonPrice {
+  name: string;
+  price: number;
+  change: number;
+  unit: string;
+}
+
+// 模拟今日有价格变化的碳汇商品
+const changedCarbonPrices: CarbonPrice[] = [
+  { name: 'CEA', price: 87.74, change: -0.05, unit: '元/吨' },
+  { name: 'CCER', price: 80.60, change: 0.12, unit: '元/吨' },
 ];
 
-// 最新资讯
-const latestNews = [
-  { title: '全国碳市场3月24日收跌0.05%，报87.74元/吨', source: '全国碳市场信息网' },
-  { title: '零碳概念大规模纳入国家级行动计划', source: '政策发布' },
-  { title: '碳普惠成为"十五五"时期全民减碳重要抓手', source: '行业分析' },
+// 新发布政策和方法学
+const newPolicies = [
+  { name: '北京市碳普惠管理办法（试行）', type: '政策', issuer: '北京市生态环境局' },
+  { name: '上海市碳普惠方法学（低碳出行）', type: '方法学', issuer: '上海市生态环境局' },
+];
+
+// 新碳交易资讯
+const newNews = [
+  { title: '全国碳市场CEA价格跌破88元关口', source: '全国碳市场信息网' },
+  { title: 'CCER市场活跃度持续提升', source: '碳交易网' },
 ];
 
 /**
- * 生成钉钉Markdown格式的简报
+ * 生成钉钉Markdown格式的简报（精简版）
  */
 export function generateDingTalkReport(): string {
-  const today = dayjs().format('YYYY年MM月DD日');
-  const weekday = dayjs().format('dddd');
+  const today = dayjs().format('MM月DD日');
   
-  // 判断涨跌颜色（钉钉不支持彩色，使用emoji）
-  const ceaChangeEmoji = todayCarbonPrice.cea.change >= 0 ? '📈' : '📉';
-  const ceaChangeText = todayCarbonPrice.cea.change >= 0 
-    ? `+${todayCarbonPrice.cea.change}%` 
-    : `${todayCarbonPrice.cea.change}%`;
+  // 碳价变动部分
+  let priceSection = '';
+  if (changedCarbonPrices.length > 0) {
+    priceSection = changedCarbonPrices.map((p) => {
+      const emoji = p.change >= 0 ? '📈' : '📉';
+      const changeText = p.change >= 0 ? `+${p.change}%` : `${p.change}%`;
+      return `**${p.name}**: ${p.price}${p.unit} (${changeText}) ${emoji}`;
+    }).join('\n');
+  } else {
+    priceSection = '今日碳价无显著变化';
+  }
 
-  const report = `## 📊 碳普惠资讯日报 - ${today} ${weekday}
+  // 政策部分
+  let policySection = '';
+  if (newPolicies.length > 0) {
+    policySection = newPolicies.map((p, i) => 
+      `${i + 1}. **[${p.type}]** ${p.name} | ${p.issuer}`
+    ).join('\n');
+  } else {
+    policySection = '今日无新发布政策或方法学';
+  }
 
+  // 资讯部分
+  let newsSection = '';
+  if (newNews.length > 0) {
+    newsSection = newNews.map((n, i) => 
+      `${i + 1}. ${n.title}`
+    ).join('\n');
+  } else {
+    newsSection = '今日无新资讯';
+  }
+
+  // 网站链接部分（部署后显示）
+  const websiteSection = WEBSITE_URL 
+    ? `\n📱 **[查看详细内容](${WEBSITE_URL})**\n`
+    : '';
+
+  const report = `## 📊 碳普惠日报 ${today}
+
+**💹 价格变动**
+${priceSection}
+
+**📋 新发布政策/方法学**
+${policySection}
+
+**📰 新资讯**
+${newsSection}
+${websiteSection}
 ---
-
-### 💹 碳价动态
-
-**全国碳市场（CEA）**
-• 收盘价：**${todayCarbonPrice.cea.price}元/吨** ${ceaChangeEmoji}
-• 涨跌幅：**${ceaChangeText}**
-
-**CCER核证自愿减排**
-• 买入价：${todayCarbonPrice.ccer.buyPrice}元/吨
-• 卖出价：${todayCarbonPrice.ccer.sellPrice}元/吨
-• 中间价：${todayCarbonPrice.ccer.midPrice}元/吨
-
----
-
-### 📋 最新政策
-
-${latestPolicies.map((p, i) => `${i + 1}. **${p.name}**\n   发布机构：${p.issuer}`).join('\n\n')}
-
----
-
-### 📰 资讯精选
-
-${latestNews.map((n, i) => `${i + 1}. ${n.title}\n   📎 ${n.source}`).join('\n\n')}
-
----
-
-### 🌱 减排小贴士
-
-**北京 - 公交出行10公里**
-≈ 减排 **1.25kg CO₂** 🚌
-
----
-
-⏰ 数据更新时间：${dayjs().format('HH:mm')}
-🤖 碳普惠资讯Agent自动生成
-`;
+⏰ ${dayjs().format('HH:mm')}更新`;
 
   return report;
 }
@@ -99,7 +103,7 @@ export function generateDingTalkMessage() {
   return {
     msgtype: 'markdown',
     markdown: {
-      title: `碳普惠资讯日报 - ${dayjs().format('MM月DD日')}`,
+      title: `碳普惠日报 ${dayjs().format('MM月DD日')}`,
       text: markdownContent,
     },
     at: {
