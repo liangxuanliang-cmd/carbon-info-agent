@@ -42,14 +42,13 @@ export const methodologies: Methodology[] = [
   {
     id: 'bj-001',
     province: '\u5317\u4eac',
-    name: '\u5317\u4eac\u5e02\u4f4e\u78b3\u51fa\u884c\u78b3\u666e\u60e0\u65b9\u6cd5\u5b66',
+    name: '\u78b3\u666e\u60e0\u9879\u76ee\u51cf\u6392\u91cf\u6838\u7b97\u6280\u672f\u89c4\u8303 \u4f4e\u78b3\u51fa\u884c\uff08DB11/T 3043\u20142024\uff09& \u6cb9\u6539\u7535\u5c0f\u5ba2\u8f66\u65b9\u6cd5\u5b66\uff082025\u7248\uff09',
     transportModes: [
-      { mode: 'public_transit', label: '\u516c\u4ea4\u51fa\u884c', icon: 'Bus', baselineFactor: 0.225, scenarioFactor: 0.068 },
-      { mode: 'rail_transit', label: '\u8f68\u9053\u4ea4\u901a', icon: 'TrainFront', baselineFactor: 0.225, scenarioFactor: 0.050 },
-      { mode: 'cycling', label: '\u9a91\u884c\u51fa\u884c', icon: 'Bike', baselineFactor: 0.225, scenarioFactor: 0 },
-      { mode: 'walking', label: '\u6b65\u884c\u51fa\u884c', icon: 'Footprints', baselineFactor: 0.225, scenarioFactor: 0 },
-      { mode: 'new_energy', label: '\u65b0\u80fd\u6e90\u8f66', icon: 'Zap', baselineFactor: 0.225, scenarioFactor: 0.056 },
-      { mode: 'driving', label: '\u4f4e\u78b3\u9a7e\u8f66', icon: 'Car', baselineFactor: 0.225, scenarioFactor: 0.180 },
+      { mode: 'public_transit', label: '\u516c\u5171\u6c7d\uff08\u7535\uff09\u8f66', icon: 'Bus', baselineFactor: 0.104, scenarioFactor: 0.052 },
+      { mode: 'rail_transit', label: '\u57ce\u5e02\u8f68\u9053\u4ea4\u901a', icon: 'TrainFront', baselineFactor: 0.104, scenarioFactor: 0.032 },
+      { mode: 'cycling', label: '\u9a91\u884c', icon: 'Bike', baselineFactor: 0.104, scenarioFactor: 0.0087 },
+      { mode: 'walking', label: '\u6b65\u884c', icon: 'Footprints', baselineFactor: 0.104, scenarioFactor: 0 },
+      { mode: 'new_energy', label: '\u6cb9\u6539\u7535\u5c0f\u5ba2\u8f66', icon: 'Zap', baselineFactor: 0.250, scenarioFactor: 0.097 },
     ],
   },
   {

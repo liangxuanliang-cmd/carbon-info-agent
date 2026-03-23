@@ -1,69 +1,108 @@
+import { useMemo } from 'react';
 import { Newspaper, ExternalLink, Calendar, Building2 } from 'lucide-react';
 import SectionCard from '../components/SectionCard';
 import { newsItems } from '../data/news';
+import dayjs from 'dayjs';
 
 export default function NewsSection() {
+  // 按日期分组显示
+  const groupedNews = useMemo(() => {
+    const groups: Record<string, typeof newsItems> = {};
+    newsItems.forEach((item) => {
+      if (!groups[item.publishDate]) {
+        groups[item.publishDate] = [];
+      }
+      groups[item.publishDate].push(item);
+    });
+    // 按日期降序排序
+    return Object.entries(groups).sort((a, b) => 
+      dayjs(b[0]).valueOf() - dayjs(a[0]).valueOf()
+    );
+  }, []);
+
   return (
     <SectionCard
-      title={'\u5f53\u65e5\u8d44\u8baf'}
-      subtitle={'\u78b3\u666e\u60e0\u4e0e\u78b3\u5e02\u573a\u6700\u65b0\u52a8\u6001'}
+      title={'每日资讯'}
+      subtitle={`碳普惠与碳市场最新动态 · 共 ${newsItems.length} 条资讯`}
       icon={<Newspaper className="w-5 h-5" />}
     >
-      <div className="space-y-4">
-        {newsItems.map((item) => (
-          <div
-            key={item.id}
-            className="border border-border rounded-lg p-4 hover:shadow-md hover:border-primary/30 transition-all bg-white"
-          >
-            <div className="flex items-start justify-between gap-3">
-              <div className="flex-1 min-w-0">
-                <a
-                  href={item.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-sm font-semibold text-text-primary hover:text-primary transition-colors no-underline block leading-snug"
-                >
-                  {item.title}
-                </a>
-
-                <p className="text-xs text-text-secondary mt-2 mb-0 line-clamp-2">
-                  {item.summary}
-                </p>
-
-                <div className="flex items-center gap-4 mt-3">
-                  <span className="inline-flex items-center gap-1 text-xs text-text-secondary">
-                    <Building2 className="w-3 h-3" />
-                    {item.source}
-                  </span>
-                  <span className="inline-flex items-center gap-1 text-xs text-text-secondary">
-                    <Calendar className="w-3 h-3" />
-                    {item.publishDate}
-                  </span>
-                  <div className="flex gap-1.5">
-                    {item.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="px-2 py-0.5 bg-primary-light text-primary text-xs rounded-full"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                </div>
+      {/* 资讯列表 */}
+      <div className="space-y-6">
+        {groupedNews.length === 0 ? (
+          <div className="text-center py-12 text-text-secondary">
+            <Newspaper className="w-12 h-12 mx-auto mb-3 opacity-30" />
+            <p className="m-0">暂无资讯</p>
+          </div>
+        ) : (
+          groupedNews.map(([date, items]) => (
+            <div key={date}>
+              {/* 日期标题 */}
+              <div className="flex items-center gap-2 mb-3 pb-2 border-b border-border">
+                <Calendar className="w-4 h-4 text-primary" />
+                <span className="font-semibold text-text-primary">
+                  {dayjs(date).format('YYYY年MM月DD日')}
+                </span>
+                <span className="text-xs text-text-secondary">
+                  ({items.length} 条)
+                </span>
               </div>
 
-              <a
-                href={item.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="shrink-0 inline-flex items-center gap-1 px-3 py-1.5 bg-primary-light text-primary text-xs rounded-lg hover:bg-primary hover:text-white transition-colors no-underline"
-              >
-                {'\u67e5\u770b\u539f\u6587'}
-                <ExternalLink className="w-3 h-3" />
-              </a>
+              {/* 该日期的资讯 */}
+              <div className="space-y-3">
+                {items.map((item) => (
+                  <div
+                    key={item.id}
+                    className="border border-border rounded-lg p-4 hover:shadow-md hover:border-primary/30 transition-all bg-white"
+                  >
+                    <div className="flex items-start justify-between gap-3">
+                      <div className="flex-1 min-w-0">
+                        <a
+                          href={item.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-sm font-semibold text-text-primary hover:text-primary transition-colors no-underline block leading-snug"
+                        >
+                          {item.title}
+                        </a>
+
+                        <p className="text-xs text-text-secondary mt-2 mb-0 line-clamp-2">
+                          {item.summary}
+                        </p>
+
+                        <div className="flex items-center gap-4 mt-3 flex-wrap">
+                          <span className="inline-flex items-center gap-1 text-xs text-text-secondary bg-gray-50 px-2 py-1 rounded">
+                            <Building2 className="w-3 h-3" />
+                            来源：{item.source}
+                          </span>
+                          <div className="flex gap-1.5">
+                            {item.tags.map((tag) => (
+                              <span
+                                key={tag}
+                                className="px-2 py-0.5 bg-primary-light text-primary text-xs rounded-full"
+                              >
+                                {tag}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+
+                      <a
+                        href={item.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="shrink-0 inline-flex items-center gap-1 px-3 py-1.5 bg-primary-light text-primary text-xs rounded-lg hover:bg-primary hover:text-white transition-colors no-underline"
+                      >
+                        {'查看原文'}
+                        <ExternalLink className="w-3 h-3" />
+                      </a>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
-          </div>
-        ))}
+          ))
+        )}
       </div>
     </SectionCard>
   );

@@ -1,76 +1,184 @@
 import type { NewsItem } from '../types';
+import dayjs from 'dayjs';
 
-export const newsItems: NewsItem[] = [
-  {
-    id: 'news-001',
-    title: '\u5168\u56fdCCER\u4ea4\u6613\u5e02\u573a\u7d2f\u8ba1\u6210\u4ea4\u91cf\u7a81\u78345000\u4e07\u5428\uff0c\u5e02\u573a\u6d3b\u8dc3\u5ea6\u6301\u7eed\u63d0\u5347',
-    summary: '\u622a\u81f32026\u5e743\u6708\uff0c\u5168\u56fdCCER\u4ea4\u6613\u5e02\u573a\u7d2f\u8ba1\u6210\u4ea4\u91cf\u5df2\u7a81\u78345000\u4e07\u5428\uff0c\u6210\u4ea4\u989d\u8d85\u8fc740\u4ebf\u5143\u3002\u5e02\u573a\u53c2\u4e0e\u4e3b\u4f53\u6570\u91cf\u7a33\u6b65\u589e\u957f\uff0c\u4ea4\u6613\u6d3b\u8dc3\u5ea6\u6301\u7eed\u63d0\u5347\u3002\u4e13\u5bb6\u8868\u793a\uff0c\u968f\u7740\u66f4\u591a\u65b9\u6cd5\u5b66\u83b7\u6279\uff0c\u5e02\u573a\u4f9b\u7ed9\u5c06\u8fdb\u4e00\u6b65\u4e30\u5bcc\u3002',
-    source: '\u4e2d\u56fd\u78b3\u4ea4\u6613\u7f51',
-    publishDate: '2026-03-23',
-    url: 'https://www.tanjiaoyi.com/',
-    tags: ['CCER', '\u4ea4\u6613\u5e02\u573a'],
-  },
-  {
-    id: 'news-002',
-    title: '\u751f\u6001\u73af\u5883\u90e8\u53d1\u5e03\u65b0\u4e00\u6279CCER\u65b9\u6cd5\u5b66\uff0c\u6d89\u53ca\u4ea4\u901a\u3001\u5efa\u7b51\u7b49\u9886\u57df',
-    summary: '\u751f\u6001\u73af\u5883\u90e8\u8fd1\u65e5\u53d1\u5e03\u65b0\u4e00\u6279\u6e29\u5ba4\u6c14\u4f53\u81ea\u613f\u51cf\u6392\u65b9\u6cd5\u5b66\uff0c\u5305\u62ec\u4f4e\u78b3\u4ea4\u901a\u3001\u7eff\u8272\u5efa\u7b51\u7b49\u591a\u4e2a\u9886\u57df\u3002\u65b0\u65b9\u6cd5\u5b66\u7684\u53d1\u5e03\u5c06\u8fdb\u4e00\u6b65\u4e30\u5bcc CCER\u9879\u76ee\u7c7b\u578b\uff0c\u4fc3\u8fdb\u81ea\u613f\u51cf\u6392\u5e02\u573a\u53d1\u5c55\u3002',
-    source: '\u751f\u6001\u73af\u5883\u90e8\u5b98\u7f51',
-    publishDate: '2026-03-23',
-    url: 'https://www.mee.gov.cn/',
-    tags: ['CCER', '\u65b9\u6cd5\u5b66'],
-  },
-  {
-    id: 'news-003',
-    title: '\u5e7f\u4e1c\u7701\u78b3\u666e\u60e0\u4f53\u7cfb\u5efa\u8bbe\u53d6\u5f97\u65b0\u8fdb\u5c55\uff0c\u591a\u4e2a\u57ce\u5e02\u542f\u52a8\u8bd5\u70b9',
-    summary: '\u5e7f\u4e1c\u7701\u78b3\u666e\u60e0\u4f53\u7cfb\u5efa\u8bbe\u6301\u7eed\u63a8\u8fdb\uff0c\u5e7f\u5dde\u3001\u6df1\u5733\u3001\u4f5b\u5c71\u7b49\u591a\u4e2a\u57ce\u5e02\u5df2\u542f\u52a8\u78b3\u666e\u60e0\u8bd5\u70b9\u3002\u901a\u8fc7\u79fb\u52a8\u5e94\u7528\u5e73\u53f0\uff0c\u5e02\u6c11\u53ef\u8bb0\u5f55\u4f4e\u78b3\u884c\u4e3a\u5e76\u83b7\u5f97\u78b3\u79ef\u5206\u5956\u52b1\u3002',
-    source: '\u5357\u65b9\u65e5\u62a5',
-    publishDate: '2026-03-23',
-    url: 'https://www.nfnews.com/',
-    tags: ['\u78b3\u666e\u60e0', '\u5e7f\u4e1c'],
-  },
-  {
-    id: 'news-004',
-    title: '\u5168\u56fd\u78b3\u5e02\u573a\u78b3\u4ef7\u7a33\u6b65\u4e0a\u884c\uff0cCEA\u4ef7\u683c\u7a81\u780484\u5143/\u5428',
-    summary: '\u5168\u56fd\u78b3\u6392\u653e\u6743\u4ea4\u6613\u5e02\u573eCEA\u4ef7\u683c\u8fd1\u65e5\u7a81\u780484\u5143/\u5428\uff0c\u521b\u4e0b\u65b0\u9ad8\u3002\u5206\u6790\u5e08\u8ba4\u4e3a\uff0c\u968f\u7740\u7b2c\u4e8c\u4e2a\u5c65\u7ea6\u5468\u671f\u914d\u989d\u6536\u7d27\uff0c\u78b3\u4ef7\u6709\u671b\u7ee7\u7eed\u4e0a\u884c\u3002',
-    source: '\u7b2c\u4e00\u8d22\u7ecf',
-    publishDate: '2026-03-22',
-    url: 'https://www.yicai.com/',
-    tags: ['\u78b3\u4ef7', 'CEA'],
-  },
-  {
-    id: 'news-005',
-    title: '\u53a6\u95e8\u5e02\u53d1\u5e03\u4f4e\u78b3\u51fa\u884c\u78b3\u666e\u60e0\u65b9\u6cd5\u5b66\uff08\u7b2c\u4e8c\u6279\uff09',
-    summary: '\u53a8\u95e8\u5e02\u6b63\u5f0f\u53d1\u5e03\u4f4e\u78b3\u51fa\u884c\u78b3\u666e\u60e0\u65b9\u6cd5\u5b66\u7b2c\u4e8c\u6279\uff0c\u65b0\u589e\u65b0\u80fd\u6e90\u8f66\u51fa\u884c\u573a\u666f\u3002\u65b9\u6cd5\u5b66\u660e\u786e\u4e86\u5404\u573a\u666f\u7684\u57fa\u51c6\u7ebf\u6392\u653e\u56e0\u5b50\u548c\u51cf\u6392\u8ba1\u7b97\u65b9\u6cd5\uff0c\u4e3a\u53a8\u95e8\u5e02\u78b3\u666e\u60e0\u4f53\u7cfb\u63d0\u4f9b\u4e86\u91cd\u8981\u652f\u6491\u3002',
-    source: '\u53a8\u95e8\u65e5\u62a5',
-    publishDate: '2026-03-22',
-    url: 'https://www.xmnn.cn/',
-    tags: ['\u78b3\u666e\u60e0', '\u65b9\u6cd5\u5b66', '\u53a8\u95e8'],
-  },
-  {
-    id: 'news-006',
-    title: '\u56fd\u9645\u78b3\u5e02\u573a\u52a8\u6001\uff1aVCS\u4ef7\u683c\u6301\u7eed\u8c03\u6574\uff0c\u5e02\u573a\u89c2\u671b\u60c5\u7eea\u6d53\u539a',
-    summary: '\u56fd\u9645\u81ea\u613f\u78b3\u5e02\u573aVCS\u4ef7\u683c\u8fd1\u671f\u6301\u7eed\u8c03\u6574\uff0c\u53d7\u5168\u7403\u7ecf\u6d4e\u4e0d\u786e\u5b9a\u6027\u5f71\u54cd\uff0c\u5e02\u573a\u89c2\u671b\u60c5\u7eea\u6d53\u539a\u3002CDM\u9879\u76ee\u53d7\u5236\u4e8e\u6e05\u6d01\u53d1\u5c55\u673a\u5236\u6539\u9769\uff0c\u4ea4\u6613\u91cf\u7ee7\u7eed\u840e\u7f29\u3002',
-    source: 'Carbon Brief',
-    publishDate: '2026-03-21',
-    url: 'https://www.carbonbrief.org/',
-    tags: ['VCS', 'CDM', '\u56fd\u9645\u5e02\u573a'],
-  },
-  {
-    id: 'news-007',
-    title: '\u6d59\u6c5f\u7701\u201c\u78b3\u60e0\u591a\u201d\u5e73\u53f0\u7528\u6237\u7a81\u78341000\u4e07\uff0c\u5f15\u9886\u6570\u5b57\u5316\u78b3\u666e\u60e0',
-    summary: '\u6d59\u6c5f\u7701\u201c\u78b3\u60e0\u591a\u201d\u78b3\u666e\u60e0\u5e73\u53f0\u7528\u6237\u6570\u7a81\u78341000\u4e07\uff0c\u5e73\u53f0\u901a\u8fc7\u6570\u5b57\u5316\u624b\u6bb5\u8bb0\u5f55\u5e02\u6c11\u4f4e\u78b3\u884c\u4e3a\uff0c\u5e76\u63d0\u4f9b\u78b3\u79ef\u5206\u5151\u6362\u670d\u52a1\uff0c\u6210\u4e3a\u5168\u56fd\u78b3\u666e\u60e0\u6570\u5b57\u5316\u6807\u6746\u3002',
-    source: '\u6d59\u6c5f\u65e5\u62a5',
-    publishDate: '2026-03-21',
-    url: 'https://www.zjol.com.cn/',
-    tags: ['\u78b3\u666e\u60e0', '\u6d59\u6c5f', '\u6570\u5b57\u5316'],
-  },
-  {
-    id: 'news-008',
-    title: '\u5317\u4eac\u78b3\u666e\u60e0\u9879\u76ee\u7b2c\u4e8c\u6279\u51cf\u6392\u91cf\u5f00\u59cb\u7b7e\u53d1\uff0c\u591a\u4e2a\u51fa\u884c\u9879\u76ee\u5165\u9009',
-    summary: '\u5317\u4eac\u5e02\u78b3\u666e\u60e0\u9879\u76ee\u7b2c\u4e8c\u6279\u51cf\u6392\u91cf\u6b63\u5f0f\u5f00\u59cb\u7b7e\u53d1\uff0c\u5305\u62ec\u5171\u4eab\u5355\u8f66\u3001\u516c\u4ea4\u51fa\u884c\u3001\u65b0\u80fd\u6e90\u8f66\u7b49\u591a\u4e2a\u4f4e\u78b3\u51fa\u884c\u9879\u76ee\u83b7\u5f97\u51cf\u6392\u91cf\u7b7e\u53d1\u3002',
-    source: '\u5317\u4eac\u65e5\u62a5',
-    publishDate: '2026-03-20',
-    url: 'https://bjrb.bjd.com.cn/',
-    tags: ['\u78b3\u666e\u60e0', '\u5317\u4eac', 'PCER'],
-  },
-];
+// 生成最近20天的模拟新闻数据
+const generateNewsData = (): NewsItem[] => {
+  const newsTemplates = [
+    {
+      title: '全国CCER交易市场累计成交量突破5000万吨，市场活跃度持续提升',
+      summary: '截至当前，全国CCER交易市场累计成交量已突破5000万吨，成交额超过40亿元。市场参与主体数量稳步增长，交易活跃度持续提升。专家表示，随着更多方法学获批，市场供给将进一步丰富。',
+      source: '中国碳交易网',
+      tags: ['CCER', '交易市场'],
+    },
+    {
+      title: '生态环境部发布新一批CCER方法学，涉及交通、建筑等领域',
+      summary: '生态环境部近日发布新一批温室气体自愿减排方法学，包括低碳交通、绿色建筑等多个领域。新方法学的发布将进一步丰富 CCER项目类型，促进自愿减排市场发展。',
+      source: '生态环境部官网',
+      tags: ['CCER', '方法学'],
+    },
+    {
+      title: '广东省碳普惠体系建设取得新进展，多个城市启动试点',
+      summary: '广东省碳普惠体系建设持续推进，广州、深圳、佛山等多个城市已启动碳普惠试点。通过移动应用平台，市民可记录低碳行为并获得碳积分奖励。',
+      source: '南方日报',
+      tags: ['碳普惠', '广东'],
+    },
+    {
+      title: '全国碳市场碳价稳步上行，CEA价格突破84元/吨',
+      summary: '全国碳排放权交易市场CEA价格近日突破84元/吨，创下新高。分析师认为，随着第二个履约周期配额收紧，碳价有望继续上行。',
+      source: '第一财经',
+      tags: ['碳价', 'CEA'],
+    },
+    {
+      title: '厦门市发布低碳出行碳普惠方法学（第二批）',
+      summary: '厦门市正式发布低碳出行碳普惠方法学第二批，新增新能源车出行场景。方法学明确了各场景的基准线排放因子和减排计算方法，为厦门市碳普惠体系提供了重要支撑。',
+      source: '厦门日报',
+      tags: ['碳普惠', '方法学', '厦门'],
+    },
+    {
+      title: '国际碳市场动态：VCS价格持续调整，市场观望情绪浓厚',
+      summary: '国际自愿碳市场VCS价格近期持续调整，受全球经济不确定性影响，市场观望情绪浓厚。CDM项目受制于清洁发展机制改革，交易量继续萎缩。',
+      source: 'Carbon Brief',
+      tags: ['VCS', 'CDM', '国际市场'],
+    },
+    {
+      title: '浙江省"碳惠多"平台用户突破1000万，引领数字化碳普惠',
+      summary: '浙江省"碳惠多"碳普惠平台用户数突破1000万，平台通过数字化手段记录市民低碳行为，并提供碳积分兑换服务，成为全国碳普惠数字化标杆。',
+      source: '浙江日报',
+      tags: ['碳普惠', '浙江', '数字化'],
+    },
+    {
+      title: '北京碳普惠项目第二批减排量开始签发，多个出行项目入选',
+      summary: '北京市碳普惠项目第二批减排量正式开始签发，包括共享单车、公交出行、新能源车等多个低碳出行项目获得减排量签发。',
+      source: '北京日报',
+      tags: ['碳普惠', '北京', 'PCER'],
+    },
+    {
+      title: '上海市发布碳普惠管理办法实施细则',
+      summary: '上海市生态环境局发布碳普惠管理办法实施细则，进一步明确了碳普惠项目的申报条件、审核流程和交易规则。',
+      source: '解放日报',
+      tags: ['碳普惠', '上海', '政策'],
+    },
+    {
+      title: '深圳碳市场成交量创新高，碳金融创新产品陆续推出',
+      summary: '深圳碳市场本月成交量创新高，碳债券、碳基金等碳金融创新产品陆续推出，为市场注入新活力。',
+      source: '深圳特区报',
+      tags: ['碳市场', '深圳', '碳金融'],
+    },
+    {
+      title: '天津市碳普惠平台正式上线运行',
+      summary: '天津市碳普惠平台正式上线，市民可通过平台记录低碳出行行为，积累碳积分并兑换相应权益。',
+      source: '天津日报',
+      tags: ['碳普惠', '天津', '平台'],
+    },
+    {
+      title: '福建省启动林业碳汇项目开发，助力乡村振兴',
+      summary: '福建省启动大规模林业碳汇项目开发，通过碳汇交易为林区农民带来增收渠道，助力乡村振兴战略实施。',
+      source: '福建日报',
+      tags: ['林业碳汇', '福建', '乡村振兴'],
+    },
+    {
+      title: '湖北省碳排放权交易中心发布年度报告',
+      summary: '湖北省碳排放权交易中心发布年度运营报告，显示市场交易量和参与企业数量均实现稳步增长。',
+      source: '湖北日报',
+      tags: ['碳交易', '湖北', '报告'],
+    },
+    {
+      title: '重庆市开展碳普惠进校园活动，培养青少年低碳意识',
+      summary: '重庆市生态环境局联合教育部门开展碳普惠进校园活动，通过趣味互动方式培养青少年低碳环保意识。',
+      source: '重庆日报',
+      tags: ['碳普惠', '重庆', '教育'],
+    },
+    {
+      title: '欧盟碳边境调节机制（CBAM）过渡期实施细则发布',
+      summary: '欧盟发布碳边境调节机制（CBAM）过渡期实施细则，将对进口商品隐含碳排放征收关税，中国企业需提前做好应对准备。',
+      source: '经济观察报',
+      tags: ['CBAM', '欧盟', '国际贸易'],
+    },
+    {
+      title: '山东省首个海洋碳汇交易项目落地青岛',
+      summary: '山东省首个海洋碳汇交易项目在青岛落地，标志着该省在蓝碳领域取得重要突破。',
+      source: '大众日报',
+      tags: ['海洋碳汇', '山东', '蓝碳'],
+    },
+    {
+      title: '四川省启动碳普惠公众参与行动计划',
+      summary: '四川省启动碳普惠公众参与行动计划，旨在通过多元化激励措施提高公众参与碳减排的积极性。',
+      source: '四川日报',
+      tags: ['碳普惠', '四川', '公众参与'],
+    },
+    {
+      title: '全国碳市场第二个履约周期清缴工作顺利完成',
+      summary: '全国碳市场第二个履约周期清缴工作顺利完成，履约率达到99%以上，显示企业碳排放管理意识显著提升。',
+      source: '中国环境报',
+      tags: ['碳市场', '履约', '清缴'],
+    },
+    {
+      title: '绿色金融助力碳达峰碳中和，多家银行推出碳金融产品',
+      summary: '多家商业银行推出碳排放权质押贷款、碳基金等绿色金融产品，为企业低碳转型提供资金支持。',
+      source: '金融时报',
+      tags: ['绿色金融', '碳金融', '银行'],
+    },
+    {
+      title: '碳普惠与数字经济融合发展研讨会在杭州召开',
+      summary: '碳普惠与数字经济融合发展研讨会在杭州召开，与会专家就数字化手段推动碳普惠发展进行深入交流。',
+      source: '杭州日报',
+      tags: ['碳普惠', '数字经济', '研讨会'],
+    },
+  ];
+
+  const newsItems: NewsItem[] = [];
+  let id = 1;
+
+  // 为最近20天生成新闻
+  for (let day = 0; day < 20; day++) {
+    const date = dayjs().subtract(day, 'day').format('YYYY-MM-DD');
+    
+    // 每天1-2条新闻
+    const newsCount = Math.random() > 0.3 ? 1 : 2;
+    
+    for (let i = 0; i < newsCount && id <= newsTemplates.length; i++) {
+      const template = newsTemplates[id - 1];
+      newsItems.push({
+        id: `news-${String(id).padStart(3, '0')}`,
+        title: template.title,
+        summary: template.summary,
+        source: template.source,
+        publishDate: date,
+        url: generateSourceUrl(template.source),
+        tags: template.tags,
+      });
+      id++;
+    }
+  }
+
+  return newsItems;
+};
+
+// 根据来源生成对应的URL
+const generateSourceUrl = (source: string): string => {
+  const urlMap: Record<string, string> = {
+    '中国碳交易网': 'https://www.tanjiaoyi.com/',
+    '生态环境部官网': 'https://www.mee.gov.cn/',
+    '南方日报': 'https://www.nfnews.com/',
+    '第一财经': 'https://www.yicai.com/',
+    '厦门日报': 'https://www.xmnn.cn/',
+    'Carbon Brief': 'https://www.carbonbrief.org/',
+    '浙江日报': 'https://www.zjol.com.cn/',
+    '北京日报': 'https://bjrb.bjd.com.cn/',
+    '解放日报': 'https://www.jfdaily.com/',
+    '深圳特区报': 'https://sztqb.sznews.com/',
+    '天津日报': 'http://www.tianjinwe.com/',
+    '福建日报': 'https://www.fjdaily.com/',
+    '湖北日报': 'https://hbrb.cnhubei.com/',
+    '重庆日报': 'https://epaper.cqrb.cn/',
+    '经济观察报': 'https://www.eeo.com.cn/',
+    '大众日报': 'https://paper.dzwww.com/',
+    '四川日报': 'https://epaper.scdaily.cn/',
+    '中国环境报': 'https://www.cenews.com.cn/',
+    '金融时报': 'https://www.financialnews.com.cn/',
+    '杭州日报': 'https://www.hangzhou.com.cn/',
+  };
+  return urlMap[source] || 'https://www.baidu.com/s?wd=' + encodeURIComponent(source);
+};
+
+export const newsItems: NewsItem[] = generateNewsData();

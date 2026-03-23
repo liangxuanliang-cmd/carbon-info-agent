@@ -10,7 +10,7 @@ const TABS = [
   { key: 'policy', label: '\u653f\u7b56\u6c47\u603b', icon: <FileText className="w-4 h-4" /> },
   { key: 'price', label: '\u78b3\u4ef7\u6c47\u603b', icon: <TrendingUp className="w-4 h-4" /> },
   { key: 'calculator', label: '\u78b3\u91cf\u8ba1\u7b97\u5668', icon: <Calculator className="w-4 h-4" /> },
-  { key: 'news', label: '\u5f53\u65e5\u8d44\u8baf', icon: <Newspaper className="w-4 h-4" /> },
+  { key: 'news', label: '\u6bcf\u65e5\u8d44\u8baf', icon: <Newspaper className="w-4 h-4" /> },
 ] as const;
 
 type TabKey = (typeof TABS)[number]['key'];
@@ -51,8 +51,8 @@ export default function App() {
         {activeTab === 'news' && <NewsSection />}
       </main>
 
-      <footer className="bg-primary-dark text-green-200 text-center text-xs py-4">
-        &copy; 2026 {'\u78b3\u666e\u60e0\u8d44\u8bafAgent'} &middot; Carbon Inclusive Information Dashboard
+      <footer className="bg-primary-dark text-blue-200 text-center text-xs py-4 border-t border-primary">
+        &copy; 2026 {'\u78b3\u666e\u60e0\u8d44\u8baf\u670d\u52a1\u5e73\u53f0'} &middot; Carbon Inclusive Information Service Platform
       </footer>
     </div>
   );

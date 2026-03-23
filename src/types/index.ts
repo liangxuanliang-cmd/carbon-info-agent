@@ -9,7 +9,7 @@ export interface Policy {
   publishDate: string;
   issuingAuthority: string;
   summary: string;
-  sourceUrl?: string;
+  sourceUrl: string;
   replacedBy?: { id: string; title: string };
 }
 

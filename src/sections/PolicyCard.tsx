@@ -1,6 +1,6 @@
 import Badge from '../components/Badge';
 import type { Policy } from '../types';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, ExternalLink } from 'lucide-react';
 
 interface PolicyCardProps {
   policy: Policy;
@@ -11,16 +11,21 @@ export default function PolicyCard({ policy }: PolicyCardProps) {
 
   return (
     <div
-      className={`rounded-lg border p-4 transition-shadow hover:shadow-md ${
+      className={`rounded-lg border p-4 transition-all hover:shadow-md ${
         isExpired
           ? 'bg-gray-50 border-gray-200 opacity-75'
-          : 'bg-white border-border hover:border-primary/30'
+          : 'bg-white border-border hover:border-primary/50'
       }`}
     >
       <div className="flex items-start justify-between gap-2 mb-2">
-        <h3 className="text-sm font-semibold text-text-primary leading-snug flex-1 m-0">
+        <a
+          href={policy.sourceUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-sm font-semibold text-text-primary leading-snug flex-1 m-0 hover:text-primary transition-colors no-underline"
+        >
           {policy.title}
-        </h3>
+        </a>
         <Badge status={policy.status} />
       </div>
 
@@ -28,9 +33,20 @@ export default function PolicyCard({ policy }: PolicyCardProps) {
         {policy.summary}
       </p>
 
-      <div className="flex items-center justify-between text-xs text-text-secondary">
-        <span>{policy.issuingAuthority}</span>
-        <span>{policy.publishDate}</span>
+      <div className="flex items-center justify-between">
+        <div className="flex items-center gap-3 text-xs text-text-secondary">
+          <span>{policy.issuingAuthority}</span>
+          <span>{policy.publishDate}</span>
+        </div>
+        <a
+          href={policy.sourceUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-1 px-2 py-1 bg-primary-light text-primary text-xs rounded hover:bg-primary hover:text-white transition-colors no-underline"
+        >
+          查看原文
+          <ExternalLink className="w-3 h-3" />
+        </a>
       </div>
 
       {isExpired && policy.replacedBy && (
@@ -38,7 +54,7 @@ export default function PolicyCard({ policy }: PolicyCardProps) {
           <div className="flex items-center gap-1 text-xs text-price-down">
             <ArrowRight className="w-3 h-3" />
             <span>
-              {'\u5df2\u88ab\u66ff\u4ee3\uff1a'}
+              {'已被替代：'}
               <span className="text-primary font-medium cursor-pointer hover:underline">
                 {policy.replacedBy.title}
               </span>

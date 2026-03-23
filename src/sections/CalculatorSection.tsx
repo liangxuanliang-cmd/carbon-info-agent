@@ -14,7 +14,7 @@ const ICON_MAP: Record<string, React.ReactNode> = {
 };
 
 export default function CalculatorSection() {
-  const [selectedProvince, setSelectedProvince] = useState(methodologies[0]?.province || '');
+  const [selectedProvince, setSelectedProvince] = useState('北京');
   const [selectedMode, setSelectedMode] = useState('');
   const [distance, setDistance] = useState<number>(10);
 

@@ -5,12 +5,16 @@ import TabFilter from '../components/TabFilter';
 import PolicyCard from './PolicyCard';
 import { policies } from '../data/policies';
 import { REGION_TYPES, PROVINCES, POLICY_CATEGORIES, POLICY_STATUS } from '../utils/constants';
+import { usePolicyLinkValidation } from '../hooks/usePolicyLinkValidation';
 
 export default function PolicySection() {
   const [regionType, setRegionType] = useState('all');
-  const [province, setProvince] = useState('\u5168\u90e8');
+  const [province, setProvince] = useState('全部');
   const [category, setCategory] = useState('all');
   const [status, setStatus] = useState('all');
+
+  // 后台静默校验政策链接（不显示UI）
+  usePolicyLinkValidation(policies);
 
   const provinceTabs = useMemo(() => {
     if (regionType === 'all') {
@@ -40,8 +44,8 @@ export default function PolicySection() {
 
   return (
     <SectionCard
-      title={'\u5168\u56fd\u78b3\u666e\u60e0\u653f\u7b56\u6c47\u603b'}
-      subtitle={`\u5171 ${filteredPolicies.length} \u6761\u653f\u7b56`}
+      title={'全国碳普惠政策汇总'}
+      subtitle={`共 ${filteredPolicies.length} 条政策`}
       icon={<FileText className="w-5 h-5" />}
     >
       <div className="mb-5 space-y-1">
