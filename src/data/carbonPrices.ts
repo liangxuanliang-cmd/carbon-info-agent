@@ -61,6 +61,7 @@ export function getLatestPrices(): Array<{
   unit: string;
   notes: string;
   market: 'domestic' | 'international';
+  updateDate: string;
 }> {
   const allRecords = generateAllPriceRecords();
   const latestDate = today.format('YYYY-MM-DD');
@@ -78,6 +79,7 @@ export function getLatestPrices(): Array<{
       unit: product.unit,
       notes: product.notes,
       market: product.market,
+      updateDate: latestDate,
     };
   });
 }

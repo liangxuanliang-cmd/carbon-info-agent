@@ -9,6 +9,7 @@ interface PriceRow {
   unit: string;
   notes: string;
   market: 'domestic' | 'international';
+  updateDate: string;
 }
 
 interface PriceTableProps {
@@ -37,6 +38,9 @@ export default function PriceTable({ data }: PriceTableProps) {
         <td className="py-3 px-4 text-sm text-center text-text-secondary">
           {row.notes}
         </td>
+        <td className="py-3 px-4 text-sm text-center text-text-secondary">
+          {row.updateDate}
+        </td>
       </tr>
     ));
 
@@ -45,19 +49,20 @@ export default function PriceTable({ data }: PriceTableProps) {
       <table className="w-full border-collapse">
         <thead>
           <tr className="bg-primary text-white">
-            <th className="py-3 px-4 text-left text-sm font-semibold">{'\u78b3\u6c47\u7c7b\u578b'}</th>
-            <th className="py-3 px-4 text-center text-sm font-semibold">{'\u6700\u65b0\u4ef7\u683c'}</th>
-            <th className="py-3 px-4 text-center text-sm font-semibold">{'\u6da8\u8dcc'}</th>
-            <th className="py-3 px-4 text-center text-sm font-semibold">{'\u5355\u4f4d'}</th>
-            <th className="py-3 px-4 text-center text-sm font-semibold">{'\u5907\u6ce8'}</th>
+            <th className="py-3 px-4 text-left text-sm font-semibold">{'碳汇类型'}</th>
+            <th className="py-3 px-4 text-center text-sm font-semibold">{'最新价格'}</th>
+            <th className="py-3 px-4 text-center text-sm font-semibold">{'涨跌'}</th>
+            <th className="py-3 px-4 text-center text-sm font-semibold">{'单位'}</th>
+            <th className="py-3 px-4 text-center text-sm font-semibold">{'备注'}</th>
+            <th className="py-3 px-4 text-center text-sm font-semibold">{'更新日期'}</th>
           </tr>
         </thead>
         <tbody>
           {domesticProducts.length > 0 && (
             <>
               <tr>
-                <td colSpan={5} className="py-2 px-4 bg-primary-light/50 text-xs font-semibold text-primary">
-                  {'\u56fd\u5185\u78b3\u4ea7\u54c1'}
+                <td colSpan={6} className="py-2 px-4 bg-primary-light/50 text-xs font-semibold text-primary">
+                  {'国内碳产品'}
                 </td>
               </tr>
               {renderRows(domesticProducts)}
@@ -66,8 +71,8 @@ export default function PriceTable({ data }: PriceTableProps) {
           {internationalProducts.length > 0 && (
             <>
               <tr>
-                <td colSpan={5} className="py-2 px-4 bg-primary-light/50 text-xs font-semibold text-primary">
-                  {'\u56fd\u9645\u78b3\u4ea7\u54c1'}
+                <td colSpan={6} className="py-2 px-4 bg-primary-light/50 text-xs font-semibold text-primary">
+                  {'国际碳产品'}
                 </td>
               </tr>
               {renderRows(internationalProducts)}
