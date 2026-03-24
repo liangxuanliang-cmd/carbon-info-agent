@@ -5,8 +5,8 @@
 
 import dayjs from 'dayjs';
 
-// 部署后的网站链接（初始为空，部署后更新）
-const WEBSITE_URL = process.env.WEBSITE_URL || '';
+// 部署后的网站链接
+const WEBSITE_URL = process.env.WEBSITE_URL || 'https://carbonhub-delta.vercel.app';
 
 // 碳价数据 - 仅显示有变化的
 interface CarbonPrice {
