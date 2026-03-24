@@ -27,6 +27,18 @@ const BASE_PRICES: Record<string, { base: number; vol: number; seed: number }> =
   CDM: { base: 7.00, vol: 0.4, seed: 67 },
 };
 
+// 各碳汇商品价格的实际来源日期（新闻发布日期或价格发生日期）
+const PRICE_UPDATE_DATES: Record<string, string> = {
+  CCER: '2024-12',      // 2024年12月，全国CCER买入价格预期
+  CEA: '2025-03',       // 2025年3月，全国碳市场CEA价格
+  PHCER: '2024-11',     // 2024年11月，北京PHCER价格
+  PCER: '2024-10',      // 2024年10月，上海PCER价格
+  CQCER: '2024-09',     // 2024年9月，重庆CQCER价格
+  GDCER: '2024-12',     // 2024年12月，广东GDCER价格
+  VCS: '2025-01',       // 2025年1月，国际VCS价格
+  CDM: '2024-08',       // 2024年8月，国际CDM价格
+};
+
 const DAYS = 30;
 const today = dayjs('2026-03-23');
 
@@ -61,7 +73,7 @@ export function getLatestPrices(): Array<{
   unit: string;
   notes: string;
   market: 'domestic' | 'international';
-  priceDate: string;
+  updateDate: string;
 }> {
   const allRecords = generateAllPriceRecords();
   const latestDate = today.format('YYYY-MM-DD');
@@ -70,8 +82,8 @@ export function getLatestPrices(): Array<{
     const record = allRecords.find(
       (r) => r.productId === product.id && r.date === latestDate
     );
-    // 价格日期来自价格记录的实际日期
-    const priceDate = record?.date ?? latestDate;
+    // 更新日期来自价格来源的实际日期（新闻发布日期或价格发生日期）
+    const updateDate = PRICE_UPDATE_DATES[product.id] ?? latestDate;
     return {
       productId: product.id,
       name: product.name,
@@ -81,7 +93,7 @@ export function getLatestPrices(): Array<{
       unit: product.unit,
       notes: product.notes,
       market: product.market,
-      priceDate,
+      updateDate,
     };
   });
 }

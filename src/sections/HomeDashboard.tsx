@@ -17,7 +17,7 @@ function useCCERPrice() {
   return useMemo(() => {
     const prices = getLatestPrices();
     const ccer = prices.find((p) => p.productId === 'CCER');
-    return ccer || { price: 0, change: 0, priceDate: '' };
+    return ccer || { price: 0, change: 0, updateDate: '' };
   }, []);
 }
 
@@ -49,7 +49,7 @@ function MetricCard({
   value,
   unit,
   change,
-  priceDate,
+  updateDate,
   icon: Icon,
   onClick,
 }: {
@@ -57,7 +57,7 @@ function MetricCard({
   value: string | number;
   unit?: string;
   change?: number;
-  priceDate?: string;
+  updateDate?: string;
   icon: React.ElementType;
   onClick?: () => void;
 }) {
@@ -83,7 +83,7 @@ function MetricCard({
           <div className={`flex items-center gap-1 mt-2 text-sm ${isPositive ? 'text-green-400' : 'text-red-400'}`}>
             {isPositive ? <ArrowUpRight className="w-4 h-4" /> : <ArrowDownRight className="w-4 h-4" />}
             <span>{Math.abs(change).toFixed(2)}%</span>
-            {priceDate && <span className="text-white/50 ml-2">{priceDate}</span>}
+            {updateDate && <span className="text-white/50 ml-2">{updateDate}</span>}
           </div>
         )}
       </div>
@@ -160,7 +160,7 @@ export default function HomeDashboard({ onNavigate }: HomeDashboardProps) {
             value={ccer.price.toFixed(2)}
             unit="元/吨"
             change={ccer.change}
-            priceDate={ccer.priceDate}
+            updateDate={ccer.updateDate}
             icon={TrendingUp}
             onClick={() => onNavigate('price')}
           />
