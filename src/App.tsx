@@ -17,26 +17,7 @@ const TABS = [
 
 type TabKey = (typeof TABS)[number]['key'];
 
-// 模块快捷导航组件
-function QuickNav({ currentTab, onNavigate }: { currentTab: TabKey; onNavigate: (tab: TabKey) => void }) {
-  const otherTabs = TABS.filter((t) => t.key !== currentTab && t.key !== 'home');
-  
-  return (
-    <div className="flex items-center gap-2">
-      <span className="text-sm text-gray-500">快捷导航:</span>
-      {otherTabs.map((tab) => (
-        <button
-          key={tab.key}
-          onClick={() => onNavigate(tab.key)}
-          className="flex items-center gap-1 px-3 py-1.5 text-sm text-blue-600 hover:text-blue-800 hover:bg-blue-50 rounded-md transition-colors"
-        >
-          <tab.icon className="w-4 h-4" />
-          {tab.label}
-        </button>
-      ))}
-    </div>
-  );
-}
+
 
 // 返回首页按钮
 function BackToHome({ onClick }: { onClick: () => void }) {
@@ -85,8 +66,7 @@ export default function App() {
                 ))}
               </div>
               
-              {/* 右上角快捷导航 */}
-              <QuickNav currentTab={activeTab} onNavigate={setActiveTab} />
+
             </div>
           </div>
         </nav>
