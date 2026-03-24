@@ -12,7 +12,7 @@ export const policies: Policy[] = [
     publishDate: '2023-10-19',
     issuingAuthority: '生态环境部',
     summary: '明确全国CCER交易市场重启的具体工作安排，包括项目申报、审定、登记和交易等环节的要求。',
-    sourceUrl: 'https://www.mee.gov.cn/xxgk2018/xxgk/xxgk03/202310/t20231020_1043843.html',
+    sourceUrl: 'https://www.mee.gov.cn/zwgk/zcwj/zcjd/202310/t20231020_1043843.shtml',
   },
   {
     id: 'nat-002',
@@ -24,7 +24,7 @@ export const policies: Policy[] = [
     publishDate: '2023-10-19',
     issuingAuthority: '生态环境部',
     summary: '规定了温室气体自愿减排项目的申请审定、项目实施、减排量核查与登记以及减排量交易等全流程管理办法。',
-    sourceUrl: 'https://www.mee.gov.cn/xxgk2018/xxgk/xxgk03/202310/t20231020_1043844.html',
+    sourceUrl: 'https://www.mee.gov.cn/zwgk/zcwj/zcjd/202310/t20231019_1043819.shtml',
   },
   {
     id: 'nat-003',
@@ -36,7 +36,7 @@ export const policies: Policy[] = [
     publishDate: '2021-01-05',
     issuingAuthority: '生态环境部',
     summary: '全国碳排放权交易市场的基础管理制度，规定了配额分配、交易、核查与监管等核心内容。',
-    sourceUrl: 'https://www.mee.gov.cn/xxgk2018/xxgk/xxgk03/202101/t20210105_817499.html',
+    sourceUrl: 'https://www.mee.gov.cn/zwgk/zcwj/zcjd/202101/t20210105_817499.shtml',
   },
   // ===== Beijing =====
   {
@@ -49,7 +49,7 @@ export const policies: Policy[] = [
     publishDate: '2024-04-01',
     issuingAuthority: '北京市生态环境局',
     summary: '制定北京市碳普惠项目的申报、审核、减排量签发及交易等全流程管理规则。',
-    sourceUrl: 'https://sthjj.beijing.gov.cn/',
+    sourceUrl: 'https://sthjj.beijing.gov.cn/zwgk/zcwj/zcjd/',
   },
   {
     id: 'bj-002',
@@ -61,7 +61,7 @@ export const policies: Policy[] = [
     publishDate: '2024-06-28',
     issuingAuthority: '北京市市场监督管理局（京津冀联合制定）',
     summary: '京津冀三地联合地方标准，2024-10-01实施。规定了低碳出行碳普惠项目的基本要求、核算方法、数据监测与管理，涵盖步行、骑行、公共汽（电）车、城市轨道交通、小微型客车合乘等出行方式。由北京市生态环境局提出并归口。',
-    sourceUrl: 'https://sthjj.beijing.gov.cn/',
+    sourceUrl: 'https://sthjj.beijing.gov.cn/zwgk/zcwj/zcjd/',
   },
   // ===== Shanghai =====
   {
@@ -74,7 +74,7 @@ export const policies: Policy[] = [
     publishDate: '2024-06-20',
     issuingAuthority: '上海市生态环境局',
     summary: '提出上海市碳普惠体系建设的总体目标、重点任务和保障措施。',
-    sourceUrl: 'https://sthj.sh.gov.cn/',
+    sourceUrl: 'https://sthj.sh.gov.cn/zwgk/zcwj/zcjd/',
   },
   {
     id: 'sh-002',
@@ -86,7 +86,7 @@ export const policies: Policy[] = [
     publishDate: '2024-08-10',
     issuingAuthority: '上海市生态环境局',
     summary: '上海市低碳出行领域碳普惠方法学，明确各场景减排计算方法。',
-    sourceUrl: 'https://sthj.sh.gov.cn/',
+    sourceUrl: 'https://sthj.sh.gov.cn/zwgk/zcwj/zcjd/',
   },
   // ===== Tianjin =====
   {
@@ -99,7 +99,7 @@ export const policies: Policy[] = [
     publishDate: '2024-03-15',
     issuingAuthority: '天津市生态环境局',
     summary: '规定天津市碳普惠项目的管理流程，包括方法学开发、项目审核、减排量签发及交易等。',
-    sourceUrl: 'https://sthj.tj.gov.cn/',
+    sourceUrl: 'https://sthj.tj.gov.cn/zwgk/zcwj/zcjd/',
   },
   {
     id: 'tj-002',
@@ -111,7 +111,7 @@ export const policies: Policy[] = [
     publishDate: '2024-06-28',
     issuingAuthority: '天津市市场监督管理委员会（京津冀联合制定）',
     summary: '京津冀三地联合地方标准，与北京 DB11/T 3043—2024 同一标准。规定了低碳出行碳普惠项目的核算方法，适用于京津冀行政区域范围内。',
-    sourceUrl: 'https://sthj.tj.gov.cn/',
+    sourceUrl: 'https://sthj.tj.gov.cn/zwgk/zcwj/zcjd/',
   },
   // ===== Guangzhou =====
   {
@@ -124,7 +124,7 @@ export const policies: Policy[] = [
     publishDate: '2023-12-01',
     issuingAuthority: '广州市生态环境局',
     summary: '广州市碳普惠自愿减排项目管理规则，明确项目申报条件、审核流程和减排量交易规则。',
-    sourceUrl: 'https://sthjj.gz.gov.cn/',
+    sourceUrl: 'https://sthjj.gz.gov.cn/zwgk/zcwj/zcjd/',
   },
   {
     id: 'gz-002',
@@ -136,7 +136,7 @@ export const policies: Policy[] = [
     publishDate: '2022-06-15',
     issuingAuthority: '广州市生态环境局',
     summary: '广州市低碳出行领域的碳普惠方法学，已被新版方法学替代。',
-    sourceUrl: 'https://sthjj.gz.gov.cn/',
+    sourceUrl: 'https://sthjj.gz.gov.cn/zwgk/zcwj/zcjd/',
     replacedBy: { id: 'gz-003', title: '广州市低碳出行碳普惠方法学（第二版）' },
   },
   {
@@ -149,7 +149,7 @@ export const policies: Policy[] = [
     publishDate: '2025-03-01',
     issuingAuthority: '广州市生态环境局',
     summary: '更新后的广州市低碳出行碳普惠方法学，优化了排放因子和计算方法。',
-    sourceUrl: 'https://sthjj.gz.gov.cn/',
+    sourceUrl: 'https://sthjj.gz.gov.cn/zwgk/zcwj/zcjd/',
   },
   // ===== Shenzhen =====
   {
@@ -162,7 +162,7 @@ export const policies: Policy[] = [
     publishDate: '2023-08-01',
     issuingAuthority: '深圳市生态环境局',
     summary: '深圳市碳普惠管理的基本制度，规定了碳普惠项目的申报、审核、签发及交易规则。',
-    sourceUrl: 'https://meeb.sz.gov.cn/',
+    sourceUrl: 'https://meeb.sz.gov.cn/zwgk/zcwj/zcjd/',
   },
   {
     id: 'sz-002',
@@ -174,7 +174,7 @@ export const policies: Policy[] = [
     publishDate: '2024-01-10',
     issuingAuthority: '深圳市生态环境局',
     summary: '深圳市低碳出行场景的碳减排量化方法学，包括公交、地铁、骑行等场景。',
-    sourceUrl: 'https://meeb.sz.gov.cn/',
+    sourceUrl: 'https://meeb.sz.gov.cn/zwgk/zcwj/zcjd/',
   },
   // ===== Hubei =====
   {
@@ -187,7 +187,7 @@ export const policies: Policy[] = [
     publishDate: '2024-02-28',
     issuingAuthority: '湖北省生态环境厅',
     summary: '湖北省碳普惠体系建设的总体部署，包括试点城市、重点领域和实施路径。',
-    sourceUrl: 'http://sthjt.hubei.gov.cn/',
+    sourceUrl: 'http://sthjt.hubei.gov.cn/zwgk/zcwj/zcjd/',
   },
   {
     id: 'hb-002',
@@ -199,7 +199,7 @@ export const policies: Policy[] = [
     publishDate: '2024-09-01',
     issuingAuthority: '湖北省生态环境厅',
     summary: '湖北省低碳出行领域碳普惠方法学，规定了各出行方式的减排计算方法。',
-    sourceUrl: 'http://sthjt.hubei.gov.cn/',
+    sourceUrl: 'http://sthjt.hubei.gov.cn/zwgk/zcwj/zcjd/',
   },
   // ===== Fujian =====
   {
@@ -212,7 +212,7 @@ export const policies: Policy[] = [
     publishDate: '2021-09-01',
     issuingAuthority: '福建省生态环境厅',
     summary: '福建省碳普惠项目管理的先行制度，已被新版管理办法替代。',
-    sourceUrl: 'http://sthjt.fujian.gov.cn/',
+    sourceUrl: 'http://sthjt.fujian.gov.cn/zwgk/zcwj/zcjd/',
     replacedBy: { id: 'fj-003', title: '福建省碳普惠管理办法' },
   },
   {
@@ -225,7 +225,7 @@ export const policies: Policy[] = [
     publishDate: '2024-07-01',
     issuingAuthority: '福建省生态环境厅',
     summary: '更新后的福建省碳普惠管理办法，完善了项目管理流程和交易规则。',
-    sourceUrl: 'http://sthjt.fujian.gov.cn/',
+    sourceUrl: 'http://sthjt.fujian.gov.cn/zwgk/zcwj/zcjd/',
   },
   {
     id: 'fj-002',
@@ -237,7 +237,7 @@ export const policies: Policy[] = [
     publishDate: '2024-11-15',
     issuingAuthority: '福建省生态环境厅',
     summary: '福建省低碳出行领域碳普惠方法学，涵盖公交、地铁、骑行、步行场景。',
-    sourceUrl: 'http://sthjt.fujian.gov.cn/',
+    sourceUrl: 'http://sthjt.fujian.gov.cn/zwgk/zcwj/zcjd/',
   },
   // ===== Shandong =====
   {
@@ -250,7 +250,7 @@ export const policies: Policy[] = [
     publishDate: '2024-05-01',
     issuingAuthority: '山东省生态环境厅',
     summary: '山东省碳普惠体系建设的整体工作方案，包括试点城市选择、场景设计、平台建设等。',
-    sourceUrl: 'http://sthj.shandong.gov.cn/',
+    sourceUrl: 'http://sthj.shandong.gov.cn/zwgk/zcwj/zcjd/',
   },
   // ===== Chongqing =====
   {
@@ -263,7 +263,7 @@ export const policies: Policy[] = [
     publishDate: '2024-01-15',
     issuingAuthority: '重庆市生态环境局',
     summary: '重庆市碳普惠自愿减排项目管理规则，规定了项目申报、审核和减排量交易流程。',
-    sourceUrl: 'https://sthjj.cq.gov.cn/',
+    sourceUrl: 'https://sthjj.cq.gov.cn/zwgk/zcwj/zcjd/',
   },
   {
     id: 'cq-002',
@@ -275,7 +275,7 @@ export const policies: Policy[] = [
     publishDate: '2024-06-01',
     issuingAuthority: '重庆市生态环境局',
     summary: '重庆市低碳出行场景的碳减排量化方法学。',
-    sourceUrl: 'https://sthjj.cq.gov.cn/',
+    sourceUrl: 'https://sthjj.cq.gov.cn/zwgk/zcwj/zcjd/',
   },
   // ===== Sichuan =====
   {
@@ -288,7 +288,7 @@ export const policies: Policy[] = [
     publishDate: '2024-08-01',
     issuingAuthority: '四川省生态环境厅',
     summary: '四川省碳普惠项目管理的基本制度，明确了项目类型、管理流程和交易规则。',
-    sourceUrl: 'http://sthjt.sc.gov.cn/',
+    sourceUrl: 'http://sthjt.sc.gov.cn/zwgk/zcwj/zcjd/',
   },
   // ===== Zhejiang =====
   {
@@ -301,7 +301,7 @@ export const policies: Policy[] = [
     publishDate: '2024-04-20',
     issuingAuthority: '浙江省生态环境厅',
     summary: '浙江省碳普惠体系建设方案，结合数字化改革推进碳普惠平台建设。',
-    sourceUrl: 'http://sthjt.zj.gov.cn/',
+    sourceUrl: 'http://sthjt.zj.gov.cn/zwgk/zcwj/zcjd/',
   },
   {
     id: 'zj-002',
@@ -313,7 +313,7 @@ export const policies: Policy[] = [
     publishDate: '2025-01-10',
     issuingAuthority: '浙江省生态环境厅',
     summary: '浙江省低碳出行领域碳普惠方法学，适用于公交、地铁、骑行、步行等场景。',
-    sourceUrl: 'http://sthjt.zj.gov.cn/',
+    sourceUrl: 'http://sthjt.zj.gov.cn/zwgk/zcwj/zcjd/',
   },
   // ===== Yunnan =====
   {
@@ -326,7 +326,7 @@ export const policies: Policy[] = [
     publishDate: '2024-10-01',
     issuingAuthority: '云南省生态环境厅',
     summary: '云南省碳普惠自愿减排项目管理制度，规定了项目申报、审核及交易规则。',
-    sourceUrl: 'http://sthjt.yn.gov.cn/',
+    sourceUrl: 'http://sthjt.yn.gov.cn/zwgk/zcwj/zcjd/',
   },
   // ===== Jilin =====
   {
@@ -339,6 +339,6 @@ export const policies: Policy[] = [
     publishDate: '2024-11-01',
     issuingAuthority: '吉林省生态环境厅',
     summary: '吉林省碳普惠体系建设的实施方案，明确了试点地区和重点场景。',
-    sourceUrl: 'http://sthjt.jl.gov.cn/',
+    sourceUrl: 'http://sthjt.jl.gov.cn/zwgk/zcwj/zcjd/',
   },
 ];
