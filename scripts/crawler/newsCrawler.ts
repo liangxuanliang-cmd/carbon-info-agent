@@ -1,6 +1,7 @@
 /**
  * 资讯数据爬虫
  * 目标：碳市场新闻网站
+ * 获取真实的碳市场新闻资讯
  */
 
 import { BaseCrawler } from './baseCrawler';
@@ -14,56 +15,74 @@ export interface NewsData {
   summary?: string;
 }
 
-export class NewsCrawler extends BaseCrawler<NewsData[]> {
-  private sources: Array<{ name: string; url: string }>;
+// 真实资讯数据源
+const NEWS_SOURCES = [
+  {
+    name: '中国碳交易网',
+    baseUrl: 'https://www.tanjiaoyi.com',
+    listUrl: 'https://www.tanjiaoyi.com/news/',
+  },
+  {
+    name: '碳道',
+    baseUrl: 'https://www.tanpaifang.com',
+    listUrl: 'https://www.tanpaifang.com/news/',
+  },
+  {
+    name: '上海环境能源交易所',
+    baseUrl: 'https://www.cneeex.com',
+    listUrl: 'https://www.cneeex.com/news/',
+  },
+  {
+    name: '北京绿色交易所',
+    baseUrl: 'https://www.bjet.com.cn',
+    listUrl: 'https://www.bjet.com.cn/news/',
+  },
+];
 
+export class NewsCrawler extends BaseCrawler<NewsData[]> {
   constructor() {
     super({
       name: 'News',
       baseUrl: '',
-      rateLimitMs: 3000,
+      rateLimitMs: 2000,
       timeout: 15000,
       retries: 2,
     });
-
-    this.sources = [
-      { name: '中国碳交易网', url: 'https://www.tanjiaoyi.com/news/' },
-      { name: '碳道', url: 'https://www.tanpaifang.com/news/' },
-    ];
   }
 
   async crawl(): Promise<NewsData[]> {
-    const news: NewsData[] = [];
+    const allNews: NewsData[] = [];
     
-    for (const source of this.sources) {
+    for (const source of NEWS_SOURCES) {
       try {
-        this.log(`正在获取 ${source.name} 的资讯...`);
-        const html = await this.fetch(source.url);
-        const sourceNews = this.parseNews(html, source.name);
-        news.push(...sourceNews);
-        this.log(`从 ${source.name} 获取到 ${sourceNews.length} 条资讯`);
+        this.log(`正在爬取 ${source.name}...`);
+        const html = await this.fetch(source.listUrl);
+        const news = this.parseNewsList(html, source);
+        allNews.push(...news);
+        this.log(`✅ 从 ${source.name} 获取 ${news.length} 条资讯`);
       } catch (error) {
-        this.log(`获取 ${source.name} 失败: ${error}`);
+        this.log(`❌ ${source.name} 爬取失败: ${error}`);
       }
     }
     
-    // 去重并排序
-    const uniqueNews = this.deduplicate(news);
-    return uniqueNews.slice(0, 5); // 只返回最新的5条
+    // 按日期排序，取最新的
+    return this.sortByDate(allNews).slice(0, 10);
   }
 
   /**
    * 解析资讯列表
    */
-  private parseNews(html: string, source: string): NewsData[] {
+  private parseNewsList(html: string, source: typeof NEWS_SOURCES[0]): NewsData[] {
     const news: NewsData[] = [];
     
-    // 匹配资讯链接和标题的多种模式
+    // 常见新闻列表模式
     const patterns = [
-      // 标准列表模式
-      /<a[^>]*href=["']([^"']+)["'][^>]*>([^<]*(?:碳|CEA|CCER|碳市场|碳普惠)[^<]*)<\/a>/gi,
-      // 带日期的模式
-      /<a[^>]*href=["']([^"']+)["'][^>]*>([^<]+)<\/a>.*?<[^>]*>(\d{4}[/-]\d{2}[/-]\d{2})/gi,
+      // 模式1: 标准列表项
+      /<li[^>]*>.*?<a[^>]*href=["']([^"']+)["'][^>]*>([^<]+)<\/a>.*?<span[^>]*>(\d{4}[\-\/]\d{2}[\-\/]\d{2})<\/span>.*?<\/li>/gis,
+      // 模式2: 文章卡片
+      /<div[^>]*class=["'][^"']*(?:news|article|item)[^"']*["'][^>]*>.*?<a[^>]*href=["']([^"']+)["'][^>]*>([^<]+)<\/a>.*?<span[^>]*>(\d{4}[\-\/]\d{2}[\-\/]\d{2})<\/span>.*?<\/div>/gis,
+      // 模式3: 通用链接+日期
+      /<a[^>]*href=["']([^"']+)["'][^>]*>([^<]{15,100})<\/a>[^<]*?(\d{4}[\-\/]\d{2}[\-\/]\d{2})/gi,
     ];
     
     for (const pattern of patterns) {
@@ -71,15 +90,15 @@ export class NewsCrawler extends BaseCrawler<NewsData[]> {
       while ((match = pattern.exec(html)) !== null) {
         const url = match[1];
         const title = match[2].trim();
-        const date = this.parseDate(match[3]) || new Date().toISOString().split('T')[0];
+        const dateStr = match[3];
         
         if (this.isValidNews(title)) {
           news.push({
             id: `news-${Date.now()}-${news.length}`,
-            title,
-            source,
-            date,
-            url: this.normalizeUrl(url),
+            title: this.cleanTitle(title),
+            source: source.name,
+            date: this.normalizeDate(dateStr),
+            url: this.resolveUrl(url, source.baseUrl),
           });
         }
       }
@@ -89,51 +108,56 @@ export class NewsCrawler extends BaseCrawler<NewsData[]> {
   }
 
   /**
-   * 验证是否为有效资讯标题
+   * 验证是否为有效资讯
    */
   private isValidNews(title: string): boolean {
-    const keywords = ['碳', 'CEA', 'CCER', '碳市场', '碳普惠', '碳交易', '减排', '低碳'];
+    const keywords = ['碳', 'CEA', 'CCER', '碳市场', '碳普惠', '碳交易', '减排', '低碳', '碳价', '碳排放'];
     const hasKeyword = keywords.some((k) => title.includes(k));
-    const isValidLength = title.length > 15 && title.length < 100;
-    const notNoise = !title.includes('登录') && !title.includes('注册') && !title.includes('广告');
+    const isValidLength = title.length >= 15 && title.length <= 120;
+    const notNoise = !title.includes('登录') && !title.includes('注册') && !title.includes('广告') && !title.includes('返回首页');
     
     return hasKeyword && isValidLength && notNoise;
   }
 
   /**
-   * 解析日期格式
+   * 清理标题
    */
-  private parseDate(dateStr: string): string | null {
-    if (!dateStr) return null;
-    
-    // 统一转换为 YYYY-MM-DD
-    const match = dateStr.match(/(\d{4})[\/-](\d{2})[\/-](\d{2})/);
+  private cleanTitle(title: string): string {
+    return title
+      .replace(/\s+/g, ' ')
+      .replace(/&nbsp;/g, '')
+      .replace(/&lt;/g, '<')
+      .replace(/&gt;/g, '>')
+      .replace(/&amp;/g, '&')
+      .trim();
+  }
+
+  /**
+   * 标准化日期格式
+   */
+  private normalizeDate(dateStr: string): string {
+    const match = dateStr.match(/(\d{4})[\-\/](\d{2})[\-\/](\d{2})/);
     if (match) {
       return `${match[1]}-${match[2]}-${match[3]}`;
     }
-    return null;
+    return new Date().toISOString().split('T')[0];
   }
 
   /**
-   * 规范化URL
+   * 解析完整URL
    */
-  private normalizeUrl(url: string): string {
+  private resolveUrl(url: string, baseUrl: string): string {
     if (url.startsWith('http')) return url;
-    if (url.startsWith('/')) return `${this.baseUrl}${url}`;
-    return `${this.baseUrl}/${url}`;
+    if (url.startsWith('//')) return `https:${url}`;
+    if (url.startsWith('/')) return `${baseUrl}${url}`;
+    return `${baseUrl}/${url}`;
   }
 
   /**
-   * 去重
+   * 按日期排序
    */
-  private deduplicate(news: NewsData[]): NewsData[] {
-    const seen = new Set<string>();
-    return news.filter((n) => {
-      const key = `${n.title}-${n.source}`;
-      if (seen.has(key)) return false;
-      seen.add(key);
-      return true;
-    });
+  private sortByDate(news: NewsData[]): NewsData[] {
+    return news.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
   }
 }
 
