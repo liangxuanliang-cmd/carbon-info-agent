@@ -31,7 +31,7 @@ jobs:
       - name: Update data and send report
         env:
           DINGTALK_WEBHOOK: ${{ secrets.DINGTALK_WEBHOOK }}
-          WEBSITE_URL: ${{ vars.WEBSITE_URL }}
+          WEBSITE_URL: 'https://carbonhub-delta.vercel.app'
         run: npx tsx scripts/autoUpdate.ts
 
       - name: Commit updated data
