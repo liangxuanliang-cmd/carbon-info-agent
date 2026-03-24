@@ -41,15 +41,15 @@ export const policies: Policy[] = [
   // ===== Beijing =====
   {
     id: 'bj-001',
-    title: '北京市碳普惠项目管理办法',
+    title: '北京市碳普惠管理办法（试行）',
     regionType: 'province',
     province: '北京',
     category: 'policy',
     status: 'active',
-    publishDate: '2024-04-01',
-    issuingAuthority: '北京市生态环境局',
-    summary: '制定北京市碳普惠项目的申报、审核、减排量签发及交易等全流程管理规则。',
-    sourceUrl: 'https://www.baidu.com/s?wd=北京市碳普惠项目管理办法+site%3Asthjj.beijing.gov.cn',
+    publishDate: '2025-08-25',
+    issuingAuthority: '北京市人民政府',
+    summary: '北京市碳普惠管理办法（试行），规范碳普惠项目的申报、审核、减排量签发及交易等全流程管理。',
+    sourceUrl: 'https://www.beijing.gov.cn/zhengce/zhengcefagui/202508/t20250825_4182653.html',
   },
   {
     id: 'bj-002',
