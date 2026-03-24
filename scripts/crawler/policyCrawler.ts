@@ -16,14 +16,16 @@ export interface PolicyData {
   category: 'policy' | 'methodology';
 }
 
-// 真实政策数据源
+// 真实政策数据源 - 覆盖全国主要省市
 const POLICY_SOURCES = [
+  // 国家级
   {
     name: '生态环境部',
     baseUrl: 'https://www.mee.gov.cn',
     listUrl: 'https://www.mee.gov.cn/zwgk/zcwj/zcjd/',
     type: 'national' as const,
   },
+  // 直辖市
   {
     name: '北京市生态环境局',
     baseUrl: 'https://sthjj.beijing.gov.cn',
@@ -37,9 +39,71 @@ const POLICY_SOURCES = [
     type: 'local' as const,
   },
   {
+    name: '天津市生态环境局',
+    baseUrl: 'https://sthj.tj.gov.cn',
+    listUrl: 'https://sthj.tj.gov.cn/zwgk/zcwj/zcjd/',
+    type: 'local' as const,
+  },
+  {
+    name: '重庆市生态环境局',
+    baseUrl: 'https://sthjj.cq.gov.cn',
+    listUrl: 'https://sthjj.cq.gov.cn/zwgk/zcwj/zcjd/',
+    type: 'local' as const,
+  },
+  // 广东省
+  {
     name: '广东省生态环境厅',
     baseUrl: 'https://gdee.gd.gov.cn',
     listUrl: 'https://gdee.gd.gov.cn/zwgk/zcwj/zcjd/',
+    type: 'local' as const,
+  },
+  {
+    name: '深圳市生态环境局',
+    baseUrl: 'https://meeb.sz.gov.cn',
+    listUrl: 'https://meeb.sz.gov.cn/zwgk/zcwj/zcjd/',
+    type: 'local' as const,
+  },
+  // 其他重点省市
+  {
+    name: '湖北省生态环境厅',
+    baseUrl: 'http://sthjt.hubei.gov.cn',
+    listUrl: 'http://sthjt.hubei.gov.cn/zwgk/zcwj/zcjd/',
+    type: 'local' as const,
+  },
+  {
+    name: '福建省生态环境厅',
+    baseUrl: 'http://sthjt.fujian.gov.cn',
+    listUrl: 'http://sthjt.fujian.gov.cn/zwgk/zcwj/zcjd/',
+    type: 'local' as const,
+  },
+  {
+    name: '浙江省生态环境厅',
+    baseUrl: 'http://sthjt.zj.gov.cn',
+    listUrl: 'http://sthjt.zj.gov.cn/zwgk/zcwj/zcjd/',
+    type: 'local' as const,
+  },
+  {
+    name: '山东省生态环境厅',
+    baseUrl: 'http://sthj.shandong.gov.cn',
+    listUrl: 'http://sthj.shandong.gov.cn/zwgk/zcwj/zcjd/',
+    type: 'local' as const,
+  },
+  {
+    name: '四川省生态环境厅',
+    baseUrl: 'http://sthjt.sc.gov.cn',
+    listUrl: 'http://sthjt.sc.gov.cn/zwgk/zcwj/zcjd/',
+    type: 'local' as const,
+  },
+  {
+    name: '云南省生态环境厅',
+    baseUrl: 'http://sthjt.yn.gov.cn',
+    listUrl: 'http://sthjt.yn.gov.cn/zwgk/zcwj/zcjd/',
+    type: 'local' as const,
+  },
+  {
+    name: '吉林省生态环境厅',
+    baseUrl: 'http://sthjt.jl.gov.cn',
+    listUrl: 'http://sthjt.jl.gov.cn/zwgk/zcwj/zcjd/',
     type: 'local' as const,
   },
 ];
