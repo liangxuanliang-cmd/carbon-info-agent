@@ -10,6 +10,7 @@ import { resolve } from 'path';
 import dayjs from 'dayjs';
 import { fetchPolicies, type PolicyData } from './crawler/policyCrawler';
 import { fetchNews, type NewsData } from './crawler/newsCrawler';
+import { fetchCarbonPriceFromBaidu, type CarbonPriceFromSearch } from './crawler/baiduSearchCrawler';
 
 // 项目根目录
 const PROJECT_ROOT = resolve(import.meta.dirname, '..');
@@ -112,20 +113,75 @@ export const getLatestNews = (count: number = 5) => {
 }
 
 /**
+ * 更新碳价数据文件 - 使用百度搜索
+ */
+async function updateCarbonPricesFile() {
+  console.log('💹 正在搜索碳价数据...');
+  
+  try {
+    const prices = await fetchCarbonPriceFromBaidu();
+    
+    if (prices.length === 0) {
+      console.log('⚠️ 未获取到碳价数据，保持原文件');
+      return;
+    }
+    
+    // 生成 TypeScript 文件内容
+    const fileContent = `import type { PriceRecord } from '../types';
+import { CARBON_PRODUCTS_META } from '../utils/constants';
+import dayjs from 'dayjs';
+
+// 自动生成的碳价数据 - 更新时间: ${dayjs().format('YYYY-MM-DD HH:mm:ss')}
+// 数据来源: 百度搜索
+
+// 最新碳价数据
+export const latestPrices = [
+${prices.map((p) => `  {
+    productId: '${p.productId}',
+    name: '${p.name}',
+    price: ${p.price},
+    change: ${p.change},
+    date: '${p.date}',
+    source: '${p.source}',
+  },`).join('\n')}
+];
+
+// 获取指定产品的最新价格
+export const getPriceByProductId = (productId: string) => {
+  return latestPrices.find((p) => p.productId === productId);
+};
+
+// 获取所有最新价格
+export const getAllLatestPrices = () => latestPrices;
+`;
+
+    const filePath = resolve(PROJECT_ROOT, 'src/data/carbonPricesLatest.ts');
+    writeFileSync(filePath, fileContent, 'utf-8');
+    
+    console.log(`✅ 碳价数据已更新: ${prices.length} 条`);
+    prices.forEach((p, i) => {
+      console.log(`   ${i + 1}. ${p.name}: ${p.price}元/吨 (${p.change}%)`);
+    });
+  } catch (error) {
+    console.error('❌ 碳价数据更新失败:', error);
+  }
+}
+
+/**
  * 主更新函数
  */
 export async function updateProjectData() {
   console.log('🚀 开始更新项目数据...\n');
   console.log(`⏰ 执行时间: ${new Date().toLocaleString('zh-CN')}\n`);
   
-  // 并行更新政策和资讯
+  // 并行更新所有数据
   await Promise.all([
+    updateCarbonPricesFile(),
     updatePoliciesFile(),
     updateNewsFile(),
   ]);
   
   console.log('\n✅ 数据更新流程完成');
-  console.log('💡 提示: 碳价数据请手动维护');
 }
 
 // 如果直接运行

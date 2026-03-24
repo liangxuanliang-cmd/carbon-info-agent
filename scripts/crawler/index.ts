@@ -7,13 +7,14 @@ export { BaseCrawler, type CrawlerOptions } from './baseCrawler';
 export { CarbonPriceCrawler, fetchCarbonPrice, type CarbonPriceData } from './carbonPriceCrawler';
 export { PolicyCrawler, fetchPolicies, type PolicyData } from './policyCrawler';
 export { NewsCrawler, fetchNews, type NewsData } from './newsCrawler';
+export { BaiduSearchCrawler, fetchCarbonPriceFromBaidu, type CarbonPriceFromSearch } from './baiduSearchCrawler';
 
-import { fetchCarbonPrice } from './carbonPriceCrawler';
+import { fetchCarbonPriceFromBaidu } from './baiduSearchCrawler';
 import { fetchPolicies } from './policyCrawler';
 import { fetchNews } from './newsCrawler';
 
 export interface CrawlResult {
-  carbonPrices: Awaited<ReturnType<typeof fetchCarbonPrice>> | null;
+  carbonPrices: Awaited<ReturnType<typeof fetchCarbonPriceFromBaidu>>;
   policies: Awaited<ReturnType<typeof fetchPolicies>>;
   news: Awaited<ReturnType<typeof fetchNews>>;
   timestamp: string;
@@ -29,9 +30,9 @@ export async function crawlAll(): Promise<CrawlResult> {
   
   // 并行执行所有爬虫任务
   const [carbonPrices, policies, news] = await Promise.allSettled([
-    fetchCarbonPrice().catch((e) => {
-      console.error('碳价爬虫失败:', e.message);
-      return null;
+    fetchCarbonPriceFromBaidu().catch((e) => {
+      console.error('碳价搜索失败:', e.message);
+      return [];
     }),
     fetchPolicies().catch((e) => {
       console.error('政策爬虫失败:', e.message);
@@ -48,7 +49,7 @@ export async function crawlAll(): Promise<CrawlResult> {
   console.log(`\n✅ 爬虫任务完成，耗时 ${duration}秒\n`);
   
   return {
-    carbonPrices: carbonPrices.status === 'fulfilled' ? carbonPrices.value : null,
+    carbonPrices: carbonPrices.status === 'fulfilled' ? carbonPrices.value : [],
     policies: policies.status === 'fulfilled' ? policies.value : [],
     news: news.status === 'fulfilled' ? news.value : [],
     timestamp: new Date().toISOString(),
