@@ -8,23 +8,25 @@ export { CarbonPriceCrawler, fetchCarbonPrice, type CarbonPriceData } from './ca
 export { PolicyCrawler, fetchPolicies, type PolicyData } from './policyCrawler';
 export { NewsCrawler, fetchNews, type NewsData } from './newsCrawler';
 export { BaiduSearchCrawler, fetchCarbonPriceFromBaidu, type CarbonPriceFromSearch } from './baiduSearchCrawler';
+export { PolicyDetailCrawler, fetchPolicyDetails, type PolicyDetailData } from './policyDetailCrawler';
+export { NewsDetailCrawler, fetchNewsDetails, type NewsDetailData } from './newsDetailCrawler';
 
 import { fetchCarbonPriceFromBaidu } from './baiduSearchCrawler';
-import { fetchPolicies } from './policyCrawler';
-import { fetchNews } from './newsCrawler';
+import { fetchPolicyDetails } from './policyDetailCrawler';
+import { fetchNewsDetails } from './newsDetailCrawler';
 
 export interface CrawlResult {
   carbonPrices: Awaited<ReturnType<typeof fetchCarbonPriceFromBaidu>>;
-  policies: Awaited<ReturnType<typeof fetchPolicies>>;
-  news: Awaited<ReturnType<typeof fetchNews>>;
+  policies: Awaited<ReturnType<typeof fetchPolicyDetails>>;
+  news: Awaited<ReturnType<typeof fetchNewsDetails>>;
   timestamp: string;
 }
 
 /**
- * 执行所有爬虫任务
+ * 执行所有爬虫任务 - 使用详情页爬虫获取真实URL
  */
 export async function crawlAll(): Promise<CrawlResult> {
-  console.log('🕷️ 启动爬虫数据采集...\n');
+  console.log('🕷️ 启动详情页爬虫数据采集...\n');
   
   const startTime = Date.now();
   
@@ -34,12 +36,12 @@ export async function crawlAll(): Promise<CrawlResult> {
       console.error('碳价搜索失败:', e.message);
       return [];
     }),
-    fetchPolicies().catch((e) => {
-      console.error('政策爬虫失败:', e.message);
+    fetchPolicyDetails().catch((e) => {
+      console.error('政策详情页爬虫失败:', e.message);
       return [];
     }),
-    fetchNews().catch((e) => {
-      console.error('资讯爬虫失败:', e.message);
+    fetchNewsDetails().catch((e) => {
+      console.error('资讯详情页爬虫失败:', e.message);
       return [];
     }),
   ]);

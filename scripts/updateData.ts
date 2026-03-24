@@ -8,8 +8,8 @@
 import { writeFileSync } from 'fs';
 import { resolve } from 'path';
 import dayjs from 'dayjs';
-import { fetchPolicies, type PolicyData } from './crawler/policyCrawler';
-import { fetchNews, type NewsData } from './crawler/newsCrawler';
+import { fetchPolicyDetails, type PolicyDetailData } from './crawler/policyDetailCrawler';
+import { fetchNewsDetails, type NewsDetailData } from './crawler/newsDetailCrawler';
 import { fetchCarbonPriceFromBaidu, type CarbonPriceFromSearch } from './crawler/baiduSearchCrawler';
 
 // 项目根目录
@@ -22,7 +22,7 @@ async function updatePoliciesFile() {
   console.log('📋 正在更新政策数据...');
   
   try {
-    const policies = await fetchPolicies();
+    const policies: PolicyDetailData[] = await fetchPolicyDetails();
     
     if (policies.length === 0) {
       console.log('⚠️ 未获取到政策数据，保持原文件');
@@ -34,15 +34,15 @@ async function updatePoliciesFile() {
 
 // 自动生成的政策数据 - 更新时间: ${dayjs().format('YYYY-MM-DD HH:mm:ss')}
 export const policies: Policy[] = [
-${policies.map((p, i) => `  {
+${policies.map((p: PolicyDetailData, i: number) => `  {
     id: 'policy-${Date.now()}-${i}',
     title: '${p.title.replace(/'/g, "\\'")}',
-    regionType: '${p.issuer.includes('生态环境部') ? 'national' : 'province'}',
-    province: '${p.issuer.replace(/生态环境[厅局]|省|市/g, '').trim()}',
-    category: '${p.category}',
+    regionType: '${p.level}',
+    province: '${p.region}',
+    category: 'policy',
     status: 'active',
     publishDate: '${p.date}',
-    issuingAuthority: '${p.issuer}',
+    issuingAuthority: '${p.source}',
     summary: '${p.title.replace(/'/g, "\\'")}',
     sourceUrl: '${p.url}',
   },`).join('\n')}
@@ -53,8 +53,8 @@ ${policies.map((p, i) => `  {
     writeFileSync(filePath, fileContent, 'utf-8');
     
     console.log(`✅ 政策数据已更新: ${policies.length} 条`);
-    policies.forEach((p, i) => {
-      console.log(`   ${i + 1}. ${p.title} (${p.issuer})`);
+    policies.forEach((p: PolicyDetailData, i: number) => {
+      console.log(`   ${i + 1}. ${p.title} (${p.source})`);
       console.log(`      链接: ${p.url}`);
     });
   } catch (error) {
@@ -69,7 +69,7 @@ async function updateNewsFile() {
   console.log('\n📰 正在更新资讯数据...');
   
   try {
-    const news = await fetchNews();
+    const news: NewsDetailData[] = await fetchNewsDetails();
     
     if (news.length === 0) {
       console.log('⚠️ 未获取到资讯数据，保持原文件');
@@ -82,10 +82,10 @@ import dayjs from 'dayjs';
 
 // 自动生成的资讯数据 - 更新时间: ${dayjs().format('YYYY-MM-DD HH:mm:ss')}
 export const news: NewsItem[] = [
-${news.map((n, i) => `  {
+${news.map((n: NewsDetailData, i: number) => `  {
     id: 'news-${Date.now()}-${i}',
     title: '${n.title.replace(/'/g, "\\'")}',
-    summary: '${n.title.replace(/'/g, "\\'")}',
+    summary: '${(n.summary || n.title).replace(/'/g, "\\'")}',
     source: '${n.source}',
     publishDate: '${n.date}',
     url: '${n.url}',
@@ -103,7 +103,7 @@ export const getLatestNews = (count: number = 5) => {
     writeFileSync(filePath, fileContent, 'utf-8');
     
     console.log(`✅ 资讯数据已更新: ${news.length} 条`);
-    news.forEach((n, i) => {
+    news.forEach((n: NewsDetailData, i: number) => {
       console.log(`   ${i + 1}. ${n.title}`);
       console.log(`      来源: ${n.source} | 链接: ${n.url}`);
     });
