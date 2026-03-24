@@ -61,7 +61,7 @@ export function getLatestPrices(): Array<{
   unit: string;
   notes: string;
   market: 'domestic' | 'international';
-  updateDate: string;
+  priceDate: string;
 }> {
   const allRecords = generateAllPriceRecords();
   const latestDate = today.format('YYYY-MM-DD');
@@ -70,6 +70,8 @@ export function getLatestPrices(): Array<{
     const record = allRecords.find(
       (r) => r.productId === product.id && r.date === latestDate
     );
+    // 价格日期来自价格记录的实际日期
+    const priceDate = record?.date ?? latestDate;
     return {
       productId: product.id,
       name: product.name,
@@ -79,7 +81,7 @@ export function getLatestPrices(): Array<{
       unit: product.unit,
       notes: product.notes,
       market: product.market,
-      updateDate: latestDate,
+      priceDate,
     };
   });
 }

@@ -9,7 +9,7 @@ interface PriceRow {
   unit: string;
   notes: string;
   market: 'domestic' | 'international';
-  updateDate: string;
+  priceDate: string;
 }
 
 interface PriceTableProps {
@@ -39,7 +39,7 @@ export default function PriceTable({ data }: PriceTableProps) {
           {row.notes}
         </td>
         <td className="py-3 px-4 text-sm text-center text-text-secondary">
-          {row.updateDate}
+          {row.priceDate}
         </td>
       </tr>
     ));
@@ -54,7 +54,7 @@ export default function PriceTable({ data }: PriceTableProps) {
             <th className="py-3 px-4 text-center text-sm font-semibold">{'涨跌'}</th>
             <th className="py-3 px-4 text-center text-sm font-semibold">{'单位'}</th>
             <th className="py-3 px-4 text-center text-sm font-semibold">{'备注'}</th>
-            <th className="py-3 px-4 text-center text-sm font-semibold">{'更新日期'}</th>
+            <th className="py-3 px-4 text-center text-sm font-semibold">{'价格日期'}</th>
           </tr>
         </thead>
         <tbody>
