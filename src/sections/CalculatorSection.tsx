@@ -40,8 +40,8 @@ export default function CalculatorSection() {
 
   return (
     <SectionCard
-      title={'\u78b3\u91cf\u8ba1\u7b97\u5668'}
-      subtitle={'\u57fa\u4e8e\u5404\u7701\u5e02\u78b3\u666e\u60e0\u65b9\u6cd5\u5b66\u8ba1\u7b97\u51cf\u6392\u91cf'}
+      title={'减排量计算器'}
+      subtitle={'基于各省市碳普惠方法学计算减排量'}
       icon={<Calculator className="w-5 h-5" />}
     >
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
