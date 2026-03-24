@@ -1,14 +1,15 @@
 import { useMemo } from 'react';
 import { Newspaper, ExternalLink, Calendar, Building2 } from 'lucide-react';
 import SectionCard from '../components/SectionCard';
-import { newsItems } from '../data/news';
+import { news } from '../data/news';
+import type { NewsItem } from '../types';
 import dayjs from 'dayjs';
 
 export default function NewsSection() {
   // 按日期分组显示
   const groupedNews = useMemo(() => {
-    const groups: Record<string, typeof newsItems> = {};
-    newsItems.forEach((item) => {
+    const groups: Record<string, NewsItem[]> = {};
+    news.forEach((item: NewsItem) => {
       if (!groups[item.publishDate]) {
         groups[item.publishDate] = [];
       }
@@ -23,7 +24,7 @@ export default function NewsSection() {
   return (
     <SectionCard
       title={'每日资讯'}
-      subtitle={`碳普惠与碳市场最新动态 · 共 ${newsItems.length} 条资讯`}
+      subtitle={`碳普惠与碳市场最新动态 · 共 ${news.length} 条资讯`}
       icon={<Newspaper className="w-5 h-5" />}
     >
       {/* 资讯列表 */}
@@ -49,7 +50,7 @@ export default function NewsSection() {
 
               {/* 该日期的资讯 */}
               <div className="space-y-3">
-                {items.map((item) => (
+                {items.map((item: NewsItem) => (
                   <div
                     key={item.id}
                     className="border border-border rounded-lg p-4 hover:shadow-md hover:border-primary/30 transition-all bg-white"
@@ -75,7 +76,7 @@ export default function NewsSection() {
                             来源：{item.source}
                           </span>
                           <div className="flex gap-1.5">
-                            {item.tags.map((tag) => (
+                            {(item.tags || []).map((tag: string) => (
                               <span
                                 key={tag}
                                 className="px-2 py-0.5 bg-primary-light text-primary text-xs rounded-full"
