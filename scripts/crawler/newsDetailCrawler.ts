@@ -1,6 +1,6 @@
 /**
- * 资讯详情页爬虫
- * 从碳市场新闻网站抓取真实的文章详情页URL
+ * 资讯爬虫 - 基于搜狗新闻搜索
+ * 搜狗新闻返回服务端渲染 HTML，无需执行 JavaScript 即可解析
  */
 
 import { BaseCrawler } from './baseCrawler';
@@ -12,42 +12,37 @@ export interface NewsDetailData {
   date: string;
   url: string;
   summary?: string;
+  tags: string[];
 }
 
-// 资讯数据源配置
-const NEWS_SOURCES = [
-  {
-    name: '中国碳交易网',
-    baseUrl: 'https://www.tanjiaoyi.com',
-    listUrl: 'https://www.tanjiaoyi.com/news/',
-    // 匹配文章链接: /news/20240315/xxx.html
-    articlePattern: /\/news\/\d{8}\/[a-z0-9_-]+\.html/g,
-  },
-  {
-    name: '碳道',
-    baseUrl: 'https://www.tanpaifang.com',
-    listUrl: 'https://www.tanpaifang.com/news/',
-    articlePattern: /\/news\/\d{8}\/[a-z0-9_-]+\.html/g,
-  },
-  {
-    name: '上海环境能源交易所',
-    baseUrl: 'https://www.cneeex.com',
-    listUrl: 'https://www.cneeex.com/news/',
-    articlePattern: /\/news\/\d{8}\/[a-z0-9_-]+\.html/g,
-  },
-  {
-    name: '北京绿色交易所',
-    baseUrl: 'https://www.bjet.com.cn',
-    listUrl: 'https://www.bjet.com.cn/news/',
-    articlePattern: /\/news\/\d{8}\/[a-z0-9_-]+\.html/g,
-  },
+/**
+ * 搜索关键词配置 - 多组关键词覆盖碳市场各领域
+ */
+const NEWS_SEARCH_QUERIES = [
+  { query: '碳市场 碳交易', tags: ['碳市场', '碳交易'] },
+  { query: '碳普惠 方法学', tags: ['碳普惠'] },
+  { query: 'CCER 自愿减排', tags: ['CCER'] },
+  { query: '全国碳排放权交易', tags: ['全国碳市场'] },
+  { query: '碳价 碳配额 行情', tags: ['碳价行情'] },
+  { query: '碳中和 低碳 政策', tags: ['碳中和', '低碳'] },
+  { query: '碳普惠 低碳出行', tags: ['碳普惠', '低碳出行'] },
+  { query: '碳排放 温室气体 减排', tags: ['碳排放', '减排'] },
+];
+
+/**
+ * 碳相关关键词 - 用于过滤搜索结果
+ */
+const CARBON_KEYWORDS = [
+  '碳', 'CEA', 'CCER', '碳市场', '碳普惠', '碳交易',
+  '碳价', '碳排放', '低碳', '碳中和', '碳配额', '碳汇',
+  '减排', '温室气体', '碳达峰',
 ];
 
 export class NewsDetailCrawler extends BaseCrawler<NewsDetailData[]> {
   constructor() {
     super({
-      name: 'NewsDetail',
-      baseUrl: '',
+      name: 'SogouNews',
+      baseUrl: 'https://news.sogou.com',
       rateLimitMs: 3000,
       timeout: 15000,
       retries: 2,
@@ -57,135 +52,282 @@ export class NewsDetailCrawler extends BaseCrawler<NewsDetailData[]> {
   async crawl(): Promise<NewsDetailData[]> {
     const allNews: NewsDetailData[] = [];
 
-    for (const source of NEWS_SOURCES) {
+    for (const item of NEWS_SEARCH_QUERIES) {
       try {
-        this.log(`正在爬取 ${source.name}...`);
-        
-        // 1. 获取列表页
-        const listHtml = await this.fetch(source.listUrl);
-        
-        // 2. 提取文章URL
-        const articleUrls = this.extractArticleUrls(listHtml, source);
-        this.log(`发现 ${articleUrls.length} 篇文章`);
-        
-        // 3. 解析每篇文章
-        for (const url of articleUrls.slice(0, 3)) { // 每个来源取前3篇
-          try {
-            const news = await this.parseArticleDetail(url, source);
-            if (news && this.isCarbonRelated(news.title)) {
-              allNews.push(news);
-              this.log(`✅ 获取资讯: ${news.title.substring(0, 40)}...`);
-            }
-          } catch (error) {
-            this.log(`❌ 解析文章失败: ${url}`);
-          }
-        }
+        this.log(`搜索: "${item.query}"`);
+        const articles = await this.searchSogouNews(item.query, item.tags);
+        this.log(`  获取 ${articles.length} 条结果`);
+        allNews.push(...articles);
       } catch (error) {
-        this.log(`❌ ${source.name} 爬取失败: ${error}`);
+        this.log(`  搜索失败: ${error instanceof Error ? error.message : error}`);
       }
     }
 
-    return this.sortByDate(allNews).slice(0, 10);
+    // 去重、排序、取前 20 条
+    const result = this.deduplicateAndSort(allNews).slice(0, 20);
+    this.log(`\n共获取 ${result.length} 条不重复资讯`);
+    return result;
   }
 
   /**
-   * 提取文章URL
+   * 搜狗新闻搜索
    */
-  private extractArticleUrls(
-    html: string,
-    source: typeof NEWS_SOURCES[0]
-  ): string[] {
-    const urls: string[] = [];
+  private async searchSogouNews(query: string, tags: string[]): Promise<NewsDetailData[]> {
+    const searchUrl = `https://news.sogou.com/news?query=${encodeURIComponent(query)}&sort=1`;
+    const html = await this.fetch(searchUrl);
+    return this.parseSogouResults(html, tags);
+  }
+
+  /**
+   * 解析搜狗新闻搜索结果页面
+   * 搜狗新闻的 HTML 结构：<h3><a href="URL">TITLE</a></h3>
+   * 来源和日期通常在 h3 后面的文本中
+   */
+  private parseSogouResults(html: string, tags: string[]): NewsDetailData[] {
+    const articles: NewsDetailData[] = [];
+
+    // 搜狗新闻搜索结果主要模式：h3 > a 链接
+    // 模式1: <h3><a href="URL" ...>TITLE</a></h3>
+    const h3Pattern = /<h3[^>]*>\s*<a[^>]*href="([^"]+)"[^>]*>([\s\S]*?)<\/a>\s*<\/h3>/gi;
     let match;
 
-    // 使用正则匹配文章链接
-    while ((match = source.articlePattern.exec(html)) !== null) {
-      const fullUrl = match[0].startsWith('http') 
-        ? match[0] 
-        : `${source.baseUrl}${match[0]}`;
-      urls.push(fullUrl);
+    while ((match = h3Pattern.exec(html)) !== null) {
+      const rawUrl = match[1];
+      const rawTitle = match[2];
+      const title = this.cleanText(rawTitle);
+      const url = this.resolveUrl(rawUrl);
+
+      if (
+        title.length >= 8 &&
+        title.length <= 200 &&
+        this.isCarbonRelated(title) &&
+        this.isValidNewsUrl(url)
+      ) {
+        // 从 h3 后面的内容中提取来源和日期
+        const contextAfterH3 = html.substring(match.index + match[0].length, match.index + match[0].length + 1000);
+        const source = this.extractSourceFromContext(contextAfterH3, url);
+        const date = this.extractDateFromContext(contextAfterH3);
+
+        articles.push({
+          id: `news-${Date.now()}-${Math.random().toString(36).substr(2, 6)}`,
+          title,
+          source,
+          date,
+          url,
+          tags,
+        });
+      }
     }
 
-    return [...new Set(urls)];
-  }
-
-  /**
-   * 解析文章详情
-   */
-  private async parseArticleDetail(
-    url: string,
-    source: typeof NEWS_SOURCES[0]
-  ): Promise<NewsDetailData | null> {
-    const html = await this.fetch(url);
-
-    // 提取标题
-    const titleMatch = html.match(/<h1[^>]*>([^<]+)<\/h1>/i) || 
-                       html.match(/<title>([^<]+)<\/title>/i);
-    const title = titleMatch ? this.cleanText(titleMatch[1]) : '';
-
-    // 提取日期
-    const dateMatch = html.match(/(\d{4}-\d{2}-\d{2})/) ||
-                      html.match(/(\d{4}年\d{2}月\d{2}日)/);
-    const date = dateMatch ? this.normalizeDate(dateMatch[1]) : new Date().toISOString().split('T')[0];
-
-    // 提取摘要（从正文前200字）
-    const contentMatch = html.match(/<div[^>]*class=["']content["'][^>]*>([\s\S]{100,500})<\/div>/i);
-    const summary = contentMatch 
-      ? this.cleanText(contentMatch[1]).substring(0, 200) + '...'
-      : title;
-
-    if (!title || title.length < 10) {
-      return null;
+    // 备选模式：更宽泛的 a 标签匹配（如果 h3 模式没找到结果）
+    if (articles.length === 0) {
+      const linkPattern = /<a[^>]*href="(https?:\/\/[^"]+)"[^>]*title="([^"]{8,200})"[^>]*>/gi;
+      while ((match = linkPattern.exec(html)) !== null) {
+        const url = match[1];
+        const title = this.cleanText(match[2]);
+        if (
+          this.isCarbonRelated(title) &&
+          this.isValidNewsUrl(url)
+        ) {
+          const contextAfter = html.substring(match.index + match[0].length, match.index + match[0].length + 500);
+          articles.push({
+            id: `news-${Date.now()}-${Math.random().toString(36).substr(2, 6)}`,
+            title,
+            source: this.extractSourceFromContext(contextAfter, url),
+            date: this.extractDateFromContext(contextAfter),
+            url,
+            tags,
+          });
+        }
+      }
     }
 
-    return {
-      id: `news-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`,
-      title,
-      source: source.name,
-      date,
-      url,
-      summary,
-    };
+    return articles;
   }
 
   /**
    * 判断是否为碳相关资讯
    */
   private isCarbonRelated(title: string): boolean {
-    const keywords = ['碳', 'CEA', 'CCER', '碳市场', '碳普惠', '碳交易', '碳价', '碳排放', '低碳'];
-    return keywords.some(k => title.includes(k));
+    return CARBON_KEYWORDS.some((k) => title.includes(k));
   }
 
   /**
-   * 清理文本
+   * 从搜索结果上下文中提取来源
+   */
+  private extractSourceFromContext(context: string, articleUrl: string): string {
+    // 搜狗新闻结果中来源通常在特定标签内
+    const sourcePatterns = [
+      // 模式：<span class="...">来源名</span>
+      /<span[^>]*class="[^"]*(?:news-from|author|source)[^"]*"[^>]*>([^<]{2,30})<\/span>/i,
+      // 模式：直接文本 "来源：XXX"
+      /来源[：:]\s*([^\s<]{2,20})/,
+      // 模式：短文本 span
+      /<span[^>]*>([^<]{2,15})\s*\d{4}/,
+    ];
+
+    for (const pattern of sourcePatterns) {
+      const match = context.match(pattern);
+      if (match) {
+        const source = match[1].trim().replace(/&nbsp;/g, '').replace(/\s+/g, '');
+        if (source.length >= 2 && source.length <= 20) {
+          return source;
+        }
+      }
+    }
+
+    return this.extractSourceFromUrl(articleUrl);
+  }
+
+  /**
+   * 从 URL 推断来源
+   */
+  private extractSourceFromUrl(url: string): string {
+    const domainMap: Record<string, string> = {
+      'mee.gov.cn': '生态环境部',
+      'gov.cn': '政府网站',
+      'people.com.cn': '人民网',
+      'xinhuanet.com': '新华网',
+      'chinanews.com': '中国新闻网',
+      'bjnews.com.cn': '新京报',
+      'thepaper.cn': '澎湃新闻',
+      'caixin.com': '财新网',
+      'cnstock.com': '中国证券网',
+      'stcn.com': '证券时报',
+      'tanjiaoyi.com': '中国碳交易网',
+      'tanpaifang.com': '碳道',
+      'ccn.ac.cn': '中国碳中和网',
+      'cneeex.com': '上海环交所',
+      'bjet.com.cn': '北京绿交所',
+      'cets.org.cn': '广州碳交所',
+      'hbets.cn': '湖北碳交中心',
+      'sina.com.cn': '新浪',
+      '163.com': '网易',
+      'sohu.com': '搜狐',
+      'qq.com': '腾讯',
+      'ifeng.com': '凤凰网',
+    };
+
+    try {
+      const hostname = new URL(url).hostname;
+      for (const [domain, name] of Object.entries(domainMap)) {
+        if (hostname.includes(domain)) return name;
+      }
+      const parts = hostname.split('.');
+      return parts.length >= 2 ? parts.slice(-2).join('.') : hostname;
+    } catch {
+      return '网络媒体';
+    }
+  }
+
+  /**
+   * 从搜索结果上下文中提取日期
+   */
+  private extractDateFromContext(context: string): string {
+    const today = new Date();
+
+    const datePatterns = [
+      // YYYY-MM-DD 或 YYYY/MM/DD
+      /(\d{4})[-/](\d{1,2})[-/](\d{1,2})/,
+      // YYYY年MM月DD日
+      /(\d{4})年(\d{1,2})月(\d{1,2})日/,
+      // X分钟前 / X小时前
+      /(\d+)\s*分钟前/,
+      /(\d+)\s*小时前/,
+      // 今天 / 昨天
+      /今天/,
+      /昨天/,
+    ];
+
+    for (const pattern of datePatterns) {
+      const match = context.match(pattern);
+      if (match) {
+        if (match[0].includes('分钟前') || match[0].includes('小时前') || match[0].includes('今天')) {
+          return today.toISOString().split('T')[0];
+        }
+        if (match[0].includes('昨天')) {
+          const yesterday = new Date(today.getTime() - 86400000);
+          return yesterday.toISOString().split('T')[0];
+        }
+        if (match[1] && match[2] && match[3]) {
+          const year = parseInt(match[1]);
+          if (year >= 2020 && year <= 2030) {
+            const month = match[2].padStart(2, '0');
+            const day = match[3].padStart(2, '0');
+            return `${match[1]}-${month}-${day}`;
+          }
+        }
+      }
+    }
+
+    return today.toISOString().split('T')[0];
+  }
+
+  /**
+   * 检查 URL 是否为有效新闻链接
+   */
+  private isValidNewsUrl(url: string): boolean {
+    if (!url || url.length < 10) return false;
+    const excludePatterns = [
+      'javascript:',
+      'sogou.com',
+      '#',
+      'void(0)',
+      'login',
+      'register',
+      'passport.',
+      'account.',
+    ];
+    return url.startsWith('http') && !excludePatterns.some((p) => url.includes(p));
+  }
+
+  /**
+   * 解析 URL（处理相对路径和协议相对 URL）
+   */
+  private resolveUrl(url: string): string {
+    if (url.startsWith('http')) return url;
+    if (url.startsWith('//')) return `https:${url}`;
+    return url;
+  }
+
+  /**
+   * 清理 HTML 文本
    */
   private cleanText(text: string): string {
     return text
-      .replace(/<[^>]+>/g, '') // 移除HTML标签
-      .replace(/\s+/g, ' ')
-      .replace(/&nbsp;/g, '')
+      .replace(/<[^>]+>/g, '')
+      .replace(/&nbsp;/g, ' ')
       .replace(/&lt;/g, '<')
       .replace(/&gt;/g, '>')
       .replace(/&amp;/g, '&')
+      .replace(/&quot;/g, '"')
+      .replace(/&#39;/g, "'")
+      .replace(/\s+/g, ' ')
       .trim();
   }
 
   /**
-   * 标准化日期
+   * 去重并按日期排序
    */
-  private normalizeDate(dateStr: string): string {
-    const match = dateStr.match(/(\d{4})[年\-/](\d{2})[月\-/](\d{2})/);
-    if (match) {
-      return `${match[1]}-${match[2]}-${match[3]}`;
-    }
-    return new Date().toISOString().split('T')[0];
-  }
+  private deduplicateAndSort(news: NewsDetailData[]): NewsDetailData[] {
+    const seen = new Map<string, NewsDetailData>();
 
-  /**
-   * 按日期排序
-   */
-  private sortByDate(news: NewsDetailData[]): NewsDetailData[] {
-    return news.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+    for (const item of news) {
+      // 按标题去重（去除空格和标点后比较）
+      const key = item.title.replace(/[\s，。、；：""''（）【】！？·…—\-,.\[\]()!?]/g, '');
+      if (!seen.has(key)) {
+        seen.set(key, item);
+      } else {
+        // 已存在同标题的，合并 tags
+        const existing = seen.get(key)!;
+        const mergedTags = [...new Set([...existing.tags, ...item.tags])];
+        seen.set(key, { ...existing, tags: mergedTags });
+      }
+    }
+
+    return [...seen.values()].sort(
+      (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
+    );
   }
 }
 
