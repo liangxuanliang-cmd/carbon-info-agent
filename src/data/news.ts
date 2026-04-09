@@ -301,6 +301,34 @@ export const news: NewsItem[] = [
     url: 'http://www.tanpaifang.com/tanjinrong/list_1_2.html',
     tags: ['碳市场', '碳交易'],
   },
+  // ===== 每日搜索自动发现 (2026-04-09) =====
+  {
+    id: 'search-20260409-001',
+    title: '绿色金融 | 碳市场碳金融月报(2026年3月)',
+    summary: '绿色金融 | 碳市场碳金融月报(2026年3月)',
+    source: '搜狐',
+    publishDate: '2026-04-09',
+    url: 'https://www.sohu.com/a/1007067551_121123881',
+    tags: ['碳普惠'],
+  },
+  {
+    id: 'search-20260409-002',
+    title: '2026生物质发电政策大礼包:掺烧、CCER、绿电、国债……一文看懂',
+    summary: '2026生物质发电政策大礼包:掺烧、CCER、绿电、国债……一文看懂',
+    source: 'toutiao.com',
+    publishDate: '2026-04-09',
+    url: 'https://www.toutiao.com/article/7626282595050897961/',
+    tags: ['CCER'],
+  },
+  {
+    id: 'search-20260409-003',
+    title: '【CEA】全国碳市场每日综合价格行情及成交信息20260409',
+    summary: '【CEA】全国碳市场每日综合价格行情及成交信息20260409',
+    source: 'com.cn',
+    publishDate: '2026-04-09',
+    url: 'http://goodsfu.10jqka.com.cn/20260409/c675874165.shtml',
+    tags: ['全国碳市场'],
+  },
 ];
 
 // 获取最近的新闻
