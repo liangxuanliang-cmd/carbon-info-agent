@@ -329,6 +329,52 @@ export const news: NewsItem[] = [
     url: 'http://goodsfu.10jqka.com.cn/20260409/c675874165.shtml',
     tags: ['全国碳市场'],
   },
+  // ===== 每日搜索自动发现 (2026-04-10) =====
+  {
+    id: 'search-20260410-001',
+    title: '30家企业共购买降碳产品近38万吨',
+    summary: '30家企业共购买降碳产品近38万吨',
+    source: 'hebnews.cn',
+    publishDate: '2026-04-10',
+    url: 'https://hbrb.hebnews.cn/pc/paper/c/202308/24/content_197268.html',
+    tags: ['碳普惠'],
+  },
+  {
+    id: 'search-20260410-002',
+    title: '河北降碳产品开发核证总规模累计达到510万吨',
+    summary: '河北降碳产品开发核证总规模累计达到510万吨',
+    source: 'hebnews.cn',
+    publishDate: '2026-04-10',
+    url: 'https://hbrb.hebnews.cn/pc/paper/c/202307/13/content_191605.html',
+    tags: ['碳普惠'],
+  },
+  {
+    id: 'search-20260410-003',
+    title: '北京环境交易所:新能源电力企业和新能源汽车如何参与碳市场',
+    summary: '北京环境交易所:新能源电力企业和新能源汽车如何参与碳市场',
+    source: 'com.cn',
+    publishDate: '2026-04-02',
+    url: 'http://news.cnpc.com.cn/epaper/sysb/20220817/0154522004.htm',
+    tags: ['碳市场', '碳交易', 'CCER'],
+  },
+  {
+    id: 'search-20260410-004',
+    title: '第二届全球碳信用市场发展论坛在澳门举行 携手共建碳市场新未来',
+    summary: '第二届全球碳信用市场发展论坛在澳门举行 携手共建碳市场新未来',
+    source: '碳道',
+    publishDate: '2026-03-28',
+    url: 'http://www.tanpaifang.com/huiyi/list_21_2.html',
+    tags: ['碳市场', '碳交易'],
+  },
+  {
+    id: 'search-20260410-005',
+    title: '全国温室气体自愿减排交易CCER市场自启动以来取得了哪些进展和成...',
+    summary: '全国温室气体自愿减排交易CCER市场自启动以来取得了哪些进展和成...',
+    source: '碳道',
+    publishDate: '2026-01-11',
+    url: 'http://www.tanpaifang.com/ccer/list_48_2.html',
+    tags: ['碳市场', '碳交易', '碳普惠', 'CCER', '全国碳市场'],
+  },
 ];
 
 // 获取最近的新闻
