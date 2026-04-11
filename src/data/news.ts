@@ -375,6 +375,16 @@ export const news: NewsItem[] = [
     url: 'http://www.tanpaifang.com/ccer/list_48_2.html',
     tags: ['碳市场', '碳交易', '碳普惠', 'CCER', '全国碳市场'],
   },
+  // ===== 每日搜索自动发现 (2026-04-11) =====
+  {
+    id: 'search-20260411-001',
+    title: '【学习强国】报道——乌钢正式纳入全国碳排放权交易市场',
+    summary: '【学习强国】报道——乌钢正式纳入全国碳排放权交易市场',
+    source: '腾讯',
+    publishDate: '2026-04-11',
+    url: 'https://new.qq.com/rain/a/20260411A031H700',
+    tags: ['碳市场', '碳交易', '全国碳市场'],
+  },
 ];
 
 // 获取最近的新闻
