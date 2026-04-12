@@ -385,6 +385,16 @@ export const news: NewsItem[] = [
     url: 'https://new.qq.com/rain/a/20260411A031H700',
     tags: ['碳市场', '碳交易', '全国碳市场'],
   },
+  // ===== 每日搜索自动发现 (2026-04-12) =====
+  {
+    id: 'search-20260412-001',
+    title: '四川首个CCER造林碳汇项目成功登记,它来自一个牧区草原县',
+    summary: '四川首个CCER造林碳汇项目成功登记,它来自一个牧区草原县',
+    source: 'newssc.org',
+    publishDate: '2026-04-12',
+    url: 'https://scnews.newssc.org/system/20260412/001604355.html',
+    tags: ['CCER'],
+  },
 ];
 
 // 获取最近的新闻

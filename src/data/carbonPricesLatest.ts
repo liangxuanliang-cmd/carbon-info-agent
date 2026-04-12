@@ -1,4 +1,8 @@
-// 自动生成的碳价数据 - 更新时间: 2026-04-11 22:00:23
+import type { PriceRecord } from '../types';
+import { CARBON_PRODUCTS_META } from '../utils/constants';
+import dayjs from 'dayjs';
+
+// 自动生成的碳价数据 - 更新时间: 2026-04-12 22:03:08
 // 数据来源: 百度搜索
 
 // 最新碳价数据
@@ -8,7 +12,7 @@ export const latestPrices = [
     name: '全国碳市场CEA',
     price: 79.5,
     change: 0,
-    date: '2026-04-11',
+    date: '2026-04-12',
     source: '百度搜索',
   },
   {
@@ -16,7 +20,7 @@ export const latestPrices = [
     name: 'CCER',
     price: 98,
     change: 0,
-    date: '2026-04-11',
+    date: '2026-04-12',
     source: '百度搜索',
   },
   {
@@ -24,7 +28,7 @@ export const latestPrices = [
     name: '北京碳配额BEA',
     price: 80,
     change: 0,
-    date: '2026-04-11',
+    date: '2026-04-12',
     source: '百度搜索',
   },
 ];
