@@ -395,6 +395,25 @@ export const news: NewsItem[] = [
     url: 'https://scnews.newssc.org/system/20260412/001604355.html',
     tags: ['CCER'],
   },
+  // ===== 每日搜索自动发现 (2026-04-13) =====
+  {
+    id: 'search-20260413-001',
+    title: '碳价淡季不淡，企业碳资产管理发力',
+    summary: '碳价淡季不淡，企业碳资产管理发力',
+    source: '腾讯',
+    publishDate: '2026-04-13',
+    url: 'https://view.inews.qq.com/a/20260413A05H8700?scene=qqsearch',
+    tags: ['碳市场', '碳交易'],
+  },
+  {
+    id: 'search-20260413-002',
+    title: '四川首个CCER造林碳汇项目成功登记,它来自一个牧区草原县丨县域...',
+    summary: '四川首个CCER造林碳汇项目成功登记,它来自一个牧区草原县丨县域...',
+    source: 'com.cn',
+    publishDate: '2026-04-13',
+    url: 'https://cbgc.scol.com.cn/news/7483334',
+    tags: ['CCER'],
+  },
 ];
 
 // 获取最近的新闻
