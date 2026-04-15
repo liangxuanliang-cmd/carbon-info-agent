@@ -505,6 +505,34 @@ export const news: NewsItem[] = [
     url: 'http://www.sinopecnews.com.cn/xnews/content/2026-04/13/content_7145591.html',
     tags: ['全国碳市场'],
   },
+  // ===== 每日搜索自动发现 (2026-04-15) =====
+  {
+    id: 'search-20260415-001',
+    title: '对话澳门国际碳排放交易所总经理孟萌：全球碳市场迈入“软连接时代”，澳门如何走向定价参与者？',
+    summary: '对话澳门国际碳排放交易所总经理孟萌：全球碳市场迈入“软连接时代”，澳门如何走向定价参与者？',
+    source: '新浪财经在全球气候治理持续推进的背景下,',
+    publishDate: '2026-04-15',
+    url: 'https://view.inews.qq.com/a/20260415A03D0500?scene=qqsearch',
+    tags: ['碳市场', '碳交易'],
+  },
+  {
+    id: 'search-20260415-002',
+    title: '打造应对气候变化“北京样板” 推动首都绿色低碳转型',
+    summary: '打造应对气候变化“北京样板” 推动首都绿色低碳转型',
+    source: '碳道',
+    publishDate: '2026-04-15',
+    url: 'http://www.tanpaifang.com/tanguihua/2026/0415/117679.html',
+    tags: ['碳普惠'],
+  },
+  {
+    id: 'search-20260415-003',
+    title: '恩施州首批“鄂林碳票”在建始发行',
+    summary: '恩施州首批“鄂林碳票”在建始发行',
+    source: 'enshi.cn',
+    publishDate: '2026-04-15',
+    url: 'http://www.enshi.cn/2026/0415/1252360.shtml',
+    tags: ['碳普惠'],
+  },
 ];
 
 // 获取最近的新闻
