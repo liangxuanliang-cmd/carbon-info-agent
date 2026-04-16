@@ -533,6 +533,34 @@ export const news: NewsItem[] = [
     url: 'http://www.enshi.cn/2026/0415/1252360.shtml',
     tags: ['碳普惠'],
   },
+  // ===== 每日搜索自动发现 (2026-04-16) =====
+  {
+    id: 'search-20260416-001',
+    title: '第一财经研究院碳市场月报：生态环境法典出台，多地推进碳市场相关工作 | 碳看',
+    summary: '第一财经研究院碳市场月报：生态环境法典出台，多地推进碳市场相关工作 | 碳看',
+    source: '腾讯',
+    publishDate: '2026-04-16',
+    url: 'https://view.inews.qq.com/a/20260416A03P5E00?scene=qqsearch',
+    tags: ['碳市场', '碳交易'],
+  },
+  {
+    id: 'search-20260416-002',
+    title: '我国首个海洋CCER项目完成登记——蓝碳市场化发展开新局',
+    summary: '我国首个海洋CCER项目完成登记——蓝碳市场化发展开新局',
+    source: 'toutiao.com',
+    publishDate: '2026-04-16',
+    url: 'https://www.toutiao.com/article/7628890675123192347/',
+    tags: ['CCER'],
+  },
+  {
+    id: 'search-20260416-003',
+    title: '北京碳市场累计交易总量超过6400万吨',
+    summary: '北京碳市场累计交易总量超过6400万吨',
+    source: 'ce.cn',
+    publishDate: '2026-04-16',
+    url: 'http://www.ce.cn/xwzx/gnsz/gdxw/202604/t20260416_2909183.shtml',
+    tags: ['全国碳市场'],
+  },
 ];
 
 // 获取最近的新闻
