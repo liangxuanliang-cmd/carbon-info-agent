@@ -3,6 +3,7 @@
 <cite>
 **本文档中引用的文件**
 - [vercel.json](file://vercel.json)
+- [.vercel/project.json](file://.vercel/project.json)
 - [netlify.toml](file://netlify.toml)
 - [package.json](file://package.json)
 - [vite.config.ts](file://vite.config.ts)
@@ -20,6 +21,13 @@
 - [eslint.config.js](file://eslint.config.js)
 </cite>
 
+## 更新摘要
+**所做更改**
+- 更新了Vercel项目配置中的项目名称和标识符
+- 更新了GitHub Actions工作流中的网站URL配置
+- 更新了项目名称相关的所有配置文件引用
+- 修正了部署配置文档中的项目名称一致性
+
 ## 目录
 1. [简介](#简介)
 2. [项目结构概览](#项目结构概览)
@@ -34,6 +42,8 @@
 ## 简介
 
 这是一个基于现代前端技术栈构建的碳普惠资讯平台，采用React + TypeScript + Vite + TailwindCSS技术组合。项目实现了完整的自动化数据更新和部署流水线，支持多平台部署（Vercel和Netlify），并通过GitHub Actions实现定时数据抓取和日报发送功能。
+
+**更新** 项目现已完成品牌重塑，项目名称从 `carbonhub` 更新为 `carbon-info-agent`，所有相关配置文件均已同步更新。
 
 ## 项目结构概览
 
@@ -108,8 +118,11 @@ G --> A
 - Node版本控制：固定使用Node.js 20
 - 重定向规则：支持SPA路由重写
 
+**更新** Vercel项目配置现已更新为新的项目名称 `carbon-info-agent`，确保与品牌重塑保持一致。
+
 **章节来源**
 - [vercel.json:1-43](file://vercel.json#L1-L43)
+- [.vercel/project.json:1-1](file://.vercel/project.json#L1-L1)
 - [netlify.toml:1-12](file://netlify.toml#L1-L12)
 - [package.json:6-14](file://package.json#L6-L14)
 
@@ -401,11 +414,17 @@ K --> A
 - 检查`vercel.json`配置是否正确
 - 确认Node.js版本兼容性
 - 验证构建命令和输出目录设置
+- **更新** 确认项目名称已更新为 `carbon-info-agent`
 
 **Netlify部署异常**
 - 确认`netlify.toml`配置格式正确
 - 检查Node.js版本设置
 - 验证构建命令权限
+
+**GitHub Actions部署问题**
+- 检查工作流文件中的网站URL配置
+- 确认部署凭证和权限设置
+- 验证构建环境和依赖安装
 
 ### 数据更新问题
 
@@ -433,4 +452,4 @@ K --> A
 4. **性能优化完善**: 多层次的性能优化策略
 5. **可扩展架构设计**: 清晰的模块划分和接口设计
 
-通过合理的架构设计和技术选型，项目实现了高效、稳定、可维护的现代化部署配置，为类似项目提供了优秀的参考模板。
+**更新** 项目已完成品牌重塑，所有配置文件均已完成更新，确保项目名称一致性。通过合理的架构设计和技术选型，项目实现了高效、稳定、可维护的现代化部署配置，为类似项目提供了优秀的参考模板。

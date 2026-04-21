@@ -4,12 +4,12 @@
  */
 
 import { useMemo } from 'react';
-import { FileText, TrendingUp, Calculator, Newspaper, ArrowUpRight, ArrowDownRight } from 'lucide-react';
+import { FileText, TrendingUp, Calculator, Newspaper, BarChart3, Briefcase, Wrench, Leaf, ArrowUpRight, ArrowDownRight } from 'lucide-react';
 import { policies } from '../data/policies';
 import { getLatestPrices } from '../data/carbonPrices';
 
 interface HomeDashboardProps {
-  onNavigate: (tab: 'policy' | 'price' | 'calculator' | 'news') => void;
+  onNavigate: (tab: 'policy' | 'price' | 'calculator' | 'c12bi' | 'business' | 'tools' | 'aliesg' | 'news') => void;
 }
 
 // 获取今日CCER价格
@@ -127,6 +127,10 @@ export default function HomeDashboard({ onNavigate }: HomeDashboardProps) {
     { key: 'price' as const, label: '碳价汇总', icon: TrendingUp, color: 'bg-blue-500' },
     { key: 'policy' as const, label: '政策汇总', icon: FileText, color: 'bg-green-500' },
     { key: 'calculator' as const, label: '碳量计算器', icon: Calculator, color: 'bg-orange-500' },
+    { key: 'c12bi' as const, label: '数据看板', icon: BarChart3, color: 'bg-cyan-500' },
+    { key: 'business' as const, label: '商务素材', icon: Briefcase, color: 'bg-amber-500' },
+    { key: 'tools' as const, label: '小工具', icon: Wrench, color: 'bg-gray-500' },
+    { key: 'aliesg' as const, label: '阿里ESG', icon: Leaf, color: 'bg-emerald-500' },
     { key: 'news' as const, label: '每日资讯', icon: Newspaper, color: 'bg-purple-500' },
   ];
 
@@ -146,10 +150,10 @@ export default function HomeDashboard({ onNavigate }: HomeDashboardProps) {
         {/* 标题 */}
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            碳普惠资讯服务平台
+            高德绿色出行碳普惠AI智能体
           </h1>
           <p className="text-white/60 text-lg">
-            Carbon Inclusive Information Service Platform
+            Amap Green Mobility Carbon Inclusive AI Agent
           </p>
         </div>
 
@@ -192,7 +196,7 @@ export default function HomeDashboard({ onNavigate }: HomeDashboardProps) {
           <h2 className="text-white/80 text-lg font-medium mb-6 text-center">
             功能模块
           </h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
             {modules.map((module) => (
               <ModuleButton
                 key={module.key}
