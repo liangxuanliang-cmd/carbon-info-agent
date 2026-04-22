@@ -1,7 +1,3 @@
-import type { PriceRecord } from '../types';
-import { CARBON_PRODUCTS_META } from '../utils/constants';
-import dayjs from 'dayjs';
-
 // 自动生成的碳价数据 - 更新时间: 2026-04-21 23:09:04
 // 数据来源: 百度搜索
 

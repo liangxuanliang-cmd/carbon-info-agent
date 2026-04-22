@@ -4,10 +4,14 @@
 **本文档引用的文件**
 - [App.tsx](file://src/App.tsx)
 - [HomeDashboard.tsx](file://src/sections/HomeDashboard.tsx)
+- [AlibabaEsgSection.tsx](file://src/sections/AlibabaEsgSection.tsx)
 - [PolicySection.tsx](file://src/sections/PolicySection.tsx)
 - [CarbonPriceSection.tsx](file://src/sections/CarbonPriceSection.tsx)
 - [CalculatorSection.tsx](file://src/sections/CalculatorSection.tsx)
 - [NewsSection.tsx](file://src/sections/NewsSection.tsx)
+- [BusinessMaterialsSection.tsx](file://src/sections/BusinessMaterialsSection.tsx)
+- [C12BISection.tsx](file://src/sections/C12BISection.tsx)
+- [ToolsSection.tsx](file://src/sections/ToolsSection.tsx)
 - [policies.ts](file://src/data/policies.ts)
 - [carbonPrices.ts](file://src/data/carbonPrices.ts)
 - [emissionFactors.ts](file://src/data/emissionFactors.ts)
@@ -21,11 +25,11 @@
 
 ## 更新摘要
 **所做更改**
-- 移除了所有关于AlibabaEsgSection组件的内容
-- 更新了项目结构图以反映当前的模块布局
-- 移除了ESG相关的数据模型和架构描述
-- 更新了应用导航和模块列表
-- 删除了ESG相关的故障排除指南
+- 新增AlibabaEsgSection组件的完整文档内容
+- 更新项目结构图以包含ESG模块
+- 添加ESG模块的详细组件分析和架构说明
+- 更新应用导航和模块列表，包含阿里ESG模块
+- 重新引入ESG相关的故障排除指南
 
 ## 目录
 1. [简介](#简介)
@@ -40,11 +44,11 @@
 
 ## 简介
 
-阿里巴巴ESG模块是高德绿色出行碳普惠AI智能体项目中的一个重要组成部分，专门用于展示和管理阿里巴巴集团的环境、社会及治理（ESG）相关信息。该模块提供了一个直观的界面，让用户能够轻松访问阿里巴巴的ESG报告和相关信息。
+阿里巴巴ESG模块是高德绿色出行碳普惠AI智能体项目中的重要组成部分，专门用于展示和管理阿里巴巴集团的环境、社会及治理（ESG）相关信息。该模块提供了一个直观的界面，让用户能够轻松访问阿里巴巴的ESG报告和相关信息。
 
 该项目是一个基于React + TypeScript + Vite构建的现代化前端应用，专注于碳普惠和ESG数据的展示与分析。模块采用了组件化的设计理念，具有良好的可维护性和扩展性。
 
-**更新** 该模块已在当前版本中移除，项目现已专注于碳普惠政策、碳价数据、碳量计算和新闻资讯等核心功能模块。
+**更新** 阿里巴巴ESG模块已在当前版本中恢复并集成，为用户提供阿里巴巴集团ESG报告门户的直接访问功能，增强了应用的企业社会责任信息披露能力。
 
 ## 项目结构
 
@@ -62,6 +66,10 @@ Policy[PolicySection.tsx]
 Price[CarbonPriceSection.tsx]
 Calc[CalculatorSection.tsx]
 News[NewsSection.tsx]
+ESG[AlibabaEsgSection.tsx]
+Business[BusinessMaterialsSection.tsx]
+C12BI[C12BISection.tsx]
+Tools[ToolsSection.tsx]
 end
 subgraph "数据层"
 Policies[policies.ts]
@@ -80,6 +88,10 @@ HomeDashboard --> Policy
 HomeDashboard --> Price
 HomeDashboard --> Calc
 HomeDashboard --> News
+HomeDashboard --> ESG
+HomeDashboard --> Business
+HomeDashboard --> C12BI
+HomeDashboard --> Tools
 Policy --> Policies
 Price --> Prices
 Calc --> Methods
@@ -91,11 +103,11 @@ CalcUtils --> Types
 ```
 
 **图表来源**
-- [App.tsx:1-101](file://src/App.tsx#L1-L101)
-- [HomeDashboard.tsx:122-131](file://src/sections/HomeDashboard.tsx#L122-L131)
+- [App.tsx:1-113](file://src/App.tsx#L1-L113)
+- [HomeDashboard.tsx:1-222](file://src/sections/HomeDashboard.tsx#L1-L222)
 
 **章节来源**
-- [App.tsx:1-101](file://src/App.tsx#L1-L101)
+- [App.tsx:1-113](file://src/App.tsx#L1-L113)
 - [package.json:1-40](file://package.json#L1-L40)
 
 ## 核心组件
@@ -134,6 +146,34 @@ HomeDashboard --> MetricCard : "渲染"
 - [HomeDashboard.tsx:122-131](file://src/sections/HomeDashboard.tsx#L122-L131)
 - [HomeDashboard.tsx:98-120](file://src/sections/HomeDashboard.tsx#L98-L120)
 - [HomeDashboard.tsx:47-95](file://src/sections/HomeDashboard.tsx#L47-L95)
+
+### 阿里巴巴ESG模块组件
+
+AlibabaEsgSection组件提供阿里巴巴集团ESG报告门户的访问功能：
+
+```mermaid
+classDiagram
+class AlibabaEsgSection {
++render() JSX.Element
++handleNavigation() void
+}
+class SectionCard {
++title : string
++subtitle : string
++icon : ReactNode
++children : ReactNode
+}
+class ExternalLink {
++className : string
++size : number
+}
+AlibabaEsgSection --> SectionCard : "封装"
+AlibabaEsgSection --> ExternalLink : "使用"
+```
+
+**图表来源**
+- [AlibabaEsgSection.tsx:4-33](file://src/sections/AlibabaEsgSection.tsx#L4-L33)
+- [SectionCard.tsx:10-25](file://src/components/SectionCard.tsx#L10-L25)
 
 ### 数据模型定义
 
@@ -182,7 +222,8 @@ METHOD ||--o{ TRANSPORT_MODE : "包含"
 - [index.ts:1-65](file://src/types/index.ts#L1-L65)
 
 **章节来源**
-- [HomeDashboard.tsx:1-218](file://src/sections/HomeDashboard.tsx#L1-L218)
+- [HomeDashboard.tsx:1-222](file://src/sections/HomeDashboard.tsx#L1-L222)
+- [AlibabaEsgSection.tsx:1-34](file://src/sections/AlibabaEsgSection.tsx#L1-L34)
 - [index.ts:1-65](file://src/types/index.ts#L1-L65)
 
 ## 架构概览
@@ -197,6 +238,7 @@ Cards[SectionCard]
 Filters[TabFilter]
 Buttons[ModuleButton]
 Metrics[MetricCard]
+ESG[AlibabaEsgSection]
 end
 subgraph "业务逻辑层"
 Home[HomeDashboard]
@@ -204,6 +246,9 @@ Policy[PolicySection]
 Price[CarbonPriceSection]
 Calc[CalculatorSection]
 News[NewsSection]
+Business[BusinessMaterialsSection]
+C12BI[C12BISection]
+Tools[ToolsSection]
 end
 subgraph "数据层"
 Policies[policies.ts]
@@ -226,6 +271,10 @@ UI --> Policy
 UI --> Price
 UI --> Calc
 UI --> News
+UI --> ESG
+UI --> Business
+UI --> C12BI
+UI --> Tools
 Home --> Buttons
 Home --> Metrics
 Policy --> Filters
@@ -239,11 +288,9 @@ Methods --> Types
 ```
 
 **图表来源**
-- [App.tsx:35-89](file://src/App.tsx#L35-L89)
+- [App.tsx:43-112](file://src/App.tsx#L43-L112)
 - [HomeDashboard.tsx:122-131](file://src/sections/HomeDashboard.tsx#L122-L131)
-- [PolicySection.tsx:1-93](file://src/sections/PolicySection.tsx#L1-L93)
-- [CarbonPriceSection.tsx:1-42](file://src/sections/CarbonPriceSection.tsx#L1-L42)
-- [CalculatorSection.tsx:1-162](file://src/sections/CalculatorSection.tsx#L1-L162)
+- [AlibabaEsgSection.tsx:1-34](file://src/sections/AlibabaEsgSection.tsx#L1-L34)
 
 ## 详细组件分析
 
@@ -267,13 +314,36 @@ Dashboard->>User : 显示目标模块界面
 
 **图表来源**
 - [HomeDashboard.tsx:122-131](file://src/sections/HomeDashboard.tsx#L122-L131)
-- [App.tsx:38-41](file://src/App.tsx#L38-L41)
+- [App.tsx:46-49](file://src/App.tsx#L46-L49)
 
 组件特性：
 - 展示CCER价格、政策数量、方法学数量和已落地城市等核心指标
-- 提供四个主要功能模块的快捷导航
+- 提供八个主要功能模块的快捷导航，包括新增的阿里ESG模块
 - 响应式设计，适配不同屏幕尺寸
 - 无障碍访问支持
+
+### 阿里巴巴ESG模块功能
+
+AlibabaEsgSection组件提供阿里巴巴集团ESG报告门户的直接访问功能：
+
+```mermaid
+flowchart TD
+Start([用户访问ESG模块]) --> Card[渲染ESG卡片组件]
+Card --> Icon[显示叶子图标]
+Icon --> Content[显示ESG相关信息]
+Content --> Link[创建外部链接]
+Link --> Redirect[跳转到阿里巴巴ESG页面]
+Redirect --> End([完成导航])
+```
+
+**图表来源**
+- [AlibabaEsgSection.tsx:4-33](file://src/sections/AlibabaEsgSection.tsx#L4-L33)
+
+功能特性：
+- 提供阿里巴巴集团ESG报告的直接访问链接
+- 使用绿色主题设计，体现环保理念
+- 包含外部链接图标，明确标识为第三方跳转
+- 响应式布局，适配各种屏幕尺寸
 
 ### 碳价数据处理
 
@@ -300,10 +370,6 @@ Seed --> Generate
 - 使用线性同余生成器确保数据一致性
 - 自动计算价格变化量
 - 支持国内和国际市场的价格对比
-
-**章节来源**
-- [HomeDashboard.tsx:16-22](file://src/sections/HomeDashboard.tsx#L16-L22)
-- [carbonPrices.ts:1-119](file://src/data/carbonPrices.ts#L1-L119)
 
 ### 减排量计算引擎
 
@@ -333,6 +399,9 @@ Formula --> Result
 - 实时计算和结果显示
 
 **章节来源**
+- [AlibabaEsgSection.tsx:1-34](file://src/sections/AlibabaEsgSection.tsx#L1-L34)
+- [HomeDashboard.tsx:16-22](file://src/sections/HomeDashboard.tsx#L16-L22)
+- [carbonPrices.ts:1-119](file://src/data/carbonPrices.ts#L1-L119)
 - [CalculatorSection.tsx:1-162](file://src/sections/CalculatorSection.tsx#L1-L162)
 - [calculator.ts:1-12](file://src/utils/calculator.ts#L1-L12)
 
@@ -347,16 +416,17 @@ React[react@^19.2.4]
 ReactDOM[react-dom@^19.2.4]
 Lucide[lucide-react@^0.577.0]
 DayJS[dayjs@^1.11.20]
+Tailwind[tailwindcss@^4.2.2]
+Recharts[recharts@^3.8.0]
 end
 subgraph "开发依赖"
 Vite[vite@^8.0.1]
 TS[typescript@~5.9.3]
-Tailwind[tailwindcss@^4.2.2]
-Recharts[recharts@^3.8.0]
 end
 subgraph "应用模块"
 App[App.tsx]
 Home[HomeDashboard]
+ESG[AlibabaEsgSection]
 Utils[utils/]
 Data[data/]
 Components[components/]
@@ -364,8 +434,10 @@ end
 React --> App
 ReactDOM --> App
 Lucide --> App
+Lucide --> ESG
 DayJS --> App
 App --> Home
+App --> ESG
 App --> Utils
 App --> Data
 App --> Components
@@ -405,10 +477,10 @@ Recharts --> Charts[图表组件]
 
 ### 常见问题及解决方案
 
-**数据加载失败**
-- 确认API端点可用性
-- 检查跨域请求配置
-- 验证数据格式正确性
+**ESG模块无法访问**
+- 确认网络连接正常
+- 检查阿里巴巴ESG页面的可用性
+- 验证外部链接的正确性
 
 **组件渲染异常**
 - 检查React版本兼容性
@@ -420,6 +492,11 @@ Recharts --> Charts[图表组件]
 - 验证模块导入路径
 - 确认组件导出正确性
 
+**外部链接跳转问题**
+- 确认target="_blank"属性设置
+- 检查rel="noopener noreferrer"的安全设置
+- 验证href属性的正确性
+
 ### 调试工具
 
 1. **React Developer Tools**：检查组件树和状态
@@ -427,7 +504,8 @@ Recharts --> Charts[图表组件]
 3. **TypeScript编译器**：验证类型安全性
 
 **章节来源**
-- [App.tsx:35-89](file://src/App.tsx#L35-L89)
+- [App.tsx:43-112](file://src/App.tsx#L43-L112)
+- [AlibabaEsgSection.tsx:20-28](file://src/sections/AlibabaEsgSection.tsx#L20-L28)
 
 ## 结论
 
@@ -438,9 +516,11 @@ Recharts --> Charts[图表组件]
 - **类型安全**：完整的TypeScript类型定义
 - **响应式布局**：适配多设备访问体验
 - **性能优化**：合理的状态管理和渲染优化
+- **企业级集成**：提供真实的ESG报告门户访问
 
 ### 功能特色
 - **核心指标展示**：提供碳普惠相关的关键数据指标
+- **ESG报告门户**：直接访问阿里巴巴集团ESG相关信息
 - **数据可视化**：支持碳价趋势和减排量计算
 - **用户友好**：直观的操作界面和交互设计
 - **扩展性强**：易于添加新的功能模块和数据源
@@ -448,4 +528,4 @@ Recharts --> Charts[图表组件]
 ### 发展前景
 该模块为未来的碳普惠数据集成和分析奠定了坚实基础，可以进一步扩展支持更多地区的碳普惠信息展示，以及更丰富的数据分析功能。通过持续的优化和改进，该模块将成为企业碳普惠信息披露和管理的重要工具。
 
-**更新** 由于ESG模块已被移除，当前版本专注于碳普惠政策、碳价数据、碳量计算和新闻资讯等核心功能模块，为用户提供更加聚焦和实用的碳普惠信息服务。
+**更新** 阿里巴巴ESG模块的恢复使应用具备了完整的企业社会责任信息披露能力，为用户提供了从政策、数据到企业报告的全方位碳普惠信息服务，增强了应用的专业性和完整性。

@@ -1,15 +1,50 @@
-import { useMemo } from 'react';
-import { Newspaper, ExternalLink, Calendar, Building2 } from 'lucide-react';
+import { useMemo, useState, useCallback } from 'react';
+import { Newspaper, ExternalLink, Calendar, Building2, RefreshCw } from 'lucide-react';
 import SectionCard from '../components/SectionCard';
-import { news } from '../data/news';
+import { news as staticNews } from '../data/news';
 import type { NewsItem } from '../types';
 import dayjs from 'dayjs';
 
 export default function NewsSection() {
+  const [isRefreshing, setIsRefreshing] = useState(false);
+  const [newsData, setNewsData] = useState<NewsItem[]>(staticNews);
+  const [lastRefreshTime, setLastRefreshTime] = useState<string | null>(null);
+
+  // 手动刷新资讯
+  const handleRefresh = useCallback(async () => {
+    setIsRefreshing(true);
+    try {
+      // 动态导入爬虫脚本并执行
+      const { fetchNewsDetails } = await import('../../scripts/crawler/newsDetailCrawler');
+      const newNews = await fetchNewsDetails();
+      
+      if (newNews.length > 0) {
+        // 转换爬虫数据为NewsItem格式
+        const convertedNews: NewsItem[] = newNews.map((n, i) => ({
+          id: `refresh-${Date.now()}-${i}`,
+          title: n.title,
+          summary: n.summary || n.title,
+          source: n.source,
+          publishDate: n.date,
+          url: n.url,
+          tags: n.tags,
+        }));
+        
+        setNewsData(convertedNews);
+        setLastRefreshTime(dayjs().format('HH:mm:ss'));
+      }
+    } catch (error) {
+      console.error('刷新资讯失败:', error);
+      alert('刷新失败，请检查网络连接');
+    } finally {
+      setIsRefreshing(false);
+    }
+  }, []);
+
   // 按日期分组显示
   const groupedNews = useMemo(() => {
     const groups: Record<string, NewsItem[]> = {};
-    news.forEach((item: NewsItem) => {
+    newsData.forEach((item: NewsItem) => {
       if (!groups[item.publishDate]) {
         groups[item.publishDate] = [];
       }
@@ -19,13 +54,23 @@ export default function NewsSection() {
     return Object.entries(groups).sort((a, b) => 
       dayjs(b[0]).valueOf() - dayjs(a[0]).valueOf()
     );
-  }, []);
+  }, [newsData]);
 
   return (
     <SectionCard
       title={'每日资讯'}
-      subtitle={`碳普惠与碳市场最新动态 · 共 ${news.length} 条资讯`}
+      subtitle={`碳普惠与碳市场最新动态 · 共 ${newsData.length} 条资讯${lastRefreshTime ? ` · 最后刷新: ${lastRefreshTime}` : ''}`}
       icon={<Newspaper className="w-5 h-5" />}
+      extra={
+        <button
+          onClick={handleRefresh}
+          disabled={isRefreshing}
+          className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-primary border border-primary rounded-lg hover:bg-primary hover:text-white transition-all disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
+        >
+          <RefreshCw className={`w-3.5 h-3.5 ${isRefreshing ? 'animate-spin' : ''}`} />
+          {isRefreshing ? '刷新中...' : '手动刷新'}
+        </button>
+      }
     >
       {/* 资讯列表 */}
       <div className="space-y-6">

@@ -1,10 +1,9 @@
 import { useState } from 'react';
-import { FileText, TrendingUp, Calculator, Newspaper, Home, BarChart3, Briefcase, Wrench, Leaf } from 'lucide-react';
+import { FileText, TrendingUp, Newspaper, Home, BarChart3, Briefcase, Wrench, Leaf } from 'lucide-react';
 import Header from './components/Header';
 import HomeDashboard from './sections/HomeDashboard';
 import PolicySection from './sections/PolicySection';
 import CarbonPriceSection from './sections/CarbonPriceSection';
-import CalculatorSection from './sections/CalculatorSection';
 import NewsSection from './sections/NewsSection';
 import C12BISection from './sections/C12BISection';
 import BusinessMaterialsSection from './sections/BusinessMaterialsSection';
@@ -15,10 +14,9 @@ const TABS = [
   { key: 'home', label: '首页', icon: Home },
   { key: 'policy', label: '政策汇总', icon: FileText },
   { key: 'price', label: '碳价汇总', icon: TrendingUp },
-  { key: 'calculator', label: '碳量计算器', icon: Calculator },
   { key: 'c12bi', label: '数据看板', icon: BarChart3 },
-  { key: 'business', label: '商务素材', icon: Briefcase },
-  { key: 'tools', label: '小工具', icon: Wrench },
+  { key: 'business', label: '商务AI', icon: Briefcase },
+  { key: 'tools', label: '商务小工具', icon: Wrench },
   { key: 'aliesg', label: '阿里ESG', icon: Leaf },
   { key: 'news', label: '每日资讯', icon: Newspaper },
 ] as const;
@@ -92,7 +90,6 @@ export default function App() {
             
             {activeTab === 'policy' && <PolicySection />}
             {activeTab === 'price' && <CarbonPriceSection />}
-            {activeTab === 'calculator' && <CalculatorSection />}
             {activeTab === 'c12bi' && <C12BISection />}
             {activeTab === 'business' && <BusinessMaterialsSection />}
             {activeTab === 'tools' && <ToolsSection />}
@@ -104,7 +101,7 @@ export default function App() {
 
       {activeTab !== 'home' && (
         <footer className="bg-primary-dark text-blue-200 text-center text-xs py-4 border-t border-primary">
-          &copy; 2026 高德绿色出行碳普惠AI智能体 &middot; Amap Green Mobility Carbon Inclusive AI Agent
+          &copy; 2026 碳普惠BDSA智能体 &middot; Carbon Inclusive BDSA Intelligent Agent
         </footer>
       )}
     </div>

@@ -11,10 +11,10 @@ export default function Header() {
           </div>
           <div>
             <h1 className="text-xl font-bold tracking-wide m-0">
-              {'碳普惠资讯服务平台'}
+              {'碳普惠BDSA智能体'}
             </h1>
             <p className="text-sm text-blue-200 m-0">
-              Carbon Inclusive Information Service Platform
+              Carbon Inclusive BDSA Intelligent Agent
             </p>
           </div>
         </div>

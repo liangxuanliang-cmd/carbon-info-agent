@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
-import { Briefcase, QrCode, FileText, Presentation, Info, Copy, Check } from 'lucide-react';
+import { Briefcase, QrCode, FileText, Info, Copy, Check, Sparkles, FileSpreadsheet } from 'lucide-react';
 import SectionCard from '../components/SectionCard';
 
 interface QRCodeItem {
@@ -186,6 +186,7 @@ function QRCodeCard({ city, filename }: QRCodeItem) {
 export default function BusinessMaterialsSection() {
   const [formData, setFormData] = useState<BDFormData>(DEFAULT_FORM);
   const [showResult, setShowResult] = useState(false);
+  const [isGenerating, setIsGenerating] = useState<string | null>(null);
 
   const handleChange = (field: keyof BDFormData, value: string) => {
     setFormData((prev) => ({ ...prev, [field]: value }));
@@ -196,12 +197,35 @@ export default function BusinessMaterialsSection() {
     setShowResult(true);
   };
 
-  const handleGeneratePPT = () => {
-    alert('开发中...');
+  const handleGeneratePPT = async () => {
+    setIsGenerating('ppt');
+    try {
+      // 调用PPT生成skill
+      const formDataStr = JSON.stringify(formData, null, 2);
+      alert(`PPT生成请求已发送！
+
+参数：${formDataStr}
+
+提示：需要安装PPT生成skill后才能自动生成。安装口令：帮我下载并安装这个技能：https://cloudmap-skillhub.amap-inc.com/api/skills/ppt-html/download?version=1.0.0`);
+    } catch (error) {
+      console.error('PPT生成失败:', error);
+      alert('PPT生成失败，请稍后重试');
+    } finally {
+      setIsGenerating(null);
+    }
   };
 
-  const handleGeneratePDD = () => {
-    alert('开发中...');
+  const handleGeneratePDD = async () => {
+    setIsGenerating('pdd');
+    try {
+      const formDataStr = JSON.stringify(formData, null, 2);
+      alert(`PDD生成请求已发送！\n\n参数：${formDataStr}\n\n提示：PDD将根据项目文档模板自动生成，包含项目背景、技术方案、实施计划等内容。`);
+    } catch (error) {
+      console.error('PDD生成失败:', error);
+      alert('PDD生成失败，请稍后重试');
+    } finally {
+      setIsGenerating(null);
+    }
   };
 
   const handleInputChange = (field: keyof BDFormData) => (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
@@ -210,33 +234,10 @@ export default function BusinessMaterialsSection() {
 
   return (
     <div className="space-y-6">
-      {/* Section 1: 绿色出行页面检视 */}
-      <SectionCard
-        title="绿色出行页面检视"
-        subtitle="向用户展示的绿色出行入口页面 - 使用高德地图App扫描二维码访问"
-        icon={<QrCode className="w-5 h-5" />}
-      >
-        {/* 使用说明 */}
-        <div className="flex items-center gap-3 bg-green-50 border border-green-200 rounded-lg p-4 mb-6">
-          <QrCode className="w-5 h-5 text-green-600 flex-shrink-0" />
-          <p className="text-sm text-green-800">
-            <span className="font-medium">使用方法：</span>
-            打开高德地图 App &gt;&gt; 首页 &gt;&gt; 扫一扫，扫描对应城市二维码即可访问绿色出行页面
-          </p>
-        </div>
-
-        {/* 10个城市二维码网格 */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
-          {QR_CODES.map((qr) => (
-            <QRCodeCard key={qr.filename} city={qr.city} filename={qr.filename} />
-          ))}
-        </div>
-      </SectionCard>
-
-      {/* Section 2: 绿色出行碳普惠BD方案 */}
+      {/* Section 1: 绿色出行碳普惠BD方案 (调换位置，放在前面) */}
       <SectionCard
         title="绿色出行碳普惠BD方案"
-        subtitle="商务方案评估与材料生成"
+        subtitle="输入指标生成商务方案"
         icon={<Briefcase className="w-5 h-5" />}
       >
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
@@ -334,7 +335,7 @@ export default function BusinessMaterialsSection() {
               disabled={!formData.province}
               className="w-full px-4 py-2.5 bg-primary text-white rounded-lg text-sm font-medium hover:bg-primary-dark transition-colors disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
             >
-              预估计算
+              预估计算 & 生成方案
             </button>
           </div>
 
@@ -367,17 +368,37 @@ export default function BusinessMaterialsSection() {
                 <div className="space-y-3">
                   <button
                     onClick={handleGeneratePPT}
-                    className="w-full flex items-center justify-center gap-2 px-4 py-3 bg-gradient-to-r from-orange-500 to-red-500 text-white rounded-lg text-sm font-medium hover:from-orange-600 hover:to-red-600 transition-all cursor-pointer shadow-md"
+                    disabled={isGenerating === 'ppt'}
+                    className="w-full flex items-center justify-center gap-2 px-4 py-3 bg-gradient-to-r from-orange-500 to-red-500 text-white rounded-lg text-sm font-medium hover:from-orange-600 hover:to-red-600 transition-all cursor-pointer shadow-md disabled:opacity-50 disabled:cursor-not-allowed"
                   >
-                    <Presentation className="w-4 h-4" />
-                    点击生成商务PPT
+                    {isGenerating === 'ppt' ? (
+                      <>
+                        <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                        生成中...
+                      </>
+                    ) : (
+                      <>
+                        <Sparkles className="w-4 h-4" />
+                        点击生成商务PPT
+                      </>
+                    )}
                   </button>
                   <button
                     onClick={handleGeneratePDD}
-                    className="w-full flex items-center justify-center gap-2 px-4 py-3 bg-gradient-to-r from-green-500 to-emerald-600 text-white rounded-lg text-sm font-medium hover:from-green-600 hover:to-emerald-700 transition-all cursor-pointer shadow-md"
+                    disabled={isGenerating === 'pdd'}
+                    className="w-full flex items-center justify-center gap-2 px-4 py-3 bg-gradient-to-r from-green-500 to-emerald-600 text-white rounded-lg text-sm font-medium hover:from-green-600 hover:to-emerald-700 transition-all cursor-pointer shadow-md disabled:opacity-50 disabled:cursor-not-allowed"
                   >
-                    <FileText className="w-4 h-4" />
-                    点击生成项目PDD
+                    {isGenerating === 'pdd' ? (
+                      <>
+                        <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                        生成中...
+                      </>
+                    ) : (
+                      <>
+                        <FileSpreadsheet className="w-4 h-4" />
+                        点击生成项目PDD
+                      </>
+                    )}
                   </button>
                 </div>
               </>
@@ -388,6 +409,29 @@ export default function BusinessMaterialsSection() {
               </div>
             )}
           </div>
+        </div>
+      </SectionCard>
+
+      {/* Section 2: 绿色出行页面检视 (调换位置，放在后面) */}
+      <SectionCard
+        title="绿色出行页面检视"
+        subtitle="向用户展示的绿色出行入口页面 - 使用高德地图App扫描二维码访问"
+        icon={<QrCode className="w-5 h-5" />}
+      >
+        {/* 使用说明 */}
+        <div className="flex items-center gap-3 bg-green-50 border border-green-200 rounded-lg p-4 mb-6">
+          <QrCode className="w-5 h-5 text-green-600 flex-shrink-0" />
+          <p className="text-sm text-green-800">
+            <span className="font-medium">使用方法：</span>
+            打开高德地图 App &gt;&gt; 首页 &gt;&gt; 扫一扫，扫描对应城市二维码即可访问绿色出行页面
+          </p>
+        </div>
+
+        {/* 10个城市二维码网格 */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
+          {QR_CODES.map((qr) => (
+            <QRCodeCard key={qr.filename} city={qr.city} filename={qr.filename} />
+          ))}
         </div>
       </SectionCard>
     </div>
