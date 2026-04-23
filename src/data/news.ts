@@ -1071,6 +1071,43 @@ export const news: NewsItem[] = [
     url: 'http://finance.eastmoney.com/a/202604223714012314.html',
     tags: ['全国碳市场'],
   },
+  // ===== 每日搜索自动发现 (2026-04-23) =====
+  {
+    id: 'search-20260423-001',
+    title: '厦门完成首笔碳普惠核证减排量交易',
+    summary: '厦门完成首笔碳普惠核证减排量交易',
+    source: 'fjsen.com',
+    publishDate: '2026-04-23',
+    url: 'http://fjnews.fjsen.com/2026-04/23/content_32173642.htm',
+    tags: ['碳普惠'],
+  },
+  {
+    id: 'search-20260423-002',
+    title: '每一次低碳行为都能变现 ＂厦门碳普惠＂小程序上线试运行',
+    summary: '每一次低碳行为都能变现 ＂厦门碳普惠＂小程序上线试运行',
+    source: 'xmnn.cn',
+    publishDate: '2026-04-23',
+    url: 'https://www.xmnn.cn/news/xmxw/202604/t20260423_422598.html',
+    tags: ['碳普惠'],
+  },
+  {
+    id: 'search-20260423-003',
+    title: '“厦门碳普惠”小程序上线试运行',
+    summary: '“厦门碳普惠”小程序上线试运行',
+    source: 'taihainet.com',
+    publishDate: '2026-04-23',
+    url: 'http://www.taihainet.com/news/xmnews/ldjj/2026-04-23/2858367.html',
+    tags: ['碳普惠'],
+  },
+  {
+    id: 'search-20260423-004',
+    title: '全国碳市场扩容影响几何',
+    summary: '全国碳市场扩容影响几何',
+    source: 'toutiao.com',
+    publishDate: '2026-04-23',
+    url: 'https://www.toutiao.com/article/7631861880562270747/',
+    tags: ['CCER'],
+  },
 ];
 
 // 获取最近的新闻
