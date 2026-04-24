@@ -1108,6 +1108,43 @@ export const news: NewsItem[] = [
     url: 'https://www.toutiao.com/article/7631861880562270747/',
     tags: ['CCER'],
   },
+  // ===== 每日搜索自动发现 (2026-04-24) =====
+  {
+    id: 'search-20260424-001',
+    title: '全国碳市场交易价格行情日报【2023年4月26日】',
+    summary: '全国碳市场交易价格行情日报【2023年4月26日】',
+    source: 'in-en.com',
+    publishDate: '2026-04-24',
+    url: 'https://www.in-en.com/article/html/energy-2323606.shtml',
+    tags: ['碳市场', '碳交易'],
+  },
+  {
+    id: 'search-20260424-002',
+    title: '全国碳市场每日综合价格行情及成交信息2025年5月12日',
+    summary: '全国碳市场每日综合价格行情及成交信息2025年5月12日',
+    source: 'in-en.com',
+    publishDate: '2026-04-24',
+    url: 'https://huanbao.in-en.com/html/huanbao-2394891.shtml',
+    tags: ['碳市场', '碳交易'],
+  },
+  {
+    id: 'search-20260424-003',
+    title: '系统施策促节能降碳提质增效',
+    summary: '系统施策促节能降碳提质增效',
+    source: 'ce.cn',
+    publishDate: '2026-04-24',
+    url: 'http://www.ce.cn/xwzx/gnsz/gdxw/202604/t20260424_2925647.shtml',
+    tags: ['全国碳市场'],
+  },
+  {
+    id: 'search-20260424-004',
+    title: '深入推进传统行业节能降碳',
+    summary: '深入推进传统行业节能降碳',
+    source: 'ce.cn',
+    publishDate: '2026-04-24',
+    url: 'http://views.ce.cn/view/ent/202604/t20260424_2925797.shtml',
+    tags: ['全国碳市场'],
+  },
 ];
 
 // 获取最近的新闻
