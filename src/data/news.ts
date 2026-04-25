@@ -1145,6 +1145,25 @@ export const news: NewsItem[] = [
     url: 'http://views.ce.cn/view/ent/202604/t20260424_2925797.shtml',
     tags: ['全国碳市场'],
   },
+  // ===== 每日搜索自动发现 (2026-04-25) =====
+  {
+    id: 'search-20260425-001',
+    title: '碳金融蓝海价值发现者：证券公司参与碳排放权交易研究｜资本市场',
+    summary: '碳金融蓝海价值发现者：证券公司参与碳排放权交易研究｜资本市场',
+    source: '腾讯',
+    publishDate: '2026-04-25',
+    url: 'https://view.inews.qq.com/a/20260425A0757G00?scene=qqsearch',
+    tags: ['碳市场', '碳交易', '全国碳市场'],
+  },
+  {
+    id: 'search-20260425-002',
+    title: '【智库圆桌】深入推进传统行业节能降碳',
+    summary: '【智库圆桌】深入推进传统行业节能降碳',
+    source: 'ce.cn',
+    publishDate: '2026-04-24',
+    url: 'http://www.ce.cn/xwzx/gnsz/gdxw/202604/t20260424_2925646.shtml',
+    tags: ['全国碳市场'],
+  },
 ];
 
 // 获取最近的新闻
