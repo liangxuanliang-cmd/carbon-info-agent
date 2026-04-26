@@ -1164,6 +1164,25 @@ export const news: NewsItem[] = [
     url: 'http://www.ce.cn/xwzx/gnsz/gdxw/202604/t20260424_2925646.shtml',
     tags: ['全国碳市场'],
   },
+  // ===== 每日搜索自动发现 (2026-04-26) =====
+  {
+    id: 'search-20260426-001',
+    title: '“厦门碳普惠”小程序正式上线试运行',
+    summary: '“厦门碳普惠”小程序正式上线试运行',
+    source: '搜狐',
+    publishDate: '2026-04-26',
+    url: 'https://www.sohu.com/a/1013765944_362042',
+    tags: ['碳普惠'],
+  },
+  {
+    id: 'search-20260426-002',
+    title: '首个海洋领域全国温室气体自愿减排项目落地福建霞浦',
+    summary: '首个海洋领域全国温室气体自愿减排项目落地福建霞浦',
+    source: '中国新闻网',
+    publishDate: '2026-03-22',
+    url: 'https://www.chinanews.com.cn/gn/2026/03-22/10591020.shtml',
+    tags: ['CCER'],
+  },
 ];
 
 // 获取最近的新闻
