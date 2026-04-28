@@ -1183,6 +1183,34 @@ export const news: NewsItem[] = [
     url: 'https://www.chinanews.com.cn/gn/2026/03-22/10591020.shtml',
     tags: ['CCER'],
   },
+  // ===== 每日搜索自动发现 (2026-04-28) =====
+  {
+    id: 'search-20260428-001',
+    title: '吉林省构建碳普惠体系 引导全民低碳生活',
+    summary: '吉林省构建碳普惠体系 引导全民低碳生活',
+    source: '中国新闻网',
+    publishDate: '2026-04-28',
+    url: 'https://www.chinanews.com.cn/gn/2026/04-28/10612325.shtml',
+    tags: ['碳普惠'],
+  },
+  {
+    id: 'search-20260428-002',
+    title: '省政府新闻办举行政策吹风会 解读《吉林省碳普惠体系建设工作方案》',
+    summary: '省政府新闻办举行政策吹风会 解读《吉林省碳普惠体系建设工作方案》',
+    source: '搜狐',
+    publishDate: '2026-04-28',
+    url: 'https://www.sohu.com/a/1015660525_121123853',
+    tags: ['碳普惠'],
+  },
+  {
+    id: 'search-20260428-003',
+    title: '4月28日全国碳市场收盘价78.30元/吨 较前一日下跌0.89%',
+    summary: '4月28日全国碳市场收盘价78.30元/吨 较前一日下跌0.89%',
+    source: 'eastmoney.com',
+    publishDate: '2026-04-28',
+    url: 'http://finance.eastmoney.com/a/202604283722217177.html',
+    tags: ['全国碳市场'],
+  },
 ];
 
 // 获取最近的新闻
