@@ -1211,6 +1211,52 @@ export const news: NewsItem[] = [
     url: 'http://finance.eastmoney.com/a/202604283722217177.html',
     tags: ['全国碳市场'],
   },
+  // ===== 每日搜索自动发现 (2026-04-29) =====
+  {
+    id: 'search-20260429-001',
+    title: '城发环境：目前暂未开展碳排放交易业务',
+    summary: '城发环境：目前暂未开展碳排放交易业务',
+    source: '腾讯',
+    publishDate: '2026-04-29',
+    url: 'https://view.inews.qq.com/a/20260429A083RA00?scene=qqsearch',
+    tags: ['碳市场', '碳交易'],
+  },
+  {
+    id: 'search-20260429-002',
+    title: '徐州彭城碳资产公司主导的全国首个边缘自控碳普惠方法学编制工作正式启动',
+    summary: '徐州彭城碳资产公司主导的全国首个边缘自控碳普惠方法学编制工作正式启动',
+    source: '腾讯',
+    publishDate: '2026-04-29',
+    url: 'https://view.inews.qq.com/a/20260429A06P7200?scene=qqsearch',
+    tags: ['碳普惠'],
+  },
+  {
+    id: 'search-20260429-003',
+    title: '从“花钱治水”到“治水生钱” 全国首个水生态碳汇“计算规则”在锡...',
+    summary: '从“花钱治水”到“治水生钱” 全国首个水生态碳汇“计算规则”在锡...',
+    source: 'wxrb.com',
+    publishDate: '2026-04-29',
+    url: 'https://www.wxrb.com/doc/2026/04/29/449091.shtml',
+    tags: ['碳普惠'],
+  },
+  {
+    id: 'search-20260429-004',
+    title: '徐州彭城碳资产公司主导的全国首个边缘自控碳普惠方法学编制工作正...',
+    summary: '徐州彭城碳资产公司主导的全国首个边缘自控碳普惠方法学编制工作正...',
+    source: '腾讯',
+    publishDate: '2026-04-29',
+    url: 'https://new.qq.com/rain/a/20260429A06P7200',
+    tags: ['碳普惠'],
+  },
+  {
+    id: 'search-20260429-005',
+    title: '复旦大学可持续发展研究中心公布2026年5月复旦碳价指数',
+    summary: '复旦大学可持续发展研究中心公布2026年5月复旦碳价指数',
+    source: 'com.cn',
+    publishDate: '2026-04-29',
+    url: 'https://www.cet.com.cn/wzsy/cyzx/10351074.shtml',
+    tags: ['CCER'],
+  },
 ];
 
 // 获取最近的新闻
