@@ -1257,6 +1257,25 @@ export const news: NewsItem[] = [
     url: 'https://www.cet.com.cn/wzsy/cyzx/10351074.shtml',
     tags: ['CCER'],
   },
+  // ===== 每日搜索自动发现 (2026-04-30) =====
+  {
+    id: 'search-20260430-001',
+    title: '生态环境部：争取年内引入首批金融机构参与全国碳排放权交易市场',
+    summary: '生态环境部：争取年内引入首批金融机构参与全国碳排放权交易市场',
+    source: '腾讯',
+    publishDate: '2026-04-30',
+    url: 'https://view.inews.qq.com/a/20260430A08Y3U00?scene=qqsearch',
+    tags: ['碳市场', '碳交易', '全国碳市场'],
+  },
+  {
+    id: 'search-20260430-002',
+    title: '生态环境部副部长李高:争取年内引入首批金融机构参与全国碳排放权...',
+    summary: '生态环境部副部长李高:争取年内引入首批金融机构参与全国碳排放权...',
+    source: 'eastmoney.com',
+    publishDate: '2026-04-30',
+    url: 'http://finance.eastmoney.com/a/202604303726761675.html',
+    tags: ['全国碳市场'],
+  },
 ];
 
 // 获取最近的新闻
