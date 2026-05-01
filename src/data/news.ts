@@ -1276,6 +1276,25 @@ export const news: NewsItem[] = [
     url: 'http://finance.eastmoney.com/a/202604303726761675.html',
     tags: ['全国碳市场'],
   },
+  // ===== 每日搜索自动发现 (2026-05-01) =====
+  {
+    id: 'search-20260501-001',
+    title: '中国特色碳市场，激活绿色新未来',
+    summary: '中国特色碳市场，激活绿色新未来',
+    source: '腾讯',
+    publishDate: '2026-05-01',
+    url: 'https://view.inews.qq.com/a/20260501A02J5Z00?scene=qqsearch',
+    tags: ['碳市场', '碳交易'],
+  },
+  {
+    id: 'search-20260501-002',
+    title: '西湖龙井首次引入“分时碳账本” 让一杯茶的碳排放变得可追溯、可计...',
+    summary: '西湖龙井首次引入“分时碳账本” 让一杯茶的碳排放变得可追溯、可计...',
+    source: '碳道',
+    publishDate: '2026-03-27',
+    url: 'http://www.tanpaifang.com/tanguwen/list_15_11.html',
+    tags: ['CCER'],
+  },
 ];
 
 // 获取最近的新闻
