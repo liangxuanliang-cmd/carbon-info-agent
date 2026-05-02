@@ -1295,6 +1295,34 @@ export const news: NewsItem[] = [
     url: 'http://www.tanpaifang.com/tanguwen/list_15_11.html',
     tags: ['CCER'],
   },
+  // ===== 每日搜索自动发现 (2026-05-02) =====
+  {
+    id: 'search-20260502-001',
+    title: '4月全国碳市场价跌量升 5月碳价预计普遍下行',
+    summary: '4月全国碳市场价跌量升 5月碳价预计普遍下行',
+    source: 'stockstar.com',
+    publishDate: '2026-05-02',
+    url: 'http://stock.stockstar.com/IG2026050100018970.shtml',
+    tags: ['碳市场', '碳交易'],
+  },
+  {
+    id: 'search-20260502-002',
+    title: '河北累计实现降碳产品价值转化7390万元',
+    summary: '河北累计实现降碳产品价值转化7390万元',
+    source: 'hebnews.cn',
+    publishDate: '2026-05-02',
+    url: 'https://hbrb.hebnews.cn/pc/paper/c/202309/16/content_199930.html',
+    tags: ['碳普惠'],
+  },
+  {
+    id: 'search-20260502-003',
+    title: '全国首个水生态碳汇“计算规则”在锡发布',
+    summary: '全国首个水生态碳汇“计算规则”在锡发布',
+    source: '政府网站',
+    publishDate: '2026-04-29',
+    url: 'http://www.wuxi.gov.cn/doc/2026/04/29/4766644.shtml',
+    tags: ['碳普惠'],
+  },
 ];
 
 // 获取最近的新闻
