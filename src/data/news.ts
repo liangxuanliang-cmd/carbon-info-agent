@@ -1323,6 +1323,25 @@ export const news: NewsItem[] = [
     url: 'http://www.wuxi.gov.cn/doc/2026/04/29/4766644.shtml',
     tags: ['碳普惠'],
   },
+  // ===== 每日搜索自动发现 (2026-05-03) =====
+  {
+    id: 'search-20260503-001',
+    title: '全球碳排放交易市场迎来新一轮扩张',
+    summary: '全球碳排放交易市场迎来新一轮扩张',
+    source: '腾讯',
+    publishDate: '2026-05-03',
+    url: 'https://view.inews.qq.com/a/20260503A02X7J00?scene=qqsearch',
+    tags: ['碳市场', '碳交易', '全国碳市场'],
+  },
+  {
+    id: 'search-20260503-002',
+    title: '生态环境部:争取年内引入首批金融机构参与全国碳排放权交易市场',
+    summary: '生态环境部:争取年内引入首批金融机构参与全国碳排放权交易市场',
+    source: 'eastmoney.com',
+    publishDate: '2026-04-30',
+    url: 'http://finance.eastmoney.com/a/202604303726846296.html',
+    tags: ['全国碳市场'],
+  },
 ];
 
 // 获取最近的新闻
