@@ -1342,6 +1342,16 @@ export const news: NewsItem[] = [
     url: 'http://finance.eastmoney.com/a/202604303726846296.html',
     tags: ['全国碳市场'],
   },
+  // ===== 每日搜索自动发现 (2026-05-04) =====
+  {
+    id: 'search-20260504-001',
+    title: '碳排放双控,意味着什么',
+    summary: '碳排放双控,意味着什么',
+    source: 'hebnews.cn',
+    publishDate: '2026-05-04',
+    url: 'http://hbrb.hebnews.cn/pc/paper/c/202307/13/content_191637.html',
+    tags: ['碳市场', '碳交易'],
+  },
 ];
 
 // 获取最近的新闻
