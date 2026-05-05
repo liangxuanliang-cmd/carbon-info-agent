@@ -1352,6 +1352,25 @@ export const news: NewsItem[] = [
     url: 'http://hbrb.hebnews.cn/pc/paper/c/202307/13/content_191637.html',
     tags: ['碳市场', '碳交易'],
   },
+  // ===== 每日搜索自动发现 (2026-05-05) =====
+  {
+    id: 'search-20260505-001',
+    title: '全国碳市场每日综合价格行情及成交信息2024年4月26日',
+    summary: '全国碳市场每日综合价格行情及成交信息2024年4月26日',
+    source: 'in-en.com',
+    publishDate: '2026-05-05',
+    url: 'https://huanbao.in-en.com/html/huanbao-2388458.shtml',
+    tags: ['碳市场', '碳交易'],
+  },
+  {
+    id: 'search-20260505-002',
+    title: '“在龙江看见美丽中国”系列报道之十四 “碳惠冰城” 让低碳生活触...',
+    summary: '“在龙江看见美丽中国”系列报道之十四 “碳惠冰城” 让低碳生活触...',
+    source: 'toutiao.com',
+    publishDate: '2024-03-26',
+    url: 'https://www.toutiao.com/article/7635852494979056174/',
+    tags: ['碳普惠'],
+  },
 ];
 
 // 获取最近的新闻
