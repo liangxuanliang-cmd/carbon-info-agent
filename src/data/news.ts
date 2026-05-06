@@ -1371,6 +1371,43 @@ export const news: NewsItem[] = [
     url: 'https://www.toutiao.com/article/7635852494979056174/',
     tags: ['碳普惠'],
   },
+  // ===== 每日搜索自动发现 (2026-05-06) =====
+  {
+    id: 'search-20260506-001',
+    title: '全国碳市场每日综合价格行情及成交信息2024年5月6日',
+    summary: '全国碳市场每日综合价格行情及成交信息2024年5月6日',
+    source: 'in-en.com',
+    publishDate: '2026-05-06',
+    url: 'https://huanbao.in-en.com/html/huanbao-2388693.shtml',
+    tags: ['碳市场', '碳交易'],
+  },
+  {
+    id: 'search-20260506-002',
+    title: '中国特色碳市场,激活绿色新未来',
+    summary: '中国特色碳市场,激活绿色新未来',
+    source: 'com.cn',
+    publishDate: '2026-05-06',
+    url: 'https://www.cpnn.com.cn/news/ydylnyhz/202605/t20260506_1885214.html',
+    tags: ['碳普惠'],
+  },
+  {
+    id: 'search-20260506-003',
+    title: '黑龙江日报丨在龙江看见美丽中国之十四:“碳惠冰城” 让低碳生活触...',
+    summary: '黑龙江日报丨在龙江看见美丽中国之十四:“碳惠冰城” 让低碳生活触...',
+    source: '搜狐',
+    publishDate: '2026-05-06',
+    url: 'https://www.sohu.com/a/1018861354_121106822',
+    tags: ['碳普惠'],
+  },
+  {
+    id: 'search-20260506-004',
+    title: '发力“碳金融” 绿色金融驶入“快车道”',
+    summary: '发力“碳金融” 绿色金融驶入“快车道”',
+    source: 'hebnews.cn',
+    publishDate: '2026-05-06',
+    url: 'http://hbrb.hebnews.cn/pc/paper/c/202201/05/content_116423.html',
+    tags: ['全国碳市场'],
+  },
 ];
 
 // 获取最近的新闻
