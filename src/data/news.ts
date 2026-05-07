@@ -1408,6 +1408,34 @@ export const news: NewsItem[] = [
     url: 'http://hbrb.hebnews.cn/pc/paper/c/202201/05/content_116423.html',
     tags: ['全国碳市场'],
   },
+  // ===== 每日搜索自动发现 (2026-05-07) =====
+  {
+    id: 'search-20260507-001',
+    title: '四川首个CCER造林碳汇项目完成登记',
+    summary: '四川首个CCER造林碳汇项目完成登记',
+    source: '市场资讯(来源:易碳家)近日,四川首个造',
+    publishDate: '2026-05-07',
+    url: 'https://www.toutiao.com/article/7637039334167757352/',
+    tags: ['CCER'],
+  },
+  {
+    id: 'search-20260507-002',
+    title: '厦门上线试运行碳普惠小程序(中国环境报)',
+    summary: '厦门上线试运行碳普惠小程序(中国环境报)',
+    source: '搜狐',
+    publishDate: '2026-05-06',
+    url: 'https://www.sohu.com/a/1018807943_121106994',
+    tags: ['碳普惠'],
+  },
+  {
+    id: 'search-20260507-003',
+    title: '山东省人民政府办公厅关于印发山东省建设绿色低碳高质量发展先行区...',
+    summary: '山东省人民政府办公厅关于印发山东省建设绿色低碳高质量发展先行区...',
+    source: '政府网站',
+    publishDate: '2023-01-20',
+    url: 'http://www.shandong.gov.cn/art/2023/1/20/art_267492_43503.html',
+    tags: ['全国碳市场'],
+  },
 ];
 
 // 获取最近的新闻
