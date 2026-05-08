@@ -1436,6 +1436,52 @@ export const news: NewsItem[] = [
     url: 'http://www.shandong.gov.cn/art/2023/1/20/art_267492_43503.html',
     tags: ['全国碳市场'],
   },
+  // ===== 每日搜索自动发现 (2026-05-08) =====
+  {
+    id: 'search-20260508-001',
+    title: '碳排放权交易市场开放联盟第一届高层会议在佛罗伦萨举行',
+    summary: '碳排放权交易市场开放联盟第一届高层会议在佛罗伦萨举行',
+    source: '腾讯',
+    publishDate: '2026-05-08',
+    url: 'https://view.inews.qq.com/a/20260508A05UAM00?scene=qqsearch',
+    tags: ['碳市场', '碳交易'],
+  },
+  {
+    id: 'search-20260508-002',
+    title: '王忠林赴中碳登大厦调研碳市场建设情况 做实支撑 做强功能 做大规模 为服务国家“双碳”战略实施提供有力支撑',
+    summary: '王忠林赴中碳登大厦调研碳市场建设情况 做实支撑 做强功能 做大规模 为服务国家“双碳”战略实施提供有力支撑',
+    source: '腾讯',
+    publishDate: '2026-05-08',
+    url: 'https://view.inews.qq.com/a/20260508A08ODO00?scene=qqsearch',
+    tags: ['碳市场', '碳交易'],
+  },
+  {
+    id: 'search-20260508-003',
+    title: '厦门:实现闽超首场零碳办赛',
+    summary: '厦门:实现闽超首场零碳办赛',
+    source: '新华网',
+    publishDate: '2026-05-08',
+    url: 'http://fj.xinhuanet.com/20260508/c53551a2a9944a3b9a224820606d4699/c.html',
+    tags: ['碳普惠'],
+  },
+  {
+    id: 'search-20260508-004',
+    title: '回收行业迎风口:碳普惠赋能,选对智能箱,轻松吃遍政策红利',
+    summary: '回收行业迎风口:碳普惠赋能,选对智能箱,轻松吃遍政策红利',
+    source: '搜狐',
+    publishDate: '2026-05-08',
+    url: 'https://www.sohu.com/a/1019718423_122643019',
+    tags: ['碳普惠'],
+  },
+  {
+    id: 'search-20260508-005',
+    title: '《2023、2024年度全国碳排放权交易发电行业配额总量和分配方案(...',
+    summary: '《2023、2024年度全国碳排放权交易发电行业配额总量和分配方案(...',
+    source: 'com.cn',
+    publishDate: '2026-04-22',
+    url: 'http://www.chinasmartgrid.com.cn/special/?id=655173',
+    tags: ['全国碳市场'],
+  },
 ];
 
 // 获取最近的新闻
