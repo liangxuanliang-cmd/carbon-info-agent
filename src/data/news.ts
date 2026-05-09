@@ -1482,6 +1482,34 @@ export const news: NewsItem[] = [
     url: 'http://www.chinasmartgrid.com.cn/special/?id=655173',
     tags: ['全国碳市场'],
   },
+  // ===== 每日搜索自动发现 (2026-05-09) =====
+  {
+    id: 'search-20260509-001',
+    title: '视频丨碳排放权交易市场开放联盟首届高层会议在意大利举行',
+    summary: '视频丨碳排放权交易市场开放联盟首届高层会议在意大利举行',
+    source: '腾讯',
+    publishDate: '2026-05-09',
+    url: 'https://view.inews.qq.com/a/20260509A095I100?scene=qqsearch',
+    tags: ['碳市场', '碳交易'],
+  },
+  {
+    id: 'search-20260509-002',
+    title: '【锋行链盟】2026年1月中国及31省市双碳循环经济政策汇编及解读|...',
+    summary: '【锋行链盟】2026年1月中国及31省市双碳循环经济政策汇编及解读|...',
+    source: '搜狐',
+    publishDate: '2026-05-09',
+    url: 'https://www.sohu.com/a/1019384831_121015326',
+    tags: ['碳普惠'],
+  },
+  {
+    id: 'search-20260509-003',
+    title: '我省降碳产品项目开发核证总规模近700万吨',
+    summary: '我省降碳产品项目开发核证总规模近700万吨',
+    source: 'hebnews.cn',
+    publishDate: '2026-05-09',
+    url: 'https://hbrb.hebnews.cn/pc/paper/c/202312/30/content_212499.html',
+    tags: ['碳普惠'],
+  },
 ];
 
 // 获取最近的新闻
