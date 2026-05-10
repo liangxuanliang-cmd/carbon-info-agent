@@ -1510,6 +1510,43 @@ export const news: NewsItem[] = [
     url: 'https://hbrb.hebnews.cn/pc/paper/c/202312/30/content_212499.html',
     tags: ['碳普惠'],
   },
+  // ===== 每日搜索自动发现 (2026-05-10) =====
+  {
+    id: 'search-20260510-001',
+    title: '碳排放权交易市场开放联盟首届高层会议在意大利举行',
+    summary: '碳排放权交易市场开放联盟首届高层会议在意大利举行',
+    source: '腾讯',
+    publishDate: '2026-05-10',
+    url: 'https://view.inews.qq.com/a/20260510A02H7Y00?scene=qqsearch',
+    tags: ['碳市场', '碳交易', '全国碳市场'],
+  },
+  {
+    id: 'search-20260510-002',
+    title: '公布《武汉市家居清洁小家电节能碳普惠方法学(试行)》等3项方法学',
+    summary: '公布《武汉市家居清洁小家电节能碳普惠方法学(试行)》等3项方法学',
+    source: '市场资讯(来源:中国节能协会碳中和专业委',
+    publishDate: '2026-05-10',
+    url: 'https://www.toutiao.com/article/7638100713398223395/',
+    tags: ['碳普惠'],
+  },
+  {
+    id: 'search-20260510-003',
+    title: '陕西首个8%以下低浓度瓦斯CCER项目成功挂网落地',
+    summary: '陕西首个8%以下低浓度瓦斯CCER项目成功挂网落地',
+    source: 'cnwest.com',
+    publishDate: '2026-05-10',
+    url: 'http://news.cnwest.com/xian/a/2026/05/10/23352389.html',
+    tags: ['CCER'],
+  },
+  {
+    id: 'search-20260510-004',
+    title: '应加快将绿色甲醇纳入CCER,尽快出台专项核算方法学!',
+    summary: '应加快将绿色甲醇纳入CCER,尽快出台专项核算方法学!',
+    source: 'toutiao.com',
+    publishDate: '2026-05-10',
+    url: 'https://www.toutiao.com/article/7638100739474194985/',
+    tags: ['CCER'],
+  },
 ];
 
 // 获取最近的新闻
