@@ -1547,6 +1547,34 @@ export const news: NewsItem[] = [
     url: 'https://www.toutiao.com/article/7638100739474194985/',
     tags: ['CCER'],
   },
+  // ===== 每日搜索自动发现 (2026-05-11) =====
+  {
+    id: 'search-20260511-001',
+    title: '减碳入政绩，碳市场如何引来金融“活水”？——2026第五届气候投融资国际研讨会热点议题观察',
+    summary: '减碳入政绩，碳市场如何引来金融“活水”？——2026第五届气候投融资国际研讨会热点议题观察',
+    source: '腾讯',
+    publishDate: '2026-05-11',
+    url: 'https://view.inews.qq.com/a/20260511A07GMR00?scene=qqsearch',
+    tags: ['碳市场', '碳交易'],
+  },
+  {
+    id: 'search-20260511-002',
+    title: '争取年内引入 首批金融机构参与全国碳排放权交易市场',
+    summary: '争取年内引入 首批金融机构参与全国碳排放权交易市场',
+    source: 'com.cn',
+    publishDate: '2026-05-11',
+    url: 'http://www.financialnews.com.cn/2026-05/11/content_448757.html',
+    tags: ['CCER', '全国碳市场'],
+  },
+  {
+    id: 'search-20260511-003',
+    title: '第十五期CCER开发与交易职业技能培训',
+    summary: '第十五期CCER开发与交易职业技能培训',
+    source: '搜狐',
+    publishDate: '2026-05-11',
+    url: 'http://www.sohu.com/a/1021174214_121123899',
+    tags: ['CCER'],
+  },
 ];
 
 // 获取最近的新闻
