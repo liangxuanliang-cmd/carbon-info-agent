@@ -1575,6 +1575,16 @@ export const news: NewsItem[] = [
     url: 'http://www.sohu.com/a/1021174214_121123899',
     tags: ['CCER'],
   },
+  // ===== 每日搜索自动发现 (2026-05-12) =====
+  {
+    id: 'search-20260512-001',
+    title: '全国碳市场累计成交额突破600亿元，累计成交量8.96亿吨',
+    summary: '全国碳市场累计成交额突破600亿元，累计成交量8.96亿吨',
+    source: '腾讯',
+    publishDate: '2021-07-16',
+    url: 'https://view.inews.qq.com/a/20260512A0AGZD00?scene=qqsearch',
+    tags: ['碳市场', '碳交易', '全国碳市场'],
+  },
 ];
 
 // 获取最近的新闻
