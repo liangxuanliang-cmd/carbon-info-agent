@@ -1585,6 +1585,25 @@ export const news: NewsItem[] = [
     url: 'https://view.inews.qq.com/a/20260512A0AGZD00?scene=qqsearch',
     tags: ['碳市场', '碳交易', '全国碳市场'],
   },
+  // ===== 每日搜索自动发现 (2026-05-13) =====
+  {
+    id: 'search-20260513-001',
+    title: '陕西首个8%以下低浓度瓦斯CCER项目挂网落地',
+    summary: '陕西首个8%以下低浓度瓦斯CCER项目挂网落地',
+    source: 'ishaanxi.com',
+    publishDate: '2026-05-13',
+    url: 'https://www.ishaanxi.com/c/2026/0513/3686914.shtml',
+    tags: ['CCER'],
+  },
+  {
+    id: 'search-20260513-002',
+    title: '《全国碳市场发展报告(2024)》发布!中国政府高度重视碳市场建设',
+    summary: '《全国碳市场发展报告(2024)》发布!中国政府高度重视碳市场建设',
+    source: 'com.cn',
+    publishDate: '2026-03-16',
+    url: 'http://www.chinasmartgrid.com.cn/special/?id=655481',
+    tags: ['全国碳市场'],
+  },
 ];
 
 // 获取最近的新闻
