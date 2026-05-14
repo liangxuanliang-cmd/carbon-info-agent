@@ -1604,6 +1604,43 @@ export const news: NewsItem[] = [
     url: 'http://www.chinasmartgrid.com.cn/special/?id=655481',
     tags: ['全国碳市场'],
   },
+  // ===== 每日搜索自动发现 (2026-05-14) =====
+  {
+    id: 'search-20260514-001',
+    title: '全国碳市场累计成交额超600亿元',
+    summary: '全国碳市场累计成交额超600亿元',
+    source: '腾讯',
+    publishDate: '2026-05-14',
+    url: 'https://view.inews.qq.com/a/20260514A01SNP00?scene=qqsearch',
+    tags: ['碳市场', '碳交易', '全国碳市场'],
+  },
+  {
+    id: 'search-20260514-002',
+    title: '资环学院党委召开中心组扩大会议 聚焦＂双碳＂目标引领农业绿色低碳...',
+    summary: '资环学院党委召开中心组扩大会议 聚焦＂双碳＂目标引领农业绿色低碳...',
+    source: 'edu.cn',
+    publishDate: '2026-05-14',
+    url: 'https://news.cau.edu.cn/jcdt/6281fb96ce0a456d9d19cced7bca2034.htm',
+    tags: ['碳普惠'],
+  },
+  {
+    id: 'search-20260514-003',
+    title: '全国碳市场累计成交额超600亿元 排放配额累计成交量近9亿吨',
+    summary: '全国碳市场累计成交额超600亿元 排放配额累计成交量近9亿吨',
+    source: '新华网',
+    publishDate: '2026-05-14',
+    url: 'http://www.xinhuanet.com/energy/20260514/4b66bbed46984a599e4073492e89228a/c.html',
+    tags: ['全国碳市场'],
+  },
+  {
+    id: 'search-20260514-004',
+    title: '陕西首个8%以下低浓度瓦斯CCER项目挂网落地 让废弃的低浓度瓦斯...',
+    summary: '陕西首个8%以下低浓度瓦斯CCER项目挂网落地 让废弃的低浓度瓦斯...',
+    source: 'com.cn',
+    publishDate: '2026-05-13',
+    url: 'https://www.sxdaily.com.cn/2026-05/13/content_20023133.html',
+    tags: ['CCER'],
+  },
 ];
 
 // 获取最近的新闻
