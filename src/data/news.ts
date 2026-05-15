@@ -1641,6 +1641,43 @@ export const news: NewsItem[] = [
     url: 'https://www.sxdaily.com.cn/2026-05/13/content_20023133.html',
     tags: ['CCER'],
   },
+  // ===== 每日搜索自动发现 (2026-05-15) =====
+  {
+    id: 'search-20260515-001',
+    title: '加快推动绿色低碳转型 本市完成今年首笔碳资产交易',
+    summary: '加快推动绿色低碳转型 本市完成今年首笔碳资产交易',
+    source: 'csxww.com',
+    publishDate: '2026-05-15',
+    url: 'https://www.csxww.com/local_news/805571053887557.html',
+    tags: ['碳普惠'],
+  },
+  {
+    id: 'search-20260515-002',
+    title: '京津冀发布低碳出行减排量核算标准',
+    summary: '京津冀发布低碳出行减排量核算标准',
+    source: 'hebnews.cn',
+    publishDate: '2026-05-15',
+    url: 'https://hbrb.hebnews.cn/pc/paper/c/202407/21/content_237887.html',
+    tags: ['碳普惠'],
+  },
+  {
+    id: 'search-20260515-003',
+    title: '全国碳市场累计成交额突破600亿元 累计成交量8.96亿吨',
+    summary: '全国碳市场累计成交额突破600亿元 累计成交量8.96亿吨',
+    source: 'ce.cn',
+    publishDate: '2026-05-13',
+    url: 'http://www.ce.cn/macro/more/202605/t20260513_2963234.shtml',
+    tags: ['碳市场', '碳交易', '全国碳市场'],
+  },
+  {
+    id: 'search-20260515-004',
+    title: '卫浴企业“减碳”为地球“降压”-新浪地产网',
+    summary: '卫浴企业“减碳”为地球“降压”-新浪地产网',
+    source: '新浪',
+    publishDate: '2026-05-06',
+    url: 'http://news.dichan.sina.com.cn/2017/12/27/1254009.html',
+    tags: ['全国碳市场'],
+  },
 ];
 
 // 获取最近的新闻
