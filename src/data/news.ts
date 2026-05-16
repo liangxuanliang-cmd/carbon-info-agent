@@ -1678,6 +1678,25 @@ export const news: NewsItem[] = [
     url: 'http://news.dichan.sina.com.cn/2017/12/27/1254009.html',
     tags: ['全国碳市场'],
   },
+  // ===== 每日搜索自动发现 (2026-05-16) =====
+  {
+    id: 'search-20260516-001',
+    title: '山东国信发展典型案例系列(一):创新模式激活600万吨CCER,盘...',
+    summary: '山东国信发展典型案例系列(一):创新模式激活600万吨CCER,盘...',
+    source: 'toutiao.com',
+    publishDate: '2026-05-16',
+    url: 'https://www.toutiao.com/article/7640391690485793330/',
+    tags: ['CCER'],
+  },
+  {
+    id: 'search-20260516-002',
+    title: '雨林碳汇,激活生态价值转化新路径—— 云南勐腊打造“零碳”发展示...',
+    summary: '雨林碳汇,激活生态价值转化新路径—— 云南勐腊打造“零碳”发展示...',
+    source: '碳道',
+    publishDate: '2026-05-15',
+    url: 'http://www.tanpaifang.com/tanhui/2026/0515/118126.html',
+    tags: ['碳普惠'],
+  },
 ];
 
 // 获取最近的新闻
