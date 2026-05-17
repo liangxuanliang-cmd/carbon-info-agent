@@ -1697,6 +1697,25 @@ export const news: NewsItem[] = [
     url: 'http://www.tanpaifang.com/tanhui/2026/0515/118126.html',
     tags: ['碳普惠'],
   },
+  // ===== 每日搜索自动发现 (2026-05-17) =====
+  {
+    id: 'search-20260517-001',
+    title: '南平市公交碳普惠方法学通过专家评审 为山区城市绿色出行提供“南平...',
+    summary: '南平市公交碳普惠方法学通过专家评审 为山区城市绿色出行提供“南平...',
+    source: '搜狐',
+    publishDate: '2026-05-17',
+    url: 'https://www.sohu.com/a/1023930070_121123771',
+    tags: ['碳普惠'],
+  },
+  {
+    id: 'search-20260517-002',
+    title: '绿金新闻 | 全国碳市场累计成交额突破600亿元 累计成交量8.96亿吨',
+    summary: '绿金新闻 | 全国碳市场累计成交额突破600亿元 累计成交量8.96亿吨',
+    source: '新浪',
+    publishDate: '2026-05-15',
+    url: 'http://finance.sina.com.cn/esg/2026-05-15/doc-inhxzerf5032449.shtml',
+    tags: ['碳市场', '碳交易'],
+  },
 ];
 
 // 获取最近的新闻
