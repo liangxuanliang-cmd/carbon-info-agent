@@ -1771,6 +1771,16 @@ export const news: NewsItem[] = [
     url: 'http://www.tibet.cn/cn/Instant/municipal/202605/t20260518_7975356.html',
     tags: ['CCER'],
   },
+  // ===== 每日搜索自动发现 (2026-05-19) =====
+  {
+    id: 'search-20260519-001',
+    title: '5万元！安徽省林业碳票跨省交易首单落沪',
+    summary: '5万元！安徽省林业碳票跨省交易首单落沪',
+    source: '腾讯',
+    publishDate: '2026-05-19',
+    url: 'https://view.inews.qq.com/a/20260519A032BI00?scene=qqsearch',
+    tags: ['碳市场', '碳交易'],
+  },
 ];
 
 // 获取最近的新闻
