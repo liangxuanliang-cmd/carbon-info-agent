@@ -1781,6 +1781,34 @@ export const news: NewsItem[] = [
     url: 'https://view.inews.qq.com/a/20260519A032BI00?scene=qqsearch',
     tags: ['碳市场', '碳交易'],
   },
+  // ===== 每日搜索自动发现 (2026-05-20) =====
+  {
+    id: 'search-20260520-001',
+    title: '全球碳定价合作进入新阶段（环球热点）',
+    summary: '全球碳定价合作进入新阶段（环球热点）',
+    source: '腾讯',
+    publishDate: '2026-05-20',
+    url: 'https://view.inews.qq.com/a/20260520A02I6J00?scene=qqsearch',
+    tags: ['碳市场', '碳交易'],
+  },
+  {
+    id: 'search-20260520-002',
+    title: '全球碳定价合作进入新阶段',
+    summary: '全球碳定价合作进入新阶段',
+    source: '腾讯',
+    publishDate: '2026-05-20',
+    url: 'https://view.inews.qq.com/a/20260520A01X1D00?scene=qqsearch',
+    tags: ['碳市场', '碳交易'],
+  },
+  {
+    id: 'search-20260520-003',
+    title: '第一财经研究院碳市场月报：4月全国碳市场价跌量升，投资者结构有望拓宽 | 碳看',
+    summary: '第一财经研究院碳市场月报：4月全国碳市场价跌量升，投资者结构有望拓宽 | 碳看',
+    source: '腾讯',
+    publishDate: '2026-05-20',
+    url: 'https://view.inews.qq.com/a/20260520A08NUG00?scene=qqsearch',
+    tags: ['碳市场', '碳交易'],
+  },
 ];
 
 // 获取最近的新闻
