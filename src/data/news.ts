@@ -1873,6 +1873,25 @@ export const news: NewsItem[] = [
     url: 'https://new.qq.com/rain/a/20260518A08BHY00',
     tags: ['全国碳市场'],
   },
+  // ===== 每日搜索自动发现 (2026-05-22) =====
+  {
+    id: 'search-20260522-001',
+    title: '长三角完成首单省级林业碳票跨省交易 成交额5万元',
+    summary: '长三角完成首单省级林业碳票跨省交易 成交额5万元',
+    source: '腾讯',
+    publishDate: '2026-05-22',
+    url: 'https://view.inews.qq.com/a/20260522A0A16I00?scene=qqsearch',
+    tags: ['碳市场', '碳交易'],
+  },
+  {
+    id: 'search-20260522-002',
+    title: '2022-2027年中國碳交易市場需求預測及發展趨勢前瞻報告',
+    summary: '2022-2027年中國碳交易市場需求預測及發展趨勢前瞻報告',
+    source: 'askci.com',
+    publishDate: '2026-04-23',
+    url: 'https://big5.askci.com/reports/20220926/0851318927925296.shtml',
+    tags: ['碳市场', '碳交易'],
+  },
 ];
 
 // 获取最近的新闻
