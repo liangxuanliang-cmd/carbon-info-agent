@@ -1892,6 +1892,34 @@ export const news: NewsItem[] = [
     url: 'https://big5.askci.com/reports/20220926/0851318927925296.shtml',
     tags: ['碳市场', '碳交易'],
   },
+  // ===== 每日搜索自动发现 (2026-05-24) =====
+  {
+    id: 'search-20260524-001',
+    title: '“龙江绿碳”在海南跨区域首单交易成交',
+    summary: '“龙江绿碳”在海南跨区域首单交易成交',
+    source: '腾讯',
+    publishDate: '2026-05-24',
+    url: 'https://view.inews.qq.com/a/20260524A0394D00?scene=qqsearch',
+    tags: ['碳市场', '碳交易'],
+  },
+  {
+    id: 'search-20260524-002',
+    title: '湖北首笔，水务企业碳资产可先变现后回购了',
+    summary: '湖北首笔，水务企业碳资产可先变现后回购了',
+    source: '腾讯',
+    publishDate: '2026-05-24',
+    url: 'https://view.inews.qq.com/a/20260523A090O500?scene=qqsearch',
+    tags: ['碳市场', '碳交易'],
+  },
+  {
+    id: 'search-20260524-003',
+    title: 'ESG周报:两部门首次明确:全国碳市场交易手续费实行政府指导价管...',
+    summary: 'ESG周报:两部门首次明确:全国碳市场交易手续费实行政府指导价管...',
+    source: '新浪',
+    publishDate: '2026-05-24',
+    url: 'http://stock.finance.sina.com.cn/stock/go.php/vReport_Show/kind/search/rptid/832966894756/index.phtml',
+    tags: ['全国碳市场'],
+  },
 ];
 
 // 获取最近的新闻
