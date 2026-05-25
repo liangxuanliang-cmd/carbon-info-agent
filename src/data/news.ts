@@ -1920,6 +1920,25 @@ export const news: NewsItem[] = [
     url: 'http://stock.finance.sina.com.cn/stock/go.php/vReport_Show/kind/search/rptid/832966894756/index.phtml',
     tags: ['全国碳市场'],
   },
+  // ===== 每日搜索自动发现 (2026-05-25) =====
+  {
+    id: 'search-20260525-001',
+    title: '碳排放权交易市场开放联盟步入实质建设阶段',
+    summary: '碳排放权交易市场开放联盟步入实质建设阶段',
+    source: '腾讯',
+    publishDate: '2026-05-25',
+    url: 'https://view.inews.qq.com/a/20260525A03E4R00?scene=qqsearch',
+    tags: ['碳市场', '碳交易', '全国碳市场'],
+  },
+  {
+    id: 'search-20260525-002',
+    title: '以减污降碳协同增效促进畜牧业全面绿色转型',
+    summary: '以减污降碳协同增效促进畜牧业全面绿色转型',
+    source: 'edu.cn',
+    publishDate: '2026-05-25',
+    url: 'https://news.cau.edu.cn/mtndnew/11b4fe8d7e09489d8c99b21a0fad5e1d.htm',
+    tags: ['碳普惠'],
+  },
 ];
 
 // 获取最近的新闻
