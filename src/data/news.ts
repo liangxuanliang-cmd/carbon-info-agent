@@ -1939,6 +1939,16 @@ export const news: NewsItem[] = [
     url: 'https://news.cau.edu.cn/mtndnew/11b4fe8d7e09489d8c99b21a0fad5e1d.htm',
     tags: ['碳普惠'],
   },
+  // ===== 每日搜索自动发现 (2026-05-26) =====
+  {
+    id: 'search-20260526-001',
+    title: '“两会”期间政协委员关于促进绿色低碳转型发展的建议',
+    summary: '“两会”期间政协委员关于促进绿色低碳转型发展的建议',
+    source: '政府网站',
+    publishDate: '2026-05-26',
+    url: 'https://www.shszx.gov.cn/shzx/sqmy/content/6d916217-efcc-4401-b765-c5c1ac43a809.html',
+    tags: ['碳普惠'],
+  },
 ];
 
 // 获取最近的新闻
