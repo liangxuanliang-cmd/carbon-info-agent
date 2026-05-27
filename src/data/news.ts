@@ -1949,6 +1949,52 @@ export const news: NewsItem[] = [
     url: 'https://www.shszx.gov.cn/shzx/sqmy/content/6d916217-efcc-4401-b765-c5c1ac43a809.html',
     tags: ['碳普惠'],
   },
+  // ===== 每日搜索自动发现 (2026-05-27) =====
+  {
+    id: 'search-20260527-001',
+    title: '张希良：碳市场扩围，金融机构有望参与，我国碳市场更加有效更有活力',
+    summary: '张希良：碳市场扩围，金融机构有望参与，我国碳市场更加有效更有活力',
+    source: '腾讯',
+    publishDate: '2026-05-27',
+    url: 'https://view.inews.qq.com/a/20260527A087GE00?scene=qqsearch',
+    tags: ['碳市场', '碳交易'],
+  },
+  {
+    id: 'search-20260527-002',
+    title: '上海：建立完善碳排放权交易体系 推动上海碳市场深化改革',
+    summary: '上海：建立完善碳排放权交易体系 推动上海碳市场深化改革',
+    source: '腾讯',
+    publishDate: '2026-05-27',
+    url: 'https://view.inews.qq.com/a/20260527A04XSF00?scene=qqsearch',
+    tags: ['碳市场', '碳交易'],
+  },
+  {
+    id: 'search-20260527-003',
+    title: '南平市公交碳普惠方法学通过专家评审,为山区城市绿色出行提供“南...',
+    summary: '南平市公交碳普惠方法学通过专家评审,为山区城市绿色出行提供“南...',
+    source: '搜狐',
+    publishDate: '2026-05-27',
+    url: 'https://www.sohu.com/a/1027868437_121106994',
+    tags: ['碳普惠'],
+  },
+  {
+    id: 'search-20260527-004',
+    title: '护林产生的额外碳储量可核算交易,推动实现“越护越富” 景宁完成全...',
+    summary: '护林产生的额外碳储量可核算交易,推动实现“越护越富” 景宁完成全...',
+    source: 'com.cn',
+    publishDate: '2026-05-27',
+    url: 'https://news.hangzhou.com.cn/zjnews/content/2026-05/27/content_9229537.htm',
+    tags: ['碳普惠'],
+  },
+  {
+    id: 'search-20260527-005',
+    title: '设立全国碳排放权交易机构',
+    summary: '设立全国碳排放权交易机构',
+    source: 'eastmoney.com',
+    publishDate: '2026-05-18',
+    url: 'https://finance.eastmoney.com/a/202312072926544389.html',
+    tags: ['全国碳市场'],
+  },
 ];
 
 // 获取最近的新闻
