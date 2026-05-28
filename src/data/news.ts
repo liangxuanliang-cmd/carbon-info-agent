@@ -1995,6 +1995,16 @@ export const news: NewsItem[] = [
     url: 'https://finance.eastmoney.com/a/202312072926544389.html',
     tags: ['全国碳市场'],
   },
+  // ===== 每日搜索自动发现 (2026-05-28) =====
+  {
+    id: 'search-20260528-001',
+    title: '全国碳交易：今日全国碳排放配额总成交量131.45万吨，总成交额1.02亿元',
+    summary: '全国碳交易：今日全国碳排放配额总成交量131.45万吨，总成交额1.02亿元',
+    source: '腾讯',
+    publishDate: '2026-05-28',
+    url: 'https://view.inews.qq.com/a/20260528A074CW00?scene=qqsearch',
+    tags: ['碳市场', '碳交易', '全国碳市场'],
+  },
 ];
 
 // 获取最近的新闻
