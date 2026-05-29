@@ -2005,6 +2005,52 @@ export const news: NewsItem[] = [
     url: 'https://view.inews.qq.com/a/20260528A074CW00?scene=qqsearch',
     tags: ['碳市场', '碳交易', '全国碳市场'],
   },
+  // ===== 每日搜索自动发现 (2026-05-29) =====
+  {
+    id: 'search-20260529-001',
+    title: '复旦大学可持续发展研究中心:5月全国碳市场价格先扬后抑',
+    summary: '复旦大学可持续发展研究中心:5月全国碳市场价格先扬后抑',
+    source: '腾讯',
+    publishDate: '2026-05-29',
+    url: 'https://view.inews.qq.com/a/20260529A04QXW00?scene=qqsearch',
+    tags: ['碳市场', '碳交易'],
+  },
+  {
+    id: 'search-20260529-002',
+    title: '煤矿瓦斯CCER:商业模式走通了,但复制不易',
+    summary: '煤矿瓦斯CCER:商业模式走通了,但复制不易',
+    source: 'com.cn',
+    publishDate: '2026-05-29',
+    url: 'http://www.cenews.com.cn/news.html?aid=1787725',
+    tags: ['CCER'],
+  },
+  {
+    id: 'search-20260529-003',
+    title: '碳中和行业现状与发展趋势分析(2026年)',
+    summary: '碳中和行业现状与发展趋势分析(2026年)',
+    source: 'chinairn.com',
+    publishDate: '2026-05-28',
+    url: 'http://www.chinairn.com/hyzx/20260528/114141100.shtml',
+    tags: ['全国碳市场'],
+  },
+  {
+    id: 'search-20260529-004',
+    title: '低碳经济行业现状与发展趋势分析(2026年)',
+    summary: '低碳经济行业现状与发展趋势分析(2026年)',
+    source: 'chinairn.com',
+    publishDate: '2026-05-27',
+    url: 'http://www.chinairn.com/hyzx/20260527/175557572.shtml',
+    tags: ['全国碳市场'],
+  },
+  {
+    id: 'search-20260529-005',
+    title: '广州碳排放权交易中心张辰:从绿色采购到碳资产优化 构建可持续商业...',
+    summary: '广州碳排放权交易中心张辰:从绿色采购到碳资产优化 构建可持续商业...',
+    source: '新浪',
+    publishDate: '2024-12-21',
+    url: 'http://news.dichan.sina.com.cn/2024/12/21/1295531.html',
+    tags: ['碳普惠'],
+  },
 ];
 
 // 获取最近的新闻
