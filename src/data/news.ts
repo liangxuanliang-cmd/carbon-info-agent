@@ -2051,6 +2051,43 @@ export const news: NewsItem[] = [
     url: 'http://news.dichan.sina.com.cn/2024/12/21/1295531.html',
     tags: ['碳普惠'],
   },
+  // ===== 每日搜索自动发现 (2026-05-30) =====
+  {
+    id: 'search-20260530-001',
+    title: '从热干面优惠券到碳市场履约,“武碳江湖”领跑碳价值闭环',
+    summary: '从热干面优惠券到碳市场履约,“武碳江湖”领跑碳价值闭环',
+    source: '搜狐',
+    publishDate: '2026-05-30',
+    url: 'https://www.sohu.com/a/1028935208_121106908',
+    tags: ['碳普惠'],
+  },
+  {
+    id: 'search-20260530-002',
+    title: '欧盟CBAM抵扣细则最新草案:首认“第六条”10%上限,探析CCER...',
+    summary: '欧盟CBAM抵扣细则最新草案:首认“第六条”10%上限,探析CCER...',
+    source: '新浪',
+    publishDate: '2026-05-30',
+    url: 'https://k.sina.com.cn/article_5953740931_162dee08306703bda6.html?cre=tianyi&amp;mod=pcpager_china&amp;loc=29&amp;r=0&amp;rfunc=43&amp;tj=cxvertical_pc_pager_spt&amp;tr=174',
+    tags: ['CCER'],
+  },
+  {
+    id: 'search-20260530-003',
+    title: '2026年5月28日全国碳排放权交易市场清结算信息日报',
+    summary: '2026年5月28日全国碳排放权交易市场清结算信息日报',
+    source: '碳道',
+    publishDate: '2026-05-30',
+    url: 'http://www.tanpaifang.com/tanjiaoyi/2026/0529/118373.html',
+    tags: ['全国碳市场'],
+  },
+  {
+    id: 'search-20260530-004',
+    title: '丽水景宁完成全国首笔县域集体公益林碳汇交易',
+    summary: '丽水景宁完成全国首笔县域集体公益林碳汇交易',
+    source: '碳道',
+    publishDate: '2026-05-28',
+    url: 'http://www.tanpaifang.com/tanhui/2026/0528/118352.html',
+    tags: ['碳普惠'],
+  },
 ];
 
 // 获取最近的新闻
