@@ -2088,6 +2088,25 @@ export const news: NewsItem[] = [
     url: 'http://www.tanpaifang.com/tanhui/2026/0528/118352.html',
     tags: ['碳普惠'],
   },
+  // ===== 每日搜索自动发现 (2026-05-31) =====
+  {
+    id: 'search-20260531-001',
+    title: '见证绿色发展,共建低碳嘉兴——嘉兴市生态环境局走进《行风热线》',
+    summary: '见证绿色发展,共建低碳嘉兴——嘉兴市生态环境局走进《行风热线》',
+    source: '搜狐',
+    publishDate: '2026-05-31',
+    url: 'https://www.sohu.com/a/1029529873_121106994',
+    tags: ['碳普惠'],
+  },
+  {
+    id: 'search-20260531-002',
+    title: '中国甲烷控排落地进行时:多项CCER方法学发布,2025年煤矿甲烷排...',
+    summary: '中国甲烷控排落地进行时:多项CCER方法学发布,2025年煤矿甲烷排...',
+    source: 'toutiao.com',
+    publishDate: '2026-05-31',
+    url: 'https://www.toutiao.com/article/7645886774207726086/',
+    tags: ['CCER'],
+  },
 ];
 
 // 获取最近的新闻
