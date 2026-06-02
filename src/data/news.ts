@@ -2162,6 +2162,25 @@ export const news: NewsItem[] = [
     url: 'https://www.sxllnews.cn/xyllrb/pc/con/202110/28/c101329.html',
     tags: ['碳中和', '低碳'],
   },
+  // ===== 每日搜索自动发现 (2026-06-02) =====
+  {
+    id: 'search-20260602-001',
+    title: '2025年山东参与全国碳市场企业数量与交易量保持全国第一',
+    summary: '2025年山东参与全国碳市场企业数量与交易量保持全国第一',
+    source: '腾讯',
+    publishDate: '2026-06-02',
+    url: 'https://view.inews.qq.com/a/20260602A07M1L00?scene=qqsearch',
+    tags: ['碳市场', '碳交易'],
+  },
+  {
+    id: 'search-20260602-002',
+    title: '【CEA】全国碳市场每日综合价格行情及成交信息20260602',
+    summary: '【CEA】全国碳市场每日综合价格行情及成交信息20260602',
+    source: 'com.cn',
+    publishDate: '2026-06-02',
+    url: 'http://goodsfu.10jqka.com.cn/20260602/c677166597.shtml',
+    tags: ['全国碳市场'],
+  },
 ];
 
 // 获取最近的新闻
