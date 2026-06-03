@@ -2181,6 +2181,25 @@ export const news: NewsItem[] = [
     url: 'http://goodsfu.10jqka.com.cn/20260602/c677166597.shtml',
     tags: ['全国碳市场'],
   },
+  // ===== 每日搜索自动发现 (2026-06-03) =====
+  {
+    id: 'search-20260603-001',
+    title: '一度电赚两份钱：无机相变蓄冷如何帮企业打开碳交易“第二利润曲线”？',
+    summary: '一度电赚两份钱：无机相变蓄冷如何帮企业打开碳交易“第二利润曲线”？',
+    source: '腾讯',
+    publishDate: '2026-06-03',
+    url: 'https://so.html5.qq.com/page/real/search_news?docid=70000021_8456a1f813e14452',
+    tags: ['碳市场', '碳交易'],
+  },
+  {
+    id: 'search-20260603-002',
+    title: 'CCER-北极星环保网',
+    summary: 'CCER-北极星环保网',
+    source: 'com.cn',
+    publishDate: '2026-06-03',
+    url: 'https://huanbao.bjx.com.cn/topics/ccer',
+    tags: ['CCER'],
+  },
 ];
 
 // 获取最近的新闻
