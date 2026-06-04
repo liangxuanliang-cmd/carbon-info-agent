@@ -2200,6 +2200,16 @@ export const news: NewsItem[] = [
     url: 'https://huanbao.bjx.com.cn/topics/ccer',
     tags: ['CCER'],
   },
+  // ===== 每日搜索自动发现 (2026-06-04) =====
+  {
+    id: 'search-20260604-001',
+    title: '欧盟300亿欧元碳市场计划：重塑清洁能源融资格局',
+    summary: '欧盟300亿欧元碳市场计划：重塑清洁能源融资格局',
+    source: '环球市场播报欧盟委员会推出一项总额约30',
+    publishDate: '2026-06-04',
+    url: 'https://view.inews.qq.com/a/20260604A093BR00?scene=qqsearch',
+    tags: ['碳市场', '碳交易'],
+  },
 ];
 
 // 获取最近的新闻
