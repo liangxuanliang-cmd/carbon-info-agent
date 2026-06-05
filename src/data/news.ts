@@ -2210,6 +2210,25 @@ export const news: NewsItem[] = [
     url: 'https://view.inews.qq.com/a/20260604A093BR00?scene=qqsearch',
     tags: ['碳市场', '碳交易'],
   },
+  // ===== 每日搜索自动发现 (2026-06-05) =====
+  {
+    id: 'search-20260605-001',
+    title: '碳市场里的广东：37村“卖空气”赚338万元，碳配额变硬通货',
+    summary: '碳市场里的广东：37村“卖空气”赚338万元，碳配额变硬通货',
+    source: '腾讯',
+    publishDate: '2026-06-05',
+    url: 'https://new.qq.com/rain/a/20260605A0ABJ400',
+    tags: ['碳市场', '碳交易'],
+  },
+  {
+    id: 'search-20260605-002',
+    title: '国家碳排放权交易市场迎来首批ccer项目挂网',
+    summary: '国家碳排放权交易市场迎来首批ccer项目挂网',
+    source: 'eastmoney.com',
+    publishDate: '2026-05-26',
+    url: 'https://finance.eastmoney.com/a/202409023173537572.html',
+    tags: ['全国碳市场'],
+  },
 ];
 
 // 获取最近的新闻
