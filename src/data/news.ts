@@ -2229,6 +2229,43 @@ export const news: NewsItem[] = [
     url: 'https://finance.eastmoney.com/a/202409023173537572.html',
     tags: ['全国碳市场'],
   },
+  // ===== 每日搜索自动发现 (2026-06-06) =====
+  {
+    id: 'search-20260606-001',
+    title: '从理念到变现,统一石化完成首笔碳配额交易,为实体企业减碳打样',
+    summary: '从理念到变现,统一石化完成首笔碳配额交易,为实体企业减碳打样',
+    source: 'com.cn',
+    publishDate: '2026-06-06',
+    url: 'https://www.cet.com.cn/wzsy/cyzx/10385870.shtml',
+    tags: ['全国碳市场'],
+  },
+  {
+    id: 'search-20260606-002',
+    title: '2026中国碳交易市场:碳交易“手续费”规则落地,市场进入精耕期',
+    summary: '2026中国碳交易市场:碳交易“手续费”规则落地,市场进入精耕期',
+    source: 'chinairn.com',
+    publishDate: '2026-06-02',
+    url: 'https://www.chinairn.com/scfx/20260602/172200230.shtml',
+    tags: ['CCER'],
+  },
+  {
+    id: 'search-20260606-003',
+    title: '今日碳价:【CEA】全国碳市场每日综合价格行情及成交信息20260520',
+    summary: '今日碳价:【CEA】全国碳市场每日综合价格行情及成交信息20260520',
+    source: '碳道',
+    publishDate: '2026-05-21',
+    url: 'http://www.tanpaifang.com/tanshichang/list_54_2.html',
+    tags: ['碳市场', '碳交易', '全国碳市场'],
+  },
+  {
+    id: 'search-20260606-004',
+    title: '预算2632500元!上海市碳达峰碳中和数智管理子系统建设项目(2026...',
+    summary: '预算2632500元!上海市碳达峰碳中和数智管理子系统建设项目(2026...',
+    source: '碳道',
+    publishDate: '2026-03-26',
+    url: 'http://www.tanpaifang.com/tanguwen/list_15_16.html',
+    tags: ['CCER'],
+  },
 ];
 
 // 获取最近的新闻
