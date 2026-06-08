@@ -2266,6 +2266,34 @@ export const news: NewsItem[] = [
     url: 'http://www.tanpaifang.com/tanguwen/list_15_16.html',
     tags: ['CCER'],
   },
+  // ===== 每日搜索自动发现 (2026-06-08) =====
+  {
+    id: 'search-20260608-001',
+    title: '法治在线丨海洋受损怎么赔？蓝碳交易解锁护海新方式',
+    summary: '法治在线丨海洋受损怎么赔？蓝碳交易解锁护海新方式',
+    source: '腾讯',
+    publishDate: '2026-06-08',
+    url: 'https://view.inews.qq.com/a/20260608A058OP00?scene=qqsearch',
+    tags: ['碳市场', '碳交易'],
+  },
+  {
+    id: 'search-20260608-002',
+    title: '海洋受损怎么赔？蓝碳交易解锁护海新方式',
+    summary: '海洋受损怎么赔？蓝碳交易解锁护海新方式',
+    source: '腾讯',
+    publishDate: '2026-06-08',
+    url: 'https://view.inews.qq.com/a/20260608A053M200?scene=qqsearch',
+    tags: ['碳市场', '碳交易'],
+  },
+  {
+    id: 'search-20260608-003',
+    title: '我市将林草碳汇写入地方性法规',
+    summary: '我市将林草碳汇写入地方性法规',
+    source: '政府网站',
+    publishDate: '2026-06-05',
+    url: 'http://www.ordos.gov.cn/xw_127672/jreeds/202606/t20260605_3901472.html',
+    tags: ['全国碳市场'],
+  },
 ];
 
 // 获取最近的新闻
