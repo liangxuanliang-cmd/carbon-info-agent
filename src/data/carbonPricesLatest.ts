@@ -2,7 +2,7 @@ import type { PriceRecord } from '../types';
 import { CARBON_PRODUCTS_META } from '../utils/constants';
 import dayjs from 'dayjs';
 
-// 自动生成的碳价数据 - 更新时间: 2026-06-08 22:21:28
+// 自动生成的碳价数据 - 更新时间: 2026-06-09 22:18:39
 // 数据来源: 百度搜索
 
 // 最新碳价数据
@@ -10,25 +10,17 @@ export const latestPrices = [
   {
     productId: 'CEA',
     name: '全国碳市场CEA',
-    price: 82.1,
-    change: 0.07,
-    date: '2026-06-08',
-    source: '百度搜索',
-  },
-  {
-    productId: 'CCER',
-    name: 'CCER',
-    price: 70.76,
+    price: 85.5,
     change: 0,
-    date: '2026-06-08',
+    date: '2026-06-09',
     source: '百度搜索',
   },
   {
     productId: 'BEA',
     name: '北京碳配额BEA',
-    price: 82.01,
-    change: 1.54,
-    date: '2026-06-08',
+    price: 81.97,
+    change: 0,
+    date: '2026-06-09',
     source: '百度搜索',
   },
 ];
