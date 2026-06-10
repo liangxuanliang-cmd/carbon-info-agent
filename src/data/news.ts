@@ -2294,6 +2294,34 @@ export const news: NewsItem[] = [
     url: 'http://www.ordos.gov.cn/xw_127672/jreeds/202606/t20260605_3901472.html',
     tags: ['全国碳市场'],
   },
+  // ===== 每日搜索自动发现 (2026-06-10) =====
+  {
+    id: 'search-20260610-001',
+    title: '上汽集团祖似杰：建议将氢能纳入国家碳排放权交易市场',
+    summary: '上汽集团祖似杰：建议将氢能纳入国家碳排放权交易市场',
+    source: '腾讯',
+    publishDate: '2026-06-10',
+    url: 'https://view.inews.qq.com/a/20260610A08SH500?scene=qqsearch',
+    tags: ['碳市场', '碳交易', '全国碳市场'],
+  },
+  {
+    id: 'search-20260610-002',
+    title: '首笔集体公益林碳汇交易，落地！',
+    summary: '首笔集体公益林碳汇交易，落地！',
+    source: '腾讯',
+    publishDate: '2026-06-10',
+    url: 'https://view.inews.qq.com/a/20260610A0912O00?scene=qqsearch',
+    tags: ['碳市场', '碳交易'],
+  },
+  {
+    id: 'search-20260610-003',
+    title: '金融润绿意低碳向未来 中信银行精准滴灌绿色发展',
+    summary: '金融润绿意低碳向未来 中信银行精准滴灌绿色发展',
+    source: '新浪',
+    publishDate: '2026-06-10',
+    url: 'https://finance.sina.com.cn/jjxw/2026-06-10/doc-iniaxkrq2702974.shtml',
+    tags: ['碳普惠'],
+  },
 ];
 
 // 获取最近的新闻
