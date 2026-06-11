@@ -2322,6 +2322,25 @@ export const news: NewsItem[] = [
     url: 'https://finance.sina.com.cn/jjxw/2026-06-10/doc-iniaxkrq2702974.shtml',
     tags: ['碳普惠'],
   },
+  // ===== 每日搜索自动发现 (2026-06-11) =====
+  {
+    id: 'search-20260611-001',
+    title: '东方证券首次达成运营层面碳中和',
+    summary: '东方证券首次达成运营层面碳中和',
+    source: 'toutiao.com',
+    publishDate: '2026-06-11',
+    url: 'https://www.toutiao.com/article/7650028416292356608/',
+    tags: ['CCER'],
+  },
+  {
+    id: 'search-20260611-002',
+    title: '全会《决定》名词卡片 碳足迹',
+    summary: '全会《决定》名词卡片 碳足迹',
+    source: 'sxllnews.cn',
+    publishDate: '2026-05-30',
+    url: 'https://www.sxllnews.cn/xyllwb/pc/con/202411/30/c203661.html',
+    tags: ['碳市场', '碳交易'],
+  },
 ];
 
 // 获取最近的新闻
