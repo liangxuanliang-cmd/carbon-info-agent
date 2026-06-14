@@ -2405,6 +2405,52 @@ export const news: NewsItem[] = [
     url: 'http://www.shandong.gov.cn/art/2023/4/27/art_267492_48741.html',
     tags: ['全国碳市场'],
   },
+  // ===== 每日搜索自动发现 (2026-06-14) =====
+  {
+    id: 'search-20260614-001',
+    title: '恒盛能源完成碳排放配额交易',
+    summary: '恒盛能源完成碳排放配额交易',
+    source: '腾讯',
+    publishDate: '2026-06-14',
+    url: 'https://view.inews.qq.com/a/20260614A05E3X00?scene=qqsearch',
+    tags: ['碳市场', '碳交易'],
+  },
+  {
+    id: 'search-20260614-002',
+    title: '重磅解读!工业硅行业首设碳排放“刚性限额”,三级能耗红线大幅...',
+    summary: '重磅解读!工业硅行业首设碳排放“刚性限额”,三级能耗红线大幅...',
+    source: 'toutiao.com',
+    publishDate: '2026-06-14',
+    url: 'https://www.toutiao.com/article/7651160875805557311/',
+    tags: ['CCER'],
+  },
+  {
+    id: 'search-20260614-003',
+    title: '“碳资产+数字人民币”债券上新',
+    summary: '“碳资产+数字人民币”债券上新',
+    source: 'ce.cn',
+    publishDate: '2026-06-11',
+    url: 'http://www.ce.cn/xwzx/gnsz/gdxw/202606/t20260611_3022764.shtml',
+    tags: ['碳市场', '碳交易'],
+  },
+  {
+    id: 'search-20260614-004',
+    title: '首笔集体公益林碳汇交易,落地!',
+    summary: '首笔集体公益林碳汇交易,落地!',
+    source: '搜狐',
+    publishDate: '2026-06-10',
+    url: 'https://www.sohu.com/a/1034893490_122014422',
+    tags: ['碳普惠'],
+  },
+  {
+    id: 'search-20260614-005',
+    title: '恒盛能源完成碳配额交易21.75万吨配额创收1992.47万元',
+    summary: '恒盛能源完成碳配额交易21.75万吨配额创收1992.47万元',
+    source: '腾讯',
+    publishDate: '2025-01-24',
+    url: 'https://so.html5.qq.com/page/real/search_news?docid=70000021_3216a2e71cb29052',
+    tags: ['碳市场', '碳交易'],
+  },
 ];
 
 // 获取最近的新闻
