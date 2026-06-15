@@ -2451,6 +2451,25 @@ export const news: NewsItem[] = [
     url: 'https://so.html5.qq.com/page/real/search_news?docid=70000021_3216a2e71cb29052',
     tags: ['碳市场', '碳交易'],
   },
+  // ===== 每日搜索自动发现 (2026-06-15) =====
+  {
+    id: 'search-20260615-001',
+    title: '个人使用低碳建筑也可变现!吉林碳普惠方法学发布',
+    summary: '个人使用低碳建筑也可变现!吉林碳普惠方法学发布',
+    source: '搜狐',
+    publishDate: '2026-06-15',
+    url: 'https://www.sohu.com/a/1036668014_120845342',
+    tags: ['碳普惠'],
+  },
+  {
+    id: 'search-20260615-002',
+    title: '恒盛能源:结转7.54万吨碳排放配额 2023年配额出售计划执行完毕',
+    summary: '恒盛能源:结转7.54万吨碳排放配额 2023年配额出售计划执行完毕',
+    source: 'eastmoney.com',
+    publishDate: '2026-06-15',
+    url: 'http://finance.eastmoney.com/a/202606153770844646.html',
+    tags: ['全国碳市场'],
+  },
 ];
 
 // 获取最近的新闻
