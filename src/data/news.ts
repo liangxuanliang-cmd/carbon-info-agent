@@ -2470,6 +2470,43 @@ export const news: NewsItem[] = [
     url: 'http://finance.eastmoney.com/a/202606153770844646.html',
     tags: ['全国碳市场'],
   },
+  // ===== 每日搜索自动发现 (2026-06-16) =====
+  {
+    id: 'search-20260616-001',
+    title: '去年海南率先实现碳市场扩围履约率100%',
+    summary: '去年海南率先实现碳市场扩围履约率100%',
+    source: '腾讯',
+    publishDate: '2026-06-16',
+    url: 'https://view.inews.qq.com/a/20260616A025RR00?scene=qqsearch',
+    tags: ['碳市场', '碳交易'],
+  },
+  {
+    id: 'search-20260616-002',
+    title: '第一财经研究院碳市场月报：全国碳市场交易迎新规，手续费实行政府指导价管理 | 碳看',
+    summary: '第一财经研究院碳市场月报：全国碳市场交易迎新规，手续费实行政府指导价管理 | 碳看',
+    source: '腾讯',
+    publishDate: '2026-06-16',
+    url: 'https://view.inews.qq.com/a/20260616A060WQ00?scene=qqsearch',
+    tags: ['碳市场', '碳交易', '全国碳市场'],
+  },
+  {
+    id: 'search-20260616-003',
+    title: '护好公益林 碳汇助增收',
+    summary: '护好公益林 碳汇助增收',
+    source: 'tibet.cn',
+    publishDate: '2026-06-16',
+    url: 'http://www.tibet.cn/cn/Instant/local/202606/t20260616_7999998.html',
+    tags: ['碳普惠'],
+  },
+  {
+    id: 'search-20260616-004',
+    title: '国家发展改革委等5部门:开展重点行业节能降碳改造攻坚三年行动',
+    summary: '国家发展改革委等5部门:开展重点行业节能降碳改造攻坚三年行动',
+    source: 'ce.cn',
+    publishDate: '2026-06-16',
+    url: 'http://www.ce.cn/xwzx/gnsz/gdxw/202606/t20260616_3033114.shtml',
+    tags: ['全国碳市场'],
+  },
 ];
 
 // 获取最近的新闻
