@@ -2653,6 +2653,25 @@ export const news: NewsItem[] = [
     url: 'http://www.eeo.com.cn/2026/0615/916509.shtml',
     tags: ['碳价行情'],
   },
+  // ===== 每日搜索自动发现 (2026-06-19) =====
+  {
+    id: 'search-20260619-001',
+    title: '越南第112号法令为碳市场参与奠定法律框架',
+    summary: '越南第112号法令为碳市场参与奠定法律框架',
+    source: '腾讯',
+    publishDate: '2026-06-19',
+    url: 'https://view.inews.qq.com/a/20260618A08CH000?scene=qqsearch',
+    tags: ['碳市场', '碳交易'],
+  },
+  {
+    id: 'search-20260619-002',
+    title: '《吉林省碳普惠方法学管理办法》《吉林省碳普惠减排量管理办法》...',
+    summary: '《吉林省碳普惠方法学管理办法》《吉林省碳普惠减排量管理办法》...',
+    source: '碳道',
+    publishDate: '2026-06-05',
+    url: 'http://www.tanpaifang.com/tanguwen/list_15_3.html',
+    tags: ['碳普惠'],
+  },
 ];
 
 // 获取最近的新闻
