@@ -2672,6 +2672,25 @@ export const news: NewsItem[] = [
     url: 'http://www.tanpaifang.com/tanguwen/list_15_3.html',
     tags: ['碳普惠'],
   },
+  // ===== 每日搜索自动发现 (2026-06-20) =====
+  {
+    id: 'search-20260620-001',
+    title: '全国节能宣传周丨中国碳市场 “三驾马车” 全景科普:碳配额、...',
+    summary: '全国节能宣传周丨中国碳市场 “三驾马车” 全景科普:碳配额、...',
+    source: '搜狐',
+    publishDate: '2026-06-20',
+    url: 'https://www.sohu.com/a/1037960805_121106908',
+    tags: ['CCER'],
+  },
+  {
+    id: 'search-20260620-002',
+    title: '中国建成全球规模最大碳排放权交易市场,对逾六成碳排放管控',
+    summary: '中国建成全球规模最大碳排放权交易市场,对逾六成碳排放管控',
+    source: 'eastmoney.com',
+    publishDate: '2026-06-17',
+    url: 'http://finance.eastmoney.com/a/202606173774667844.html',
+    tags: ['全国碳市场'],
+  },
 ];
 
 // 获取最近的新闻
