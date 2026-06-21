@@ -2691,6 +2691,52 @@ export const news: NewsItem[] = [
     url: 'http://finance.eastmoney.com/a/202606173774667844.html',
     tags: ['全国碳市场'],
   },
+  // ===== 每日搜索自动发现 (2026-06-21) =====
+  {
+    id: 'search-20260621-001',
+    title: '李瑾：当碳资产成为“硬通货”，碳金融如何为绿色转型助力 |文汇讲堂',
+    summary: '李瑾：当碳资产成为“硬通货”，碳金融如何为绿色转型助力 |文汇讲堂',
+    source: '腾讯',
+    publishDate: '2026-06-21',
+    url: 'https://view.inews.qq.com/a/20260620A06MJI00?scene=qqsearch',
+    tags: ['碳市场', '碳交易'],
+  },
+  {
+    id: 'search-20260621-002',
+    title: '全球碳定价的“欧盟坐标”',
+    summary: '全球碳定价的“欧盟坐标”',
+    source: '腾讯',
+    publishDate: '2026-06-21',
+    url: 'https://view.inews.qq.com/a/20260620A05W9J00?scene=qqsearch',
+    tags: ['碳市场', '碳交易'],
+  },
+  {
+    id: 'search-20260621-003',
+    title: '全国节能宣传周丨中国碳市场体系——地方碳普惠机制',
+    summary: '全国节能宣传周丨中国碳市场体系——地方碳普惠机制',
+    source: '搜狐',
+    publishDate: '2026-06-21',
+    url: 'http://www.sohu.com/a/1038981514_121106908',
+    tags: ['碳普惠'],
+  },
+  {
+    id: 'search-20260621-004',
+    title: '106.2万吨、13.63万吨!中国绿发完成首批CCER交易',
+    summary: '106.2万吨、13.63万吨!中国绿发完成首批CCER交易',
+    source: 'toutiao.com',
+    publishDate: '2026-06-21',
+    url: 'https://www.toutiao.com/article/7653696668591768114/',
+    tags: ['CCER'],
+  },
+  {
+    id: 'search-20260621-005',
+    title: '金融街来的“碳”路人,筑绿运河畔',
+    summary: '金融街来的“碳”路人,筑绿运河畔',
+    source: 'toutiao.com',
+    publishDate: '2026-06-21',
+    url: 'https://www.toutiao.com/article/7653959111041696296/',
+    tags: ['CCER'],
+  },
 ];
 
 // 获取最近的新闻
