@@ -2737,6 +2737,16 @@ export const news: NewsItem[] = [
     url: 'https://www.toutiao.com/article/7653959111041696296/',
     tags: ['CCER'],
   },
+  // ===== 每日搜索自动发现 (2026-06-22) =====
+  {
+    id: 'search-20260622-001',
+    title: '越南为碳市场发展奠定基础',
+    summary: '越南为碳市场发展奠定基础',
+    source: '腾讯',
+    publishDate: '2026-06-22',
+    url: 'https://view.inews.qq.com/a/20260622A092PF00?scene=qqsearch',
+    tags: ['碳市场', '碳交易'],
+  },
 ];
 
 // 获取最近的新闻
