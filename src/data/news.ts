@@ -2747,6 +2747,43 @@ export const news: NewsItem[] = [
     url: 'https://view.inews.qq.com/a/20260622A092PF00?scene=qqsearch',
     tags: ['碳市场', '碳交易'],
   },
+  // ===== 每日搜索自动发现 (2026-06-23) =====
+  {
+    id: 'search-20260623-001',
+    title: '全国首次！上海“碳信托”完成首次公开市场调节操作',
+    summary: '全国首次！上海“碳信托”完成首次公开市场调节操作',
+    source: '腾讯',
+    publishDate: '2026-06-23',
+    url: 'https://view.inews.qq.com/a/20260623A04GWC00?scene=qqsearch',
+    tags: ['碳市场', '碳交易'],
+  },
+  {
+    id: 'search-20260623-002',
+    title: '全国低碳日丨陕西发布“十四五”应对气候变化政策与行动报告',
+    summary: '全国低碳日丨陕西发布“十四五”应对气候变化政策与行动报告',
+    source: 'com.cn',
+    publishDate: '2026-06-23',
+    url: 'http://www.cenews.com.cn/news.html?aid=1792224',
+    tags: ['碳普惠'],
+  },
+  {
+    id: 'search-20260623-003',
+    title: '广东能源集团节能降碳公司:如何做好节能降碳这篇大文章',
+    summary: '广东能源集团节能降碳公司:如何做好节能降碳这篇大文章',
+    source: 'southcn.com',
+    publishDate: '2026-06-23',
+    url: 'https://news.southcn.com/node_54a44f01a2/7c2829901e.shtml',
+    tags: ['CCER'],
+  },
+  {
+    id: 'search-20260623-004',
+    title: '【CEA】全国碳市场每日综合价格行情及成交信息20260622',
+    summary: '【CEA】全国碳市场每日综合价格行情及成交信息20260622',
+    source: 'com.cn',
+    publishDate: '2026-06-23',
+    url: 'http://goodsfu.10jqka.com.cn/20260623/c677643048.shtml',
+    tags: ['全国碳市场'],
+  },
 ];
 
 // 获取最近的新闻
