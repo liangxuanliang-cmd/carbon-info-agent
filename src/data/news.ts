@@ -2839,6 +2839,43 @@ export const news: NewsItem[] = [
     url: 'http://www.tanpaifang.com/tanjiaoyi/2026/0622/118863.html',
     tags: ['碳市场', '碳交易'],
   },
+  // ===== 每日搜索自动发现 (2026-06-25) =====
+  {
+    id: 'search-20260625-001',
+    title: '【越南启动碳排放交易试点,92家高排放企业参与配额交易】',
+    summary: '【越南启动碳排放交易试点,92家高排放企业参与配额交易】',
+    source: 'gold678.com',
+    publishDate: '2027-12-24',
+    url: 'https://www.gold678.com/live/202606251740212283',
+    tags: ['碳市场', '碳交易'],
+  },
+  {
+    id: 'search-20260625-002',
+    title: '青岛25家企业进军碳交易市场 增收7900余万元',
+    summary: '青岛25家企业进军碳交易市场 增收7900余万元',
+    source: 'qdxin.cn',
+    publishDate: '2026-06-25',
+    url: 'http://www.qdxin.cn/Fortune/2025/356093.html',
+    tags: ['碳市场', '碳交易'],
+  },
+  {
+    id: 'search-20260625-003',
+    title: '山东累计“卖碳”1.33亿吨 交易量交易额均居全国首位',
+    summary: '山东累计“卖碳”1.33亿吨 交易量交易额均居全国首位',
+    source: 'qdxin.cn',
+    publishDate: '2026-06-25',
+    url: 'http://www.qdxin.cn/shandong/2025/354589.html',
+    tags: ['碳市场', '碳交易'],
+  },
+  {
+    id: 'search-20260625-004',
+    title: '高盛预测全球碳市场将在2035年达到1万亿美元规模',
+    summary: '高盛预测全球碳市场将在2035年达到1万亿美元规模',
+    source: '碳道',
+    publishDate: '2026-06-22',
+    url: 'http://www.tanpaifang.com/tanjiaoyi/2026/0622/118887.html',
+    tags: ['碳市场', '碳交易'],
+  },
 ];
 
 // 获取最近的新闻
