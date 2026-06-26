@@ -2876,6 +2876,34 @@ export const news: NewsItem[] = [
     url: 'http://www.tanpaifang.com/tanjiaoyi/2026/0622/118887.html',
     tags: ['碳市场', '碳交易'],
   },
+  // ===== 每日搜索自动发现 (2026-06-26) =====
+  {
+    id: 'search-20260626-001',
+    title: '对标国管局碳核算新规,安科瑞赋能公共机构绿色低碳减排',
+    summary: '对标国管局碳核算新规,安科瑞赋能公共机构绿色低碳减排',
+    source: '新浪',
+    publishDate: '2026-06-26',
+    url: 'https://finance.sina.com.cn/wm/2026-06-26/doc-inietnfw2044933.shtml',
+    tags: ['碳市场', '碳交易'],
+  },
+  {
+    id: 'search-20260626-002',
+    title: '全国碳市场本周综合价格行情及成交数据汇总',
+    summary: '全国碳市场本周综合价格行情及成交数据汇总',
+    source: 'toutiao.com',
+    publishDate: '2026-06-26',
+    url: 'https://www.toutiao.com/article/7655742882380382755/',
+    tags: ['碳市场', '碳交易'],
+  },
+  {
+    id: 'search-20260626-003',
+    title: '个人和企业如何快速参与碳交易市场',
+    summary: '个人和企业如何快速参与碳交易市场',
+    source: 'toutiao.com',
+    publishDate: '2026-06-26',
+    url: 'https://www.toutiao.com/article/7655524025611665961/',
+    tags: ['碳市场', '碳交易'],
+  },
 ];
 
 // 获取最近的新闻
