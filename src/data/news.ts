@@ -2904,6 +2904,43 @@ export const news: NewsItem[] = [
     url: 'https://www.toutiao.com/article/7655524025611665961/',
     tags: ['碳市场', '碳交易'],
   },
+  // ===== 每日搜索自动发现 (2026-06-27) =====
+  {
+    id: 'search-20260627-001',
+    title: '全国首次!上海“碳信托”完成首次公开市场调节操作',
+    summary: '全国首次!上海“碳信托”完成首次公开市场调节操作',
+    source: 'toutiao.com',
+    publishDate: '2026-06-27',
+    url: 'https://www.toutiao.com/article/7655904781944308262/',
+    tags: ['碳市场', '碳交易'],
+  },
+  {
+    id: 'search-20260627-002',
+    title: '不止于冷!跟随冰轮环境走进肉类产业园“零碳工艺”与“智慧大脑”',
+    summary: '不止于冷!跟随冰轮环境走进肉类产业园“零碳工艺”与“智慧大脑”',
+    source: '新浪',
+    publishDate: '2026-06-26',
+    url: 'https://finance.sina.com.cn/wm/2026-06-26/doc-inietnfu5268538.shtml',
+    tags: ['碳市场', '碳交易'],
+  },
+  {
+    id: 'search-20260627-003',
+    title: '世界银行:全球碳定价收入2024年突破1000亿美元,超半数投入绿色...',
+    summary: '世界银行:全球碳定价收入2024年突破1000亿美元,超半数投入绿色...',
+    source: '碳道',
+    publishDate: '2026-06-25',
+    url: 'http://www.tanpaifang.com/tanguwen/2026/0625/118952.html',
+    tags: ['碳市场', '碳交易'],
+  },
+  {
+    id: 'search-20260627-004',
+    title: '上海碳普惠平台一年碳减排量超33万吨',
+    summary: '上海碳普惠平台一年碳减排量超33万吨',
+    source: '碳道',
+    publishDate: '2026-06-22',
+    url: 'http://www.tanpaifang.com/jienenjianpai/2026/0622/118852.html',
+    tags: ['碳市场', '碳交易'],
+  },
 ];
 
 // 获取最近的新闻
