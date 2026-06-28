@@ -2941,6 +2941,52 @@ export const news: NewsItem[] = [
     url: 'http://www.tanpaifang.com/jienenjianpai/2026/0622/118852.html',
     tags: ['碳市场', '碳交易'],
   },
+  // ===== 每日搜索自动发现 (2026-06-28) =====
+  {
+    id: 'search-20260628-001',
+    title: '浙江节能降碳技改资金管理办法(试行)征求意见!涉及能源综合利用...',
+    summary: '浙江节能降碳技改资金管理办法(试行)征求意见!涉及能源综合利用...',
+    source: 'toutiao.com',
+    publishDate: '2026-06-28',
+    url: 'https://www.toutiao.com/article/7656268420727456283/',
+    tags: ['碳市场', '碳交易'],
+  },
+  {
+    id: 'search-20260628-002',
+    title: '湖北碳市场落地全国首笔线上碳配额回购业务',
+    summary: '湖北碳市场落地全国首笔线上碳配额回购业务',
+    source: '搜狐',
+    publishDate: '2026-06-27',
+    url: 'https://www.sohu.com/a/1042415488_121106908',
+    tags: ['碳市场', '碳交易'],
+  },
+  {
+    id: 'search-20260628-003',
+    title: '碳信用可抵消30%的碳配额!越南将于下周启动碳排放交易试点',
+    summary: '碳信用可抵消30%的碳配额!越南将于下周启动碳排放交易试点',
+    source: '碳道',
+    publishDate: '2026-06-26',
+    url: 'http://www.tanpaifang.com/tanjiaoyi/2026/0626/118975.html',
+    tags: ['碳市场', '碳交易'],
+  },
+  {
+    id: 'search-20260628-004',
+    title: '越南机构与市场运营商携手推进碳交易平台建设',
+    summary: '越南机构与市场运营商携手推进碳交易平台建设',
+    source: '腾讯',
+    publishDate: '2026-06-25',
+    url: 'https://new.qq.com/rain/a/20260625A08D9J00',
+    tags: ['碳市场', '碳交易'],
+  },
+  {
+    id: 'search-20260628-005',
+    title: '自愿碳市场报告:科技行业需求支撑碳信用价格 宏观经济逆风影响有限',
+    summary: '自愿碳市场报告:科技行业需求支撑碳信用价格 宏观经济逆风影响有限',
+    source: '碳道',
+    publishDate: '2026-06-22',
+    url: 'http://www.tanpaifang.com/tanxinyong/2026/0622/118884.html',
+    tags: ['碳市场', '碳交易'],
+  },
 ];
 
 // 获取最近的新闻
