@@ -2987,6 +2987,16 @@ export const news: NewsItem[] = [
     url: 'http://www.tanpaifang.com/tanxinyong/2026/0622/118884.html',
     tags: ['碳市场', '碳交易'],
   },
+  // ===== 每日搜索自动发现 (2026-07-01) =====
+  {
+    id: 'search-20260701-001',
+    title: '越南启动试点碳交易交易所',
+    summary: '越南启动试点碳交易交易所',
+    source: '腾讯',
+    publishDate: '2026-07-01',
+    url: 'https://view.inews.qq.com/a/20260701A084U500?scene=qqsearch',
+    tags: ['碳市场', '碳交易'],
+  },
 ];
 
 // 获取最近的新闻
