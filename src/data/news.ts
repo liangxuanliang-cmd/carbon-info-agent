@@ -2997,6 +2997,16 @@ export const news: NewsItem[] = [
     url: 'https://view.inews.qq.com/a/20260701A084U500?scene=qqsearch',
     tags: ['碳市场', '碳交易'],
   },
+  // ===== 每日搜索自动发现 (2026-07-02) =====
+  {
+    id: 'search-20260702-001',
+    title: '国常会审议通过《“十五五”碳达峰行动方案》',
+    summary: '国常会审议通过《“十五五”碳达峰行动方案》',
+    source: 'ce.cn',
+    publishDate: '2026-06-30',
+    url: 'http://www.ce.cn/xwzx/gnsz/gdxw/202606/t20260630_3059656.shtml',
+    tags: ['碳市场', '碳交易'],
+  },
 ];
 
 // 获取最近的新闻
