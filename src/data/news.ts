@@ -3007,6 +3007,16 @@ export const news: NewsItem[] = [
     url: 'http://www.ce.cn/xwzx/gnsz/gdxw/202606/t20260630_3059656.shtml',
     tags: ['碳市场', '碳交易'],
   },
+  // ===== 每日搜索自动发现 (2026-07-03) =====
+  {
+    id: 'search-20260703-001',
+    title: '美丽中国建设“十五五”规划：有序扩大全国碳排放权交易市场覆盖行业范围、扩展参与主体',
+    summary: '美丽中国建设“十五五”规划：有序扩大全国碳排放权交易市场覆盖行业范围、扩展参与主体',
+    source: '腾讯',
+    publishDate: '2026-07-03',
+    url: 'https://view.inews.qq.com/a/20260703A096YP00?scene=qqsearch',
+    tags: ['碳市场', '碳交易'],
+  },
 ];
 
 // 获取最近的新闻
