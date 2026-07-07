@@ -3017,6 +3017,16 @@ export const news: NewsItem[] = [
     url: 'https://view.inews.qq.com/a/20260703A096YP00?scene=qqsearch',
     tags: ['碳市场', '碳交易'],
   },
+  // ===== 每日搜索自动发现 (2026-07-07) =====
+  {
+    id: 'search-20260707-001',
+    title: '全国碳市场四周年观察与反思',
+    summary: '全国碳市场四周年观察与反思',
+    source: '腾讯',
+    publishDate: '2026-07-07',
+    url: 'https://new.qq.com/rain/a/20260707A05MJ800',
+    tags: ['碳市场', '碳交易'],
+  },
 ];
 
 // 获取最近的新闻
