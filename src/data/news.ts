@@ -3027,6 +3027,16 @@ export const news: NewsItem[] = [
     url: 'https://new.qq.com/rain/a/20260707A05MJ800',
     tags: ['碳市场', '碳交易'],
   },
+  // ===== 每日搜索自动发现 (2026-07-08) =====
+  {
+    id: 'search-20260708-001',
+    title: '超3000家控排单位，全国碳市场五年累计成交约619亿元',
+    summary: '超3000家控排单位，全国碳市场五年累计成交约619亿元',
+    source: '腾讯',
+    publishDate: '2026-07-08',
+    url: 'https://new.qq.com/rain/a/20260708A0AFC800',
+    tags: ['碳市场', '碳交易'],
+  },
 ];
 
 // 获取最近的新闻
