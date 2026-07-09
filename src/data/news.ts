@@ -3037,6 +3037,16 @@ export const news: NewsItem[] = [
     url: 'https://new.qq.com/rain/a/20260708A0AFC800',
     tags: ['碳市场', '碳交易'],
   },
+  // ===== 每日搜索自动发现 (2026-07-09) =====
+  {
+    id: 'search-20260709-001',
+    title: '“十五五”碳达峰行动方案：积极发展全国温室气体自愿减排交易市场',
+    summary: '“十五五”碳达峰行动方案：积极发展全国温室气体自愿减排交易市场',
+    source: '腾讯',
+    publishDate: '2026-07-09',
+    url: 'https://view.inews.qq.com/a/20260709A08BSC00?scene=qqsearch',
+    tags: ['碳市场', '碳交易'],
+  },
 ];
 
 // 获取最近的新闻
