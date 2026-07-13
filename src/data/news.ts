@@ -3047,6 +3047,16 @@ export const news: NewsItem[] = [
     url: 'https://view.inews.qq.com/a/20260709A08BSC00?scene=qqsearch',
     tags: ['碳市场', '碳交易'],
   },
+  // ===== 每日搜索自动发现 (2026-07-13) =====
+  {
+    id: 'search-20260713-001',
+    title: '越南呼吁企业参与碳市场',
+    summary: '越南呼吁企业参与碳市场',
+    source: '腾讯',
+    publishDate: '2026-07-13',
+    url: 'https://view.inews.qq.com/a/20260713A04LO700?scene=qqsearch',
+    tags: ['碳市场', '碳交易'],
+  },
 ];
 
 // 获取最近的新闻
