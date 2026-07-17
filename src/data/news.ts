@@ -3121,6 +3121,43 @@ export const news: NewsItem[] = [
     url: 'https://view.inews.qq.com/a/20260716A0CE4Z00?scene=qqsearch',
     tags: ['碳市场', '碳交易'],
   },
+  // ===== 每日搜索自动发现 (2026-07-17) =====
+  {
+    id: 'search-20260717-001',
+    title: '全国蓝碳交易联盟今日在深圳成立',
+    summary: '全国蓝碳交易联盟今日在深圳成立',
+    source: '腾讯',
+    publishDate: '2026-07-17',
+    url: 'https://view.inews.qq.com/a/20260717A0C2T400?scene=qqsearch',
+    tags: ['碳市场', '碳交易'],
+  },
+  {
+    id: 'search-20260717-002',
+    title: '我国已成为全球规模最大的碳市场！',
+    summary: '我国已成为全球规模最大的碳市场！',
+    source: '腾讯',
+    publishDate: '2026-07-17',
+    url: 'https://so.html5.qq.com/page/real/search_news?docid=70000021_9326a597a5a34052',
+    tags: ['碳市场', '碳交易'],
+  },
+  {
+    id: 'search-20260717-003',
+    title: '碳排放配额怎么买卖？从“碳k线”看全国碳市场运行规律',
+    summary: '碳排放配额怎么买卖？从“碳k线”看全国碳市场运行规律',
+    source: '腾讯',
+    publishDate: '2026-07-17',
+    url: 'https://view.inews.qq.com/a/20260717A03ZK500?scene=qqsearch',
+    tags: ['碳市场', '碳交易'],
+  },
+  {
+    id: 'search-20260717-004',
+    title: '视频丨碳排放配额怎么买卖？从“碳k线”看全国碳市场运行规律',
+    summary: '视频丨碳排放配额怎么买卖？从“碳k线”看全国碳市场运行规律',
+    source: '腾讯',
+    publishDate: '2026-07-17',
+    url: 'https://view.inews.qq.com/a/20260717A03XBJ00?scene=qqsearch',
+    tags: ['碳市场', '碳交易'],
+  },
 ];
 
 // 获取最近的新闻
