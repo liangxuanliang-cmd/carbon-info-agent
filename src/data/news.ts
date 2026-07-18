@@ -3158,6 +3158,16 @@ export const news: NewsItem[] = [
     url: 'https://view.inews.qq.com/a/20260717A03XBJ00?scene=qqsearch',
     tags: ['碳市场', '碳交易'],
   },
+  // ===== 每日搜索自动发现 (2026-07-18) =====
+  {
+    id: 'search-20260718-001',
+    title: '欧盟拟调整碳排放交易体系 减轻企业脱碳压力',
+    summary: '欧盟拟调整碳排放交易体系 减轻企业脱碳压力',
+    source: '腾讯',
+    publishDate: '2026-07-18',
+    url: 'https://view.inews.qq.com/a/20260718A070B700?scene=qqsearch',
+    tags: ['碳市场', '碳交易'],
+  },
 ];
 
 // 获取最近的新闻
