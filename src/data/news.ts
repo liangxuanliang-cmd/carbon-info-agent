@@ -3168,6 +3168,16 @@ export const news: NewsItem[] = [
     url: 'https://view.inews.qq.com/a/20260718A070B700?scene=qqsearch',
     tags: ['碳市场', '碳交易'],
   },
+  // ===== 每日搜索自动发现 (2026-07-19) =====
+  {
+    id: 'search-20260719-001',
+    title: '全国蓝碳交易联盟在深圳成立',
+    summary: '全国蓝碳交易联盟在深圳成立',
+    source: '腾讯',
+    publishDate: '2026-07-19',
+    url: 'https://view.inews.qq.com/a/20260717A0C3GE00?scene=qqsearch',
+    tags: ['碳市场', '碳交易'],
+  },
 ];
 
 // 获取最近的新闻
