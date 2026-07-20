@@ -3178,6 +3178,34 @@ export const news: NewsItem[] = [
     url: 'https://view.inews.qq.com/a/20260717A0C3GE00?scene=qqsearch',
     tags: ['碳市场', '碳交易'],
   },
+  // ===== 每日搜索自动发现 (2026-07-20) =====
+  {
+    id: 'search-20260720-001',
+    title: '欧盟公布碳排放交易体系改革提案',
+    summary: '欧盟公布碳排放交易体系改革提案',
+    source: '腾讯',
+    publishDate: '2026-07-20',
+    url: 'https://view.inews.qq.com/a/20260720A06OUP00?scene=qqsearch',
+    tags: ['碳市场', '碳交易'],
+  },
+  {
+    id: 'search-20260720-002',
+    title: '越南：每吨15美元碳税可减少3%排放',
+    summary: '越南：每吨15美元碳税可减少3%排放',
+    source: '腾讯',
+    publishDate: '2026-07-20',
+    url: 'https://so.html5.qq.com/page/real/search_news?docid=70000021_6386a5d7bff08352',
+    tags: ['碳市场', '碳交易'],
+  },
+  {
+    id: 'search-20260720-003',
+    title: '5年成交624亿元 全球最大碳市场的“大账本”在湖北',
+    summary: '5年成交624亿元 全球最大碳市场的“大账本”在湖北',
+    source: '腾讯',
+    publishDate: '2026-07-20',
+    url: 'https://view.inews.qq.com/a/20260719A03KZC00?scene=qqsearch',
+    tags: ['碳市场', '碳交易'],
+  },
 ];
 
 // 获取最近的新闻
