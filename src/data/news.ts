@@ -3206,6 +3206,16 @@ export const news: NewsItem[] = [
     url: 'https://view.inews.qq.com/a/20260719A03KZC00?scene=qqsearch',
     tags: ['碳市场', '碳交易'],
   },
+  // ===== 每日搜索自动发现 (2026-07-21) =====
+  {
+    id: 'search-20260721-001',
+    title: '财经观察：碳交易改革分歧背后，欧盟有哪些困境',
+    summary: '财经观察：碳交易改革分歧背后，欧盟有哪些困境',
+    source: '腾讯',
+    publishDate: '2026-07-21',
+    url: 'https://view.inews.qq.com/a/20260721A029N400?scene=qqsearch',
+    tags: ['碳市场', '碳交易'],
+  },
 ];
 
 // 获取最近的新闻
