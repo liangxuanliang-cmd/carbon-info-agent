@@ -3216,6 +3216,16 @@ export const news: NewsItem[] = [
     url: 'https://view.inews.qq.com/a/20260721A029N400?scene=qqsearch',
     tags: ['碳市场', '碳交易'],
   },
+  // ===== 每日搜索自动发现 (2026-07-22) =====
+  {
+    id: 'search-20260722-001',
+    title: '（乡村行·看振兴）广东紫金县：碳普惠交易绘就“绿色富民图”',
+    summary: '（乡村行·看振兴）广东紫金县：碳普惠交易绘就“绿色富民图”',
+    source: '腾讯',
+    publishDate: '2026-07-22',
+    url: 'https://view.inews.qq.com/a/20260722A097MK00?scene=qqsearch',
+    tags: ['碳市场', '碳交易'],
+  },
 ];
 
 // 获取最近的新闻
