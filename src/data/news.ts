@@ -3226,6 +3226,25 @@ export const news: NewsItem[] = [
     url: 'https://view.inews.qq.com/a/20260722A097MK00?scene=qqsearch',
     tags: ['碳市场', '碳交易'],
   },
+  // ===== 每日搜索自动发现 (2026-07-23) =====
+  {
+    id: 'search-20260723-001',
+    title: '碳市场政策密集落地，低碳etf易方达涨1.06%',
+    summary: '碳市场政策密集落地，低碳etf易方达涨1.06%',
+    source: '腾讯',
+    publishDate: '2026-07-23',
+    url: 'https://view.inews.qq.com/a/20260723A05E2A00?scene=qqsearch',
+    tags: ['碳市场', '碳交易'],
+  },
+  {
+    id: 'search-20260723-002',
+    title: '碳市场政策密集落地，碳中和etf易方达涨1.15%',
+    summary: '碳市场政策密集落地，碳中和etf易方达涨1.15%',
+    source: '腾讯',
+    publishDate: '2026-07-23',
+    url: 'https://view.inews.qq.com/a/20260723A05DST00?scene=qqsearch',
+    tags: ['碳市场', '碳交易'],
+  },
 ];
 
 // 获取最近的新闻
