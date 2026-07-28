@@ -3245,6 +3245,16 @@ export const news: NewsItem[] = [
     url: 'https://view.inews.qq.com/a/20260723A05DST00?scene=qqsearch',
     tags: ['碳市场', '碳交易'],
   },
+  // ===== 每日搜索自动发现 (2026-07-28) =====
+  {
+    id: 'search-20260728-001',
+    title: '碳市场交易额达105亿元！湖北立法促进碳市场建设',
+    summary: '碳市场交易额达105亿元！湖北立法促进碳市场建设',
+    source: '腾讯',
+    publishDate: '2026-07-28',
+    url: 'https://view.inews.qq.com/a/20260728A0A6M200?scene=qqsearch',
+    tags: ['碳市场', '碳交易'],
+  },
 ];
 
 // 获取最近的新闻
