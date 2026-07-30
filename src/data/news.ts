@@ -3319,6 +3319,16 @@ export const news: NewsItem[] = [
     url: 'https://view.inews.qq.com/a/20260729A0A00N00?scene=qqsearch',
     tags: ['碳市场', '碳交易'],
   },
+  // ===== 每日搜索自动发现 (2026-07-30) =====
+  {
+    id: 'search-20260730-001',
+    title: '中国碳排放权成交额突破629亿元，占中国二氧化碳排放总量的65%以上',
+    summary: '中国碳排放权成交额突破629亿元，占中国二氧化碳排放总量的65%以上',
+    source: '腾讯',
+    publishDate: '2026-07-30',
+    url: 'https://view.inews.qq.com/a/20260729A07EG400?scene=qqsearch',
+    tags: ['碳市场', '碳交易'],
+  },
 ];
 
 // 获取最近的新闻
