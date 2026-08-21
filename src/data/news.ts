@@ -3329,6 +3329,16 @@ export const news: NewsItem[] = [
     url: 'https://view.inews.qq.com/a/20260729A07EG400?scene=qqsearch',
     tags: ['碳市场', '碳交易'],
   },
+  // ===== 每日搜索自动发现 (2026-08-21) =====
+  {
+    id: 'search-20260821-001',
+    title: '第一财经研究院碳市场月报：全国碳市场7月量价齐升，碳价触及99.50元/吨高位 | 碳看',
+    summary: '第一财经研究院碳市场月报：全国碳市场7月量价齐升，碳价触及99.50元/吨高位 | 碳看',
+    source: '腾讯',
+    publishDate: '2026-08-21',
+    url: 'https://view.inews.qq.com/a/20260819A0554M00?scene=qqsearch',
+    tags: ['碳价行情'],
+  },
 ];
 
 // 获取最近的新闻
