@@ -2,7 +2,7 @@ import type { PriceRecord } from '../types';
 import { CARBON_PRODUCTS_META } from '../utils/constants';
 import dayjs from 'dayjs';
 
-// 自动生成的碳价数据 - 更新时间: 2026-10-15 23:29:38
+// 自动生成的碳价数据 - 更新时间: 2026-10-16 23:11:31
 // 数据来源: 百度搜索
 
 // 最新碳价数据
@@ -12,15 +12,7 @@ export const latestPrices = [
     name: '全国碳市场CEA',
     price: 99,
     change: 0,
-    date: '2026-10-15',
-    source: '百度搜索',
-  },
-  {
-    productId: 'BEA',
-    name: '北京碳配额BEA',
-    price: 98.4,
-    change: 0,
-    date: '2026-10-15',
+    date: '2026-10-16',
     source: '百度搜索',
   },
 ];

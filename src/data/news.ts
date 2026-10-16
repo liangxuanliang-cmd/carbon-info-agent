@@ -3339,6 +3339,16 @@ export const news: NewsItem[] = [
     url: 'https://view.inews.qq.com/a/20260819A0554M00?scene=qqsearch',
     tags: ['碳价行情'],
   },
+  // ===== 每日搜索自动发现 (2026-10-16) =====
+  {
+    id: 'search-20261016-001',
+    title: '欧盟碳市场“松绑”，释放产业优先信号',
+    summary: '欧盟碳市场“松绑”，释放产业优先信号',
+    source: '腾讯',
+    publishDate: '2026-10-16',
+    url: 'https://view.inews.qq.com/a/20261015A0ABIM00?scene=qqsearch',
+    tags: ['碳市场', '碳交易'],
+  },
 ];
 
 // 获取最近的新闻
