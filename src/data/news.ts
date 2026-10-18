@@ -3349,6 +3349,16 @@ export const news: NewsItem[] = [
     url: 'https://view.inews.qq.com/a/20261015A0ABIM00?scene=qqsearch',
     tags: ['碳市场', '碳交易'],
   },
+  // ===== 每日搜索自动发现 (2026-10-18) =====
+  {
+    id: 'search-20261018-001',
+    title: '专访刘世锦：警惕“停工式降碳”，不计成本的转型不可持续 建议探索在适宜区域水平上进行碳核算',
+    summary: '专访刘世锦：警惕“停工式降碳”，不计成本的转型不可持续 建议探索在适宜区域水平上进行碳核算',
+    source: '腾讯',
+    publishDate: '2026-10-18',
+    url: 'https://view.inews.qq.com/a/20261018A0A3MQ00?scene=qqsearch',
+    tags: ['碳市场', '碳交易'],
+  },
 ];
 
 // 获取最近的新闻
