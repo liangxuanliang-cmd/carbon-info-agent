@@ -3359,6 +3359,16 @@ export const news: NewsItem[] = [
     url: 'https://view.inews.qq.com/a/20261018A0A3MQ00?scene=qqsearch',
     tags: ['碳市场', '碳交易'],
   },
+  // ===== 每日搜索自动发现 (2026-10-20) =====
+  {
+    id: 'search-20261020-001',
+    title: '我国碳市场“四梁八柱”制度体系基本建成',
+    summary: '我国碳市场“四梁八柱”制度体系基本建成',
+    source: '腾讯',
+    publishDate: '2026-10-20',
+    url: 'https://view.inews.qq.com/a/20261019A06KJ900?scene=qqsearch',
+    tags: ['碳市场', '碳交易'],
+  },
 ];
 
 // 获取最近的新闻
