@@ -3369,6 +3369,16 @@ export const news: NewsItem[] = [
     url: 'https://view.inews.qq.com/a/20261019A06KJ900?scene=qqsearch',
     tags: ['碳市场', '碳交易'],
   },
+  // ===== 每日搜索自动发现 (2026-10-20) =====
+  {
+    id: 'search-20261020-001',
+    title: '全国首宗再生水利用节水碳交易落地广州，3351吨节水碳减排量成功“变现”',
+    summary: '全国首宗再生水利用节水碳交易落地广州，3351吨节水碳减排量成功“变现”',
+    source: '腾讯',
+    publishDate: '2026-10-20',
+    url: 'https://view.inews.qq.com/a/20261020A0DA0800?scene=qqsearch',
+    tags: ['碳市场', '碳交易'],
+  },
 ];
 
 // 获取最近的新闻
