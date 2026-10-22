@@ -3434,6 +3434,34 @@ export const news: NewsItem[] = [
     url: 'https://view.inews.qq.com/a/20261021A0BN1H00?scene=qqsearch',
     tags: ['碳市场', '碳交易'],
   },
+  // ===== 每日搜索自动发现 (2026-10-22) =====
+  {
+    id: 'search-20261022-001',
+    title: '全国首宗再生水利用节水碳交易落地广东',
+    summary: '全国首宗再生水利用节水碳交易落地广东',
+    source: '腾讯',
+    publishDate: '2026-10-22',
+    url: 'https://view.inews.qq.com/a/20261022A08NW000?scene=qqsearch',
+    tags: ['碳市场', '碳交易'],
+  },
+  {
+    id: 'search-20261022-002',
+    title: '北京绿色交易所梅德文：碳市场对新一轮经济周期增长发挥激励作用',
+    summary: '北京绿色交易所梅德文：碳市场对新一轮经济周期增长发挥激励作用',
+    source: '腾讯',
+    publishDate: '2026-10-22',
+    url: 'https://view.inews.qq.com/a/20261022A045AT00?scene=qqsearch',
+    tags: ['碳市场', '碳交易'],
+  },
+  {
+    id: 'search-20261022-003',
+    title: '北京绿色交易所梅德文：用好碳市场机制以技术创新驱动产业低碳转型',
+    summary: '北京绿色交易所梅德文：用好碳市场机制以技术创新驱动产业低碳转型',
+    source: '新浪财经2026年10月21日下午,在2',
+    publishDate: '2026-10-21',
+    url: 'https://view.inews.qq.com/a/20261022A0D93K00?scene=qqsearch',
+    tags: ['碳市场', '碳交易'],
+  },
 ];
 
 // 获取最近的新闻
