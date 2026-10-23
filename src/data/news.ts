@@ -3462,6 +3462,16 @@ export const news: NewsItem[] = [
     url: 'https://view.inews.qq.com/a/20261022A0D93K00?scene=qqsearch',
     tags: ['碳市场', '碳交易'],
   },
+  // ===== 每日搜索自动发现 (2026-10-23) =====
+  {
+    id: 'search-20261023-001',
+    title: '新华社消息丨全国碳排放权交易市场成交量突破10亿吨',
+    summary: '新华社消息丨全国碳排放权交易市场成交量突破10亿吨',
+    source: '腾讯',
+    publishDate: '2026-10-23',
+    url: 'https://view.inews.qq.com/a/20261021A0706V00?scene=qqsearch',
+    tags: ['碳市场', '碳交易'],
+  },
 ];
 
 // 获取最近的新闻
