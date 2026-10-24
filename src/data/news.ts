@@ -3472,6 +3472,34 @@ export const news: NewsItem[] = [
     url: 'https://view.inews.qq.com/a/20261021A0706V00?scene=qqsearch',
     tags: ['碳市场', '碳交易'],
   },
+  // ===== 每日搜索自动发现 (2026-10-24) =====
+  {
+    id: 'search-20261024-001',
+    title: '碳讨｜10亿吨之后，中国碳市场的“管住”与“算账”',
+    summary: '碳讨｜10亿吨之后，中国碳市场的“管住”与“算账”',
+    source: '腾讯',
+    publishDate: '2026-10-24',
+    url: 'https://view.inews.qq.com/a/20261024A05W0500?scene=qqsearch',
+    tags: ['碳市场', '碳交易'],
+  },
+  {
+    id: 'search-20261024-002',
+    title: '一周碳要闻：全国碳市场配额累计成交突破10亿吨',
+    summary: '一周碳要闻：全国碳市场配额累计成交突破10亿吨',
+    source: '腾讯',
+    publishDate: '2026-10-24',
+    url: 'https://view.inews.qq.com/a/20261024A05VZN00?scene=qqsearch',
+    tags: ['碳市场', '碳交易'],
+  },
+  {
+    id: 'search-20261024-003',
+    title: '全国碳排放交易量突破10亿吨大关，2027年将扩围至化工等行业，化工etf博时（158006）回调蓄势',
+    summary: '全国碳排放交易量突破10亿吨大关，2027年将扩围至化工等行业，化工etf博时（158006）回调蓄势',
+    source: '腾讯',
+    publishDate: '2026-10-22',
+    url: 'https://view.inews.qq.com/a/20261022A07GDQ00?scene=qqsearch',
+    tags: ['碳市场', '碳交易'],
+  },
 ];
 
 // 获取最近的新闻
