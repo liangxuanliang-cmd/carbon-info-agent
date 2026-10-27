@@ -3500,6 +3500,25 @@ export const news: NewsItem[] = [
     url: 'https://view.inews.qq.com/a/20261022A07GDQ00?scene=qqsearch',
     tags: ['碳市场', '碳交易'],
   },
+  // ===== 每日搜索自动发现 (2026-10-27) =====
+  {
+    id: 'search-20261027-001',
+    title: '全国碳市场迈过十亿吨关口，广东“先行十年”坐标何在？',
+    summary: '全国碳市场迈过十亿吨关口，广东“先行十年”坐标何在？',
+    source: '腾讯',
+    publishDate: '2026-10-27',
+    url: 'https://view.inews.qq.com/a/20261026A0BF5B00?scene=qqsearch',
+    tags: ['碳市场', '碳交易'],
+  },
+  {
+    id: 'search-20261027-002',
+    title: '第一财经研究院碳市场月报：9月市场配额分配方案出炉，地方推进碳资产融资创新 | 碳看',
+    summary: '第一财经研究院碳市场月报：9月市场配额分配方案出炉，地方推进碳资产融资创新 | 碳看',
+    source: '腾讯',
+    publishDate: '2026-10-27',
+    url: 'https://view.inews.qq.com/a/20261026A06XRV00?scene=qqsearch',
+    tags: ['碳市场', '碳交易'],
+  },
 ];
 
 // 获取最近的新闻
