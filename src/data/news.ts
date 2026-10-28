@@ -3519,6 +3519,25 @@ export const news: NewsItem[] = [
     url: 'https://view.inews.qq.com/a/20261026A06XRV00?scene=qqsearch',
     tags: ['碳市场', '碳交易'],
   },
+  // ===== 每日搜索自动发现 (2026-10-28) =====
+  {
+    id: 'search-20261028-001',
+    title: '友绿观察：碳市场量价齐升，建筑纳入尚待时机',
+    summary: '友绿观察：碳市场量价齐升，建筑纳入尚待时机',
+    source: '腾讯',
+    publishDate: '2026-10-28',
+    url: 'https://so.html5.qq.com/page/real/search_news?docid=70000021_0576ae06cad42052',
+    tags: ['碳市场', '碳交易'],
+  },
+  {
+    id: 'search-20261028-002',
+    title: '阿处共识:碳交易市场与碳信用发行,碳信用收益持有方与减排成本承担方分离|郭丽莎',
+    summary: '阿处共识:碳交易市场与碳信用发行,碳信用收益持有方与减排成本承担方分离|郭丽莎',
+    source: '腾讯',
+    publishDate: '2026-10-28',
+    url: 'https://so.html5.qq.com/page/real/search_news?docid=70000021_5046ae0daab93352',
+    tags: ['碳市场', '碳交易'],
+  },
 ];
 
 // 获取最近的新闻
