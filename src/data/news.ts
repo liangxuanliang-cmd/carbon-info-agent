@@ -3538,6 +3538,16 @@ export const news: NewsItem[] = [
     url: 'https://so.html5.qq.com/page/real/search_news?docid=70000021_5046ae0daab93352',
     tags: ['碳市场', '碳交易'],
   },
+  // ===== 每日搜索自动发现 (2026-10-29) =====
+  {
+    id: 'search-20261029-001',
+    title: '一图看懂碳市场扩容：四大行业、83亿吨排放意味着什么',
+    summary: '一图看懂碳市场扩容：四大行业、83亿吨排放意味着什么',
+    source: '腾讯',
+    publishDate: '2026-10-29',
+    url: 'https://so.html5.qq.com/page/real/search_news?docid=70000021_8306ae1e7cc43952',
+    tags: ['碳市场', '碳交易'],
+  },
 ];
 
 // 获取最近的新闻
