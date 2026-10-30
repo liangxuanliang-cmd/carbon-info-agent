@@ -3548,6 +3548,16 @@ export const news: NewsItem[] = [
     url: 'https://so.html5.qq.com/page/real/search_news?docid=70000021_8306ae1e7cc43952',
     tags: ['碳市场', '碳交易'],
   },
+  // ===== 每日搜索自动发现 (2026-10-30) =====
+  {
+    id: 'search-20261030-001',
+    title: '复旦大学可持续发展研究中心:10月全球主要碳市场成交量整体下跌',
+    summary: '复旦大学可持续发展研究中心:10月全球主要碳市场成交量整体下跌',
+    source: '腾讯',
+    publishDate: '2026-10-30',
+    url: 'https://view.inews.qq.com/a/20261029A048U100?scene=qqsearch',
+    tags: ['碳市场', '碳交易'],
+  },
 ];
 
 // 获取最近的新闻
