@@ -3558,6 +3558,16 @@ export const news: NewsItem[] = [
     url: 'https://view.inews.qq.com/a/20261029A048U100?scene=qqsearch',
     tags: ['碳市场', '碳交易'],
   },
+  // ===== 每日搜索自动发现 (2026-11-02) =====
+  {
+    id: 'search-20261102-001',
+    title: '青海首个省级碳市场服务枢纽挂牌 打通生态碳汇入市通道',
+    summary: '青海首个省级碳市场服务枢纽挂牌 打通生态碳汇入市通道',
+    source: '腾讯',
+    publishDate: '2026-11-02',
+    url: 'https://view.inews.qq.com/a/20261101A06BY500?scene=qqsearch',
+    tags: ['碳市场', '碳交易'],
+  },
 ];
 
 // 获取最近的新闻
