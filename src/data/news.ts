@@ -3568,6 +3568,16 @@ export const news: NewsItem[] = [
     url: 'https://view.inews.qq.com/a/20261101A06BY500?scene=qqsearch',
     tags: ['碳市场', '碳交易'],
   },
+  // ===== 每日搜索自动发现 (2026-11-03) =====
+  {
+    id: 'search-20261103-001',
+    title: '碳金融现货交易落地与产学研研发中心成立，低碳能源融合迈入实质阶段',
+    summary: '碳金融现货交易落地与产学研研发中心成立，低碳能源融合迈入实质阶段',
+    source: '腾讯',
+    publishDate: '2026-11-03',
+    url: 'https://view.inews.qq.com/a/20261102A06S7W00?scene=qqsearch',
+    tags: ['碳市场', '碳交易'],
+  },
 ];
 
 // 获取最近的新闻
