@@ -3578,6 +3578,25 @@ export const news: NewsItem[] = [
     url: 'https://view.inews.qq.com/a/20261102A06S7W00?scene=qqsearch',
     tags: ['碳市场', '碳交易'],
   },
+  // ===== 每日搜索自动发现 (2026-11-05) =====
+  {
+    id: 'search-20261105-001',
+    title: '碳金融现货交易实质性落地，海风招标回暖与储能成本下移同步显现',
+    summary: '碳金融现货交易实质性落地，海风招标回暖与储能成本下移同步显现',
+    source: '腾讯',
+    publishDate: '2026-11-05',
+    url: 'https://view.inews.qq.com/a/20261104A0A5B000?scene=qqsearch',
+    tags: ['碳市场', '碳交易'],
+  },
+  {
+    id: 'search-20261105-002',
+    title: '能源低碳转型提速 碳市场扩围，低碳etf易方达（516070）动能积聚',
+    summary: '能源低碳转型提速 碳市场扩围，低碳etf易方达（516070）动能积聚',
+    source: '腾讯',
+    publishDate: '2026-11-05',
+    url: 'https://view.inews.qq.com/a/20261103A08KZ400?scene=qqsearch',
+    tags: ['碳市场', '碳交易'],
+  },
 ];
 
 // 获取最近的新闻
