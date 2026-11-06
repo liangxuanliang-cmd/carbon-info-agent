@@ -3597,6 +3597,16 @@ export const news: NewsItem[] = [
     url: 'https://view.inews.qq.com/a/20261103A08KZ400?scene=qqsearch',
     tags: ['碳市场', '碳交易'],
   },
+  // ===== 每日搜索自动发现 (2026-11-06) =====
+  {
+    id: 'search-20261106-001',
+    title: '淮安首单碳资产市场化交易落地！1480 吨公交充电桩减排量成功变现',
+    summary: '淮安首单碳资产市场化交易落地！1480 吨公交充电桩减排量成功变现',
+    source: '腾讯',
+    publishDate: '2026-11-06',
+    url: 'https://view.inews.qq.com/a/20261105A07UN700?scene=qqsearch',
+    tags: ['碳市场', '碳交易'],
+  },
 ];
 
 // 获取最近的新闻
