@@ -3607,6 +3607,25 @@ export const news: NewsItem[] = [
     url: 'https://view.inews.qq.com/a/20261105A07UN700?scene=qqsearch',
     tags: ['碳市场', '碳交易'],
   },
+  // ===== 每日搜索自动发现 (2026-11-07) =====
+  {
+    id: 'search-20261107-001',
+    title: '2027年度碳市场名录已公布：企业配额清缴要点',
+    summary: '2027年度碳市场名录已公布：企业配额清缴要点',
+    source: '腾讯',
+    publishDate: '2026-11-07',
+    url: 'https://so.html5.qq.com/page/real/search_news?docid=70000021_8146aed7fdc79852',
+    tags: ['碳市场', '碳交易'],
+  },
+  {
+    id: 'search-20261107-002',
+    title: '全国碳排放权交易市场2027年度重点排放单位名录公布',
+    summary: '全国碳排放权交易市场2027年度重点排放单位名录公布',
+    source: '腾讯',
+    publishDate: '2026-11-07',
+    url: 'https://view.inews.qq.com/a/20261106A0EP5900?scene=qqsearch',
+    tags: ['碳市场', '碳交易'],
+  },
 ];
 
 // 获取最近的新闻
