@@ -3626,6 +3626,16 @@ export const news: NewsItem[] = [
     url: 'https://view.inews.qq.com/a/20261106A0EP5900?scene=qqsearch',
     tags: ['碳市场', '碳交易'],
   },
+  // ===== 每日搜索自动发现 (2026-11-08) =====
+  {
+    id: 'search-20261108-001',
+    title: '全国碳市场2027年度重点排放单位名录公布，共纳入3746家',
+    summary: '全国碳市场2027年度重点排放单位名录公布，共纳入3746家',
+    source: '腾讯',
+    publishDate: '2026-11-08',
+    url: 'https://view.inews.qq.com/a/20261107A09POM00?scene=qqsearch',
+    tags: ['碳市场', '碳交易'],
+  },
 ];
 
 // 获取最近的新闻
