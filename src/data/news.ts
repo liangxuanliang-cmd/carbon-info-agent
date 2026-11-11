@@ -3646,6 +3646,25 @@ export const news: NewsItem[] = [
     url: 'https://view.inews.qq.com/a/20261107A08LK300?scene=qqsearch',
     tags: ['碳市场', '碳交易'],
   },
+  // ===== 每日搜索自动发现 (2026-11-11) =====
+  {
+    id: 'search-20261111-001',
+    title: '欧盟与英国碳市场互联协议接近达成',
+    summary: '欧盟与英国碳市场互联协议接近达成',
+    source: '腾讯',
+    publishDate: '2026-11-11',
+    url: 'https://new.qq.com/rain/a/20261111A03Z6000',
+    tags: ['碳市场', '碳交易'],
+  },
+  {
+    id: 'search-20261111-002',
+    title: '上海：探索蓝碳交易核算 推进零碳海岛等多场景应用试点',
+    summary: '上海：探索蓝碳交易核算 推进零碳海岛等多场景应用试点',
+    source: '腾讯',
+    publishDate: '2026-11-11',
+    url: 'https://view.inews.qq.com/a/20261110A09WHT00?scene=qqsearch',
+    tags: ['碳市场', '碳交易'],
+  },
 ];
 
 // 获取最近的新闻
