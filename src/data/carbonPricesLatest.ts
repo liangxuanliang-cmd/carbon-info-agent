@@ -2,7 +2,7 @@ import type { PriceRecord } from '../types';
 import { CARBON_PRODUCTS_META } from '../utils/constants';
 import dayjs from 'dayjs';
 
-// 自动生成的碳价数据 - 更新时间: 2026-11-19 02:10:42
+// 自动生成的碳价数据 - 更新时间: 2026-11-20 01:59:08
 // 数据来源: 百度搜索
 
 // 最新碳价数据
@@ -12,15 +12,23 @@ export const latestPrices = [
     name: '全国碳市场CEA',
     price: 58.68,
     change: 0,
-    date: '2026-11-19',
+    date: '2026-11-20',
+    source: '百度搜索',
+  },
+  {
+    productId: 'CCER',
+    name: 'CCER',
+    price: 68,
+    change: 0,
+    date: '2026-11-20',
     source: '百度搜索',
   },
   {
     productId: 'BEA',
     name: '北京碳配额BEA',
-    price: 92.67,
+    price: 64,
     change: 0,
-    date: '2026-11-19',
+    date: '2026-11-20',
     source: '百度搜索',
   },
   {
@@ -28,15 +36,15 @@ export const latestPrices = [
     name: '上海碳配额SHEA',
     price: 56.5,
     change: 0,
-    date: '2026-11-19',
+    date: '2026-11-20',
     source: '百度搜索',
   },
   {
     productId: 'GDEA',
     name: '广东碳配额GDEA',
-    price: 81.07,
+    price: 41,
     change: 0,
-    date: '2026-11-19',
+    date: '2026-11-20',
     source: '百度搜索',
   },
   {
@@ -44,7 +52,7 @@ export const latestPrices = [
     name: '湖北碳配额HBEA',
     price: 59,
     change: 0,
-    date: '2026-11-19',
+    date: '2026-11-20',
     source: '百度搜索',
   },
 ];
