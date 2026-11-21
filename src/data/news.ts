@@ -3665,6 +3665,43 @@ export const news: NewsItem[] = [
     url: 'https://view.inews.qq.com/a/20261110A09WHT00?scene=qqsearch',
     tags: ['碳市场', '碳交易'],
   },
+  // ===== 每日搜索自动发现 (2026-11-21) =====
+  {
+    id: 'search-20261121-001',
+    title: '全国碳市场信息网 -更好发挥碳市场资源配置作用',
+    summary: '全国碳市场信息网 -更好发挥碳市场资源配置作用',
+    source: '广州碳交所',
+    publishDate: '2026-11-21',
+    url: 'https://www.cets.org.cn/hjywt/7560.jhtml',
+    tags: ['碳市场', '碳交易'],
+  },
+  {
+    id: 'search-20261121-002',
+    title: '买卖什么? 如何更有活力? 碳市场2.0,中国这样布局_央广网',
+    summary: '买卖什么? 如何更有活力? 碳市场2.0,中国这样布局_央广网',
+    source: 'cnr.cn',
+    publishDate: '2025-09-16',
+    url: 'https://www.cnr.cn/jingji/zbpd/20250916/t20250916_527363412.shtml',
+    tags: ['碳市场', '碳交易'],
+  },
+  {
+    id: 'search-20261121-003',
+    title: '中共中央办公厅 国务院办公厅关于推进绿色低碳转型加强全国碳市场建设的意见_中央文件_中国政府网',
+    summary: '中共中央办公厅 国务院办公厅关于推进绿色低碳转型加强全国碳市场建设的意见_中央文件_中国政府网',
+    source: '政府网站',
+    publishDate: '2025-08-25',
+    url: 'https://www.gov.cn/zhengce/202508/content_7037717.htm',
+    tags: ['碳市场', '碳交易'],
+  },
+  {
+    id: 'search-20261121-004',
+    title: '中共中央辦公廳 國務院辦公廳關於推進綠色低碳轉型加強全國碳市場建設的意見__2025年第25號國務院公報_中國政府網',
+    summary: '中共中央辦公廳 國務院辦公廳關於推進綠色低碳轉型加強全國碳市場建設的意見__2025年第25號國務院公報_中國政府網',
+    source: '政府网站',
+    publishDate: '2025-05-24',
+    url: 'https://big5.www.gov.cn/gate/big5/www.gov.cn/govweb/gongbao/2025/issue_12266/202509/content_7039599.html',
+    tags: ['碳市场', '碳交易'],
+  },
 ];
 
 // 获取最近的新闻
