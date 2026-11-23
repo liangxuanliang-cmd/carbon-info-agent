@@ -3702,6 +3702,16 @@ export const news: NewsItem[] = [
     url: 'https://big5.www.gov.cn/gate/big5/www.gov.cn/govweb/gongbao/2025/issue_12266/202509/content_7039599.html',
     tags: ['碳市场', '碳交易'],
   },
+  // ===== 每日搜索自动发现 (2026-11-23) =====
+  {
+    id: 'search-20261123-001',
+    title: '頂層設計擘畫市場發展藍圖 碳排放權交易活力加速釋放 | 碳市場建設解讀⑥',
+    summary: '頂層設計擘畫市場發展藍圖 碳排放權交易活力加速釋放 | 碳市場建設解讀⑥',
+    source: '生态环境部',
+    publishDate: '2025-09-08',
+    url: 'https://big5.mee.gov.cn/gate/big5/www.mee.gov.cn/zcwj/zcjd/202509/t20250908_1127083.shtml',
+    tags: ['碳市场', '碳交易'],
+  },
 ];
 
 // 获取最近的新闻
